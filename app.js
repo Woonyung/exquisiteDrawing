@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 
 var mongoose = require('mongoose'); // mongodb
-mongoose.connect(process.env.MONGOLAB_URI); // connect to the mongolab database
+// mongoose.connect(process.env.MONGOLAB_URI); // connect to the mongolab database
 
 
 app.configure(function(){
