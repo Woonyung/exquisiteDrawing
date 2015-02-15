@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 
 var mongoose = require('mongoose'); // mongodb
-// mongoose.connect(process.env.MONGOLAB_URI); // connect to the mongolab database
+mongoose.connect(process.env.MONGOLAB_URI); // connect to the mongolab database
 
 
 app.configure(function(){
@@ -56,6 +56,10 @@ app.get('/gallery', function(req,res){
 	});
 });
 
+app.get('/new', function(req,res){
+	res.render('newdrawing.html');
+});
+
 
 app.post('/submitDrawing', function(req,res){
 	var infoData = {
@@ -68,7 +72,7 @@ app.post('/submitDrawing', function(req,res){
 			console.log(err);
 		} else {
 			console.log("SAVED INTO DATABASE!!!!!!!!!");
-			// res.redirect('/gallery');
+			res.redirect('/gallery');
 		}
 	});
 

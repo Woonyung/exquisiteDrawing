@@ -6,7 +6,7 @@ body {
   background-color: yellow;
 }
 
-#bottomArea {
+#canvasArea {
   width: 800px;
   height: 500px;
   background-color: pink;
@@ -16,6 +16,27 @@ body {
   width: 800px;
   height: 500px;
   background-color: white;
+}
+
+/* gallery */
+#bottomArea {
+  height: 400px;
+  white-space: nowrap;
+  background-color: aqua;
+}
+
+li {
+  display: inline;
+  margin-left: -30px;
+}
+
+.galleryImages {
+  width: 560px;
+}
+
+#makeNew {
+  position: absolute;
+  height: 350px;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
