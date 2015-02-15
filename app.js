@@ -2,10 +2,10 @@ var express = require('express');
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
-
 var app = express();
+
 var mongoose = require('mongoose'); // mongodb
-mongoose.connect(process.env.MONGOLAB_URI); // connect to the mongolab database
+// mongoose.connect(process.env.MONGOLAB_URI); // connect to the mongolab database
 
 
 app.configure(function(){
@@ -27,6 +27,8 @@ app.configure(function(){
 	app.use(express.methodOverride());
 	app.use(app.router);
 	app.use('/public', express.static('public'));
+
+	app.db = mongoose.connect(process.env.MONGOLAB_URI);
 
 });
 
