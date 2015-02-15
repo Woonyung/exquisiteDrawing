@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- css -->
+		<link rel="stylesheet" type="text/css" href="public/css/stylesheet.css">
+
+		<!-- js -->
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	    <script charset="utf-8" src="http://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.12/paper.js"></script>
+	    <style>
+	    	.galleryImages{
+	    		width: 50px;
+	    	}
+	    </style>
+	</head>
+
+	<body>
+
+	<div id="toolBox">
+		<h2>THIS IS SAVED GALLERY PAGE</h2>
+		saved images
+	</div> <!-- toolbox -->
+
+	<div id="bottomArea">
+		{{#infoData}}
+			<img class='galleryImages' src={{imageData}}>
+		{{/infoData}}
+	</div> 
+
+	<!-- ========================================== -->
+	<script type="text/javascript" src="public/js/main.js"></script>
+	</body>
+
+
+</html>

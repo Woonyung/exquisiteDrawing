@@ -1,0 +1,21 @@
+body {
+  background-color: gray;
+}
+
+#toolBox {
+  background-color: yellow;
+}
+
+#bottomArea {
+  width: 800px;
+  height: 500px;
+  background-color: pink;
+}
+
+#myCanvas {
+  width: 800px;
+  height: 500px;
+  background-color: white;
+}
+
+/*# sourceMappingURL=stylesheet.css.map */
