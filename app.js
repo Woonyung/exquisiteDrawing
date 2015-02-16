@@ -56,8 +56,18 @@ app.get('/gallery', function(req,res){
 	});
 });
 
+
 app.get('/new', function(req,res){
-	res.render('newdrawing.html');
+	// res.render('newdrawing.html');
+	Info.find({}, function(err, info){
+		if(err){
+			res.json(err);
+		} else {
+			// info data is the object that I defined in the gallery
+			res.render('newdrawing.html', { infoData: info })
+		}
+	});
+
 });
 
 

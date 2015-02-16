@@ -23,9 +23,18 @@
 		<a href="#" id="save"><b>SAVE</b></a>
 	</div> <!-- toolbox -->
 
-	<div id="canvasArea">
-		<canvas id="myCanvas"></canvas>
-	</div> <!-- canvas-->
+
+	<div id="bottomArea">
+		{{#infoData}}
+		<li><img class='previousDrawing' src={{imageData}}></li>
+		{{/infoData}}
+		<li><canvas id="myCanvas"></canvas></li>
+
+	</div> 
+
+
+
+
 
 	<!-- ========================================== -->
 	<script type="text/javascript" src="public/js/main.js"></script>
