@@ -3,7 +3,7 @@ body {
 }
 
 #toolBox {
-  position: fixed;
+  position: absolute;
   z-index: 10;
   float: right;
   background-color: yellow;
@@ -22,9 +22,7 @@ body {
 
 /* gallery */
 #bottomArea {
-  height: 400px;
   white-space: nowrap;
-  background-color: aqua;
 }
 
 ul {
