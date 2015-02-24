@@ -23,6 +23,7 @@ window.onload = function(){
 	// create two drawing tools
 	// tool1 = brushline thin
 	// tool2 = brushline thick
+	// tool3 = weird brush with red head
 
 	var path;
 
@@ -59,9 +60,29 @@ window.onload = function(){
 		path.add(event.point);
 	}
 
+	// TOOL 3
+	tool3 = new Tool();
+	tool3.onMouseDown = function(event){
+		path = new Path();
+		path.strokeColor = "black";
+		path.strokeWidth = 1.5;
+	}
+	tool3.onMouseDrag = function(event){
+		path.add(event.point);
+	}
+	tool3.onMouseUp = function(event){
+		var myCircle = new Path.Circle({
+			center: event.point,
+			strokeWidth: 1.5,
+			strokeColor: 'red',
+			fillColor: 'red',
+			radius: 10
+		});
+	}
+
+
 	// Whenever buttons are pressed
 	$("#brush1").click(function(){
-		console.log(new Date());
 		tool1.activate();
 	});
 
@@ -69,6 +90,13 @@ window.onload = function(){
 		tool2.activate();
 	});
 
+	$("#weird").click(function(){
+		tool3.activate();
+	});
+
+
+
+	///////////////////////////////////////////////
 	// SAVE FUNCTION
 	$('#save').click(function(){
 		var imageString = canvas.toDataURL();
