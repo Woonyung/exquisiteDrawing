@@ -59,6 +59,7 @@ app.get('/gallery', function(req,res){
 
 //http://stackoverflow.com/questions/5830513/how-do-i-limit-the-number-of-returned-items
 app.get('/new', function(req,res){
+	// only shows the most recent one
 	Info.find({}).limit(1).exec(function(err,info){
 		if(err){
 			res.json(err);
@@ -67,14 +68,6 @@ app.get('/new', function(req,res){
 			res.render('newdrawing.html', { infoData: info })
 		}
 	});
-	// Info.find({}, function(err, info){
-	// 	if(err){
-	// 		res.json(err);
-	// 	} else {
-	// 		// info data is the object that I defined in the gallery
-	// 		res.render('newdrawing.html', { infoData: info })
-	// 	}
-	// });
 
 });
 
