@@ -1,5 +1,18 @@
-body {
-  background-color: gray;
+#bottomArea {
+  white-space: nowrap;
+}
+
+.bg {
+  z-index: 300;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+#backgroundCanvas {
+  width: 100%;
+  background-color: #404040;
 }
 
 #toolBox {
@@ -12,17 +25,18 @@ body {
 .previousDrawing {
   width: 800px;
   height: 500px;
+  vertical-align: top;
+  opacity: 0.5;
+}
+
+.crop {
+  margin: 0 0 0 -600px;
 }
 
 #myCanvas {
   width: 800px;
   height: 500px;
   background-color: white;
-}
-
-/* gallery */
-#bottomArea {
-  white-space: nowrap;
 }
 
 ul {

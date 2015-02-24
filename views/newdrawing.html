@@ -1,51 +1,23 @@
-<!DOCTYPE html>
-<html>
-	<head>
+<!-- new page -->
 
-		<!-- js -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	    <script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.12/paper.js"></script>
+<div id="toolBox">
+	<h2>Multiple Tools Test</h2>
 
-		<!-- bootstrap-->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<!-- TOOLS -->
+	<a href="#" id="brush1">Brush 1 - Thin</a>
+	<a href="#" id="brush2">Brush 2 - Thick</a>
 
-	    <!-- css -->
-		<link rel="stylesheet" type="text/css" href="public/css/stylesheet.css">
-
-	</head>
-
-	<body>
-
-	<div id="toolBox">
-		<h2>Multiple Tools Test</h2>
-
-		<!-- TOOLS -->
-		<a href="#" id="brush1">Brush 1 - Thin</a>
-		<a href="#" id="brush2">Brush 2 - Thick</a>
-
-		<!-- MENUS -->
-		<a href="/gallery"><b>GALLERY</b></a>
-		<a href="#" id="save"><b>SAVE</b></a>
-	</div> <!-- toolbox -->
+	<!-- MENUS -->
+	<a href="/gallery"><b>GALLERY</b></a>
+	<a href="#" id="save"><b>SAVE</b></a>
+</div> <!-- toolbox -->
 
 
-	<div id="bottomArea">
-<!-- 		{{#infoData}}
-		<li><img class='previousDrawing' src={{imageData}}></li>
-		{{/infoData}} -->
-		<li><canvas id="myCanvas"></canvas></li>
+<div id="bottomArea">
+	{{#infoData}}
+		<li><img onmousedown="return false" class='previousDrawing crop' src={{imageData}}></li>
+	{{/infoData}} 
+	<li><canvas id="myCanvas"></canvas></li>
 
-	</div> 
-
-
-
-
-
-	<!-- ========================================== -->
-	<script type="text/javascript" src="public/js/main.js"></script>
-	</body>
-
-
-</html>
+</div> 
+<script type="text/javascript" src="public/js/drawing.js"></script>
