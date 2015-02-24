@@ -34,6 +34,7 @@ app.configure(function(){
 
 
 var Info = mongoose.model('Info', {
+	Date: String,
 	imageData: String
 });
 
@@ -60,7 +61,7 @@ app.get('/gallery', function(req,res){
 //http://stackoverflow.com/questions/5830513/how-do-i-limit-the-number-of-returned-items
 app.get('/new', function(req,res){
 	// only shows the most recent one
-	Info.find({}).limit(1).exec(function(err,info){
+	Info.find({}).sort({'Date':'asc'}).limit(1).exec(function(err,info){
 		if(err){
 			res.json(err);
 		} else {
@@ -74,6 +75,7 @@ app.get('/new', function(req,res){
 
 app.post('/submitDrawing', function(req,res){
 	var infoData = {
+		Date: req.body.Date,
 		imageData : req.body.imageData
 	}
 

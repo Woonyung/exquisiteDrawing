@@ -61,6 +61,7 @@ window.onload = function(){
 
 	// Whenever buttons are pressed
 	$("#brush1").click(function(){
+		console.log(new Date());
 		tool1.activate();
 	});
 
@@ -72,6 +73,7 @@ window.onload = function(){
 	$('#save').click(function(){
 		var imageString = canvas.toDataURL();
 		var dataToSave = {
+			Date: new Date(),
 			imageData: imageString
 		}
 
