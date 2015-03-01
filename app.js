@@ -26,10 +26,7 @@ app.configure(function(){
 	app.use(express.cookieParser());
 	app.use(express.methodOverride());
 	app.use(app.router);
-	app.use('/public', express.static('public'));
-
-	// app.db = mongoose.connect(process.env.MONGOLAB_URI);
-
+	app.use(express.static(path.join(__dirname, 'public')));
 });
 
 
