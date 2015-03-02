@@ -73,6 +73,8 @@ li {
   height: 600px;
 }
 
-.hideit {display: none!important}
+.hideit {
+  display: none !important;
+}
 
 /*# sourceMappingURL=stylesheet.css.map */
