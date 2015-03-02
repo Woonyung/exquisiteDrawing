@@ -100,9 +100,15 @@ window.onload = function(){
 	// SAVE FUNCTION
 	$('#save').click(function(){
 		var imageString = canvas.toDataURL();
+		var currentTheme = document.getElementById("currentTheme").getAttribute("data-theme");
+		console.log(currentTheme);
+
+        //document.getElementById("currentTheme").setAttribute("data-theme", "happiness"); // to change the theme
+        
 		var dataToSave = {
 			Date: new Date(),
-			imageData: imageString
+			imageData: imageString,
+			theme: currentTheme
 		}
 
 		$.ajax({

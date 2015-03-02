@@ -6,6 +6,11 @@ body {
   white-space: nowrap;
 }
 
+#topBar {
+  height: 10vh;
+  background-color: magenta;
+}
+
 .bg {
   z-index: 300;
   width: 100%;
@@ -20,15 +25,21 @@ body {
 }
 
 #toolBox {
-  position: absolute;
   z-index: 10;
+  width: 30%;
+  height: 15vh;
+  background-color: yellow;
+}
+
+#toolBox2 {
   float: right;
+  right: 10px;
   background-color: yellow;
 }
 
 .previousDrawing {
-  width: 800px;
-  height: 500px;
+  width: 900px;
+  height: 600px;
   vertical-align: top;
   opacity: 0.5;
 }
@@ -38,8 +49,8 @@ body {
 }
 
 #myCanvas {
-  width: 800px;
-  height: 500px;
+  width: 900px;
+  height: 600px;
   background-color: white;
 }
 
@@ -53,13 +64,15 @@ li {
 }
 
 .galleryImages {
-  width: 800px;
-  height: 500px;
+  width: 900px;
+  height: 600px;
 }
 
 #makeNew {
   position: absolute;
-  height: 500px;
+  height: 600px;
 }
+
+.hideit {display: none!important}
 
 /*# sourceMappingURL=stylesheet.css.map */
