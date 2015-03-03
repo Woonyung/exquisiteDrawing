@@ -49,7 +49,7 @@ body {
 
 #middleArea {
   white-space: nowrap;
-  height: 60vh;
+  height: 48vh;
   background-color: yellow;
 }
 
@@ -60,15 +60,15 @@ body {
 }
 
 .previousDrawing {
-  width: 800px;
-  height: 60vh;
+  width: 640px;
+  height: 48vh;
   vertical-align: top;
   opacity: 0.5;
 }
 
 #myCanvas {
-  width: 800px;
-  height: 60vh;
+  width: 640px;
+  height: 48vh;
   background-color: white;
 }
 
@@ -94,13 +94,13 @@ li {
 }
 
 .galleryImages {
-  width: 800px;
-  height: 60vh;
+  width: 640px;
+  height: 48vh;
 }
 
 #makeNew {
   position: absolute;
-  height: 60vh;
+  height: 48vh;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
