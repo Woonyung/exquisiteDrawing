@@ -59,6 +59,19 @@ app.get('/newDRAWING', function(req,res){
 	});
 });
 
+// to see whole gallery / css
+app.get('/gallllery', function(req,res){
+	Info.find({}, function(err, info){
+		if(err){
+			res.json(err);
+		} else {
+			// info data is the object that I defined in the gallery
+			res.render('gallery.html', { infoData: info })
+		}
+	});
+});
+
+
 app.get('/theme/:theme', function(req,res){
 	var requestedTheme = req.param('theme');
 
@@ -66,7 +79,7 @@ app.get('/theme/:theme', function(req,res){
 		if(err){
 			res.json(err);
 		} else {
-			console.log(info.length);
+			// console.log(info.length);
 
 			// if info data is not empty;
 			if ( info.length > 0 ){
