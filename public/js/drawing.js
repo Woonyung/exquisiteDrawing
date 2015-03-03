@@ -7,7 +7,7 @@
 
 //canvasWH
 var width = 640;
-var height = 480;
+var height = 540;
 
 var path;
 var frame;
