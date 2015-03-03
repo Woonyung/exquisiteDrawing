@@ -9,14 +9,14 @@ body {
 
 #middleArea {
   white-space: nowrap;
-  height: 70vh;
+  height: 60vh;
   background-color: cyan;
 }
 
 #bottomArea {
   z-index: 600;
   background-color: pink;
-  height: 20vh;
+  height: 30vh;
 }
 
 .bg {
@@ -33,19 +33,19 @@ body {
 }
 
 .previousDrawing {
-  width: 900px;
-  height: 70vh;
+  width: 800px;
+  height: 60vh;
   vertical-align: top;
   opacity: 0.5;
 }
 
 .crop {
-  margin: 0 0 0 -600px;
+  margin: 0 0 0 -500px;
 }
 
 #myCanvas {
-  width: 900px;
-  height: 70vh;
+  width: 800px;
+  height: 60vh;
   background-color: white;
 }
 
@@ -59,13 +59,13 @@ li {
 }
 
 .galleryImages {
-  width: 900px;
-  height: 70vh;
+  width: 800px;
+  height: 60vh;
 }
 
 #makeNew {
   position: absolute;
-  height: 70vh;
+  height: 60vh;
 }
 
 .hideit {

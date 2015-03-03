@@ -11,7 +11,7 @@ paper.install(window);
 var tool1, tool2;
 
 //canvasWH
-var width = 900;
+var width = 800;
 var height = 600;
 
 window.onload = function(){
