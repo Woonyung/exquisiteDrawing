@@ -49,7 +49,7 @@ body {
 
 #middleArea {
   white-space: nowrap;
-  height: 540px;
+  height: 480px;
   background-color: yellow;
 }
 
@@ -61,20 +61,21 @@ body {
 
 .previousDrawing {
   width: 640px;
-  height: 540px;
+  height: 480px;
   vertical-align: top;
   opacity: 0.5;
 }
 
 #myCanvas {
   width: 640px;
-  height: 540px;
+  height: 480px;
   background-color: white;
 }
 
 #bottomArea {
   z-index: 600;
   background-color: pink;
+  bottom: 0;
   height: 200px;
 }
 
@@ -95,12 +96,12 @@ li {
 
 .galleryImages {
   width: 640px;
-  height: 540px;
+  height: 480px;
 }
 
 #makeNew {
   position: absolute;
-  height: 540px;
+  height: 480px;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
