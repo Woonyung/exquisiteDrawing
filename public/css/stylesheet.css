@@ -43,13 +43,13 @@ body {
 }
 
 #topArea {
-  height: 12vh;
+  height: 100px;
   background-color: magenta;
 }
 
 #middleArea {
   white-space: nowrap;
-  height: 54vh;
+  height: 540px;
   background-color: yellow;
 }
 
@@ -61,21 +61,21 @@ body {
 
 .previousDrawing {
   width: 640px;
-  height: 54vh;
+  height: 540px;
   vertical-align: top;
   opacity: 0.5;
 }
 
 #myCanvas {
   width: 640px;
-  height: 54vh;
+  height: 540px;
   background-color: white;
 }
 
 #bottomArea {
   z-index: 600;
   background-color: pink;
-  height: 30vh;
+  height: 200px;
 }
 
 #toolBox {
@@ -95,12 +95,12 @@ li {
 
 .galleryImages {
   width: 640px;
-  height: 54vh;
+  height: 540px;
 }
 
 #makeNew {
   position: absolute;
-  height: 54vh;
+  height: 540px;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
