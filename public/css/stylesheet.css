@@ -21,6 +21,10 @@ body {
   background-color: #404040;
 }
 
+#wrapper {
+  position: relative;
+}
+
 .closed {
   color: red;
 }
@@ -73,10 +77,12 @@ body {
 }
 
 #bottomArea {
-  z-index: 600;
-  background-color: pink;
+  position: absolute;
   bottom: 0;
-  height: 200px;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 150px;
+  background-color: #f5f5f5;
 }
 
 #toolBox {
