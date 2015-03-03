@@ -11,8 +11,8 @@ paper.install(window);
 var tool1, tool2;
 
 //canvasWH
-var width = 800;
-var height = 500;
+var width = 900;
+var height = 600;
 
 window.onload = function(){
 	// get id from canvas and set up
@@ -100,15 +100,15 @@ window.onload = function(){
 	// SAVE FUNCTION
 	$('#save').click(function(){
 		var imageString = canvas.toDataURL();
-		var currentTheme = document.getElementById("currentTheme").getAttribute("data-theme");
-		console.log(currentTheme);
-
-        //document.getElementById("currentTheme").setAttribute("data-theme", "happiness"); // to change the theme
+		// front-end stuffs
+		// var currentTheme = document.getElementById("currentTheme").getAttribute("data-theme");
+		// console.log(currentTheme);
+        // document.getElementById("currentTheme").setAttribute("data-theme", "happiness"); // to change the theme
         
 		var dataToSave = {
 			Date: new Date(),
-			imageData: imageString,
-			theme: currentTheme
+			imageData: imageString
+			// theme: currentTheme // front-end
 		}
 
 		$.ajax({
@@ -127,7 +127,7 @@ window.onload = function(){
                 // paper.project.activeLayer.removeChildren();
 
                 //Send them to the gallery
-                document.location.href = '/gallery';
+                document.location.href = '/';
 
             }
 		});

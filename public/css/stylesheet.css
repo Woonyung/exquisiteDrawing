@@ -2,13 +2,21 @@ body {
   background-color: #404040;
 }
 
-#bottomArea {
-  white-space: nowrap;
-}
-
-#topBar {
+#topArea {
   height: 10vh;
   background-color: magenta;
+}
+
+#middleArea {
+  white-space: nowrap;
+  height: 70vh;
+  background-color: cyan;
+}
+
+#bottomArea {
+  z-index: 600;
+  background-color: pink;
+  height: 20vh;
 }
 
 .bg {
@@ -24,22 +32,9 @@ body {
   background-color: #404040;
 }
 
-#toolBox {
-  z-index: 10;
-  width: 30%;
-  height: 15vh;
-  background-color: yellow;
-}
-
-#toolBox2 {
-  float: right;
-  right: 10px;
-  background-color: yellow;
-}
-
 .previousDrawing {
   width: 900px;
-  height: 600px;
+  height: 70vh;
   vertical-align: top;
   opacity: 0.5;
 }
@@ -50,7 +45,7 @@ body {
 
 #myCanvas {
   width: 900px;
-  height: 600px;
+  height: 70vh;
   background-color: white;
 }
 
@@ -65,16 +60,24 @@ li {
 
 .galleryImages {
   width: 900px;
-  height: 600px;
+  height: 70vh;
 }
 
 #makeNew {
   position: absolute;
-  height: 600px;
+  height: 70vh;
 }
 
 .hideit {
   display: none !important;
+}
+
+.closed {
+  color: red;
+}
+
+.opened {
+  color: green;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */

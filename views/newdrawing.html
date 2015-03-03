@@ -1,6 +1,6 @@
-<!-- new page -->
+<!-- continue drawing with the theme -->
 
-<div id="topBar">
+<div id="topArea">
 	this is topbar
 
 	<br>
@@ -11,28 +11,32 @@
 
 
 
-<div id="bottomArea">
+<div id="middleArea">
 	{{#infoData}}
-		<li><img onmousedown="return false" class='previousDrawing crop' src={{imageData}}></li>
+	<li><img onmousedown="return false" class='previousDrawing crop' src={{imageData}}></li>
 	{{/infoData}} 
-	<li><canvas id="myCanvas"></canvas></li>
+
+	<li>
+	<canvas id="myCanvas"></canvas>
+	</li>
+</div>
+
+<div id="bottomArea">
+	<div id="toolBox">
+		<div id="left">
+			<!-- TOOLS -->
+			<a href="#" id="brush1">Thin</a> <br>
+			<a href="#" id="brush2">Thick</a> <br>
+			<a href="#" id="weird">WEIRD BRUSH</a> <br>
+		</div>
+	</div> <!-- toolbox -->
+</div>
+	
 
 </div> 
 
 
 
-<div id="toolBox">
-	<div id=""></div>
-	<!-- TOOLS -->
-	<a href="#" id="brush1">Thin</a> <br>
-	<a href="#" id="brush2">Thick</a> <br>
-	<a href="#" id="weird">WEIRD BRUSH</a> <br>
-	TEST <br>
-	TEST <br>
-	TEST <br>
-	TEST <br>	
 
-</div> <!-- toolbox -->
-
-<div id="currentTheme" data-theme="memory" class="hideit"></div>
+<!-- <div id="currentTheme" data-theme="memory" class="hideit"></div> -->
 <script type="text/javascript" src="/js/drawing.js"></script>
