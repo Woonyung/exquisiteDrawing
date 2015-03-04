@@ -1,3 +1,13 @@
+# WEEKLY TO DO LIST
+- [ ] WED - Make crappy version 0.0.1 -- for usertesting
+    * tools - display selected / not selected 
+    * crappy version of UI
+    * display previous drawing
+- [ ] THUR - install usertesting + send email
+- [ ] THUR - figure out multiple theme + how to display those
+- [ ] FRI - figure out UI 
+- [ ] SAT / SUN - make slides
+
 # Moodboard
 [Pinterest](https://www.pinterest.com/woonyung/thesis-inspirations/)
 
@@ -17,4 +27,4 @@
 - [ ] [Gallizioli's works]()
 - [ ] [Writing to Heal](https://www.utexas.edu/features/2005/writing/)
 - [ ] [Memory](http://mitpress.mit.edu/books/memory-0)
-- [ ] [The Journey of Form-Nicolas bourricaud]()
+- [ ] The Journey of Form-Nicolas bourricaud

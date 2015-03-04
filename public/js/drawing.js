@@ -65,7 +65,7 @@ $(document).ready(function(){
                 // paper.project.activeLayer.removeChildren();
 
                 //Send them to the gallery
-                document.location.href = '/';
+                document.location.href = '/newDRAWING';
 
             }
         }); // end of ajax
