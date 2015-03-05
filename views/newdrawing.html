@@ -1,17 +1,23 @@
 <!-- continue drawing with the theme -->
 
 <div id="topArea">
-	<div class="col-sm-3">
-		Back to the main
+	<div class="col-sm-2">
+		<!-- Back to the main -->
 	</div>
-	<div class="col-sm-3">
-		<!-- MENUS -->
+	<div class="col-sm-2">
 		<a href="#" id="undo">Undo</a>
+	</div>
+	<div class="col-sm-2">
 		<a href="#" id="clear">Clear</a>
 	</div>
-	<div class="col-sm-3"></div>
-	<div class="col-sm-3">
+	<div class="col-sm-2">
 		<a href="#" id="save"><b>SAVE</b></a><br>
+	</div>
+	<div class="col-sm-2">
+		
+	</div>
+	<div class="col-sm-2">
+		
 	</div>
 </div>
 
@@ -21,10 +27,12 @@
 
 	<div id="canvasWrapper">
 		<li>
-		previous drawing
-<!-- 		{{#infoData}}
-		<li><img onmousedown="return false" class='previousDrawing crop' src={{imageData}}></li>
-		{{/infoData}}  -->
+		<div class="previousDrawing">
+			<div id="placeholderImage"></div>
+			{{#infoData}}
+			<img onmousedown="return false" id="preview" src={{imageData}}>
+			{{/infoData}} 
+		</div>
 		</li>
 
 		<li>
@@ -38,26 +46,20 @@
 	<div id="toolBox">
 		<div class="col-sm-2">
 			<!-- TOOLS -->
-			<a href="#" id="tool0">ERASER</a>
-			
-			<a href="#" id="tool1">tool1: Thin</a>
-			<a href="#" id="tool2">tool2: Super Thick</a>
-			<a href="#" id="tool3">tool3: dashed</a>	
 		</div>
 		<div class="col-sm-2">
-			tool
+			<a href="#" id="tool1">tool1</a>
 		</div>
 		<div class="col-sm-2">
-			tool
+			<a href="#" id="tool2">tool2</a>
 		</div>
 		<div class="col-sm-2">
-			tool
+			<a href="#" id="tool3">tool3</a>
 		</div>
 		<div class="col-sm-2">
-			tool
+			<a href="#" id="tool0">tool4</a>		
 		</div>
 		<div class="col-sm-2">
-			tool
 		</div>
 
 	</div> <!-- toolbox -->

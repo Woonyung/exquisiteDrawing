@@ -1,36 +1,32 @@
+/* load the font face from local machine */
+@font-face {}
+/*****************************************/
 a:link {
-  color: #FF0000;
+  color: #84C0D7;
 }
 
 /* visited link */
 a:visited {
-  color: #00FF00;
+  color: #84C0D7;
 }
 
 /* mouse over link */
 a:hover {
-  color: #FF00FF;
+  color: #84C0D7;
 }
 
 /* selected link */
 a:active {
-  color: #0000FF;
+  color: #84C0D7;
 }
 
+/*****************************************/
 body {
   background-color: #404040;
 }
 
 #wrapper {
   position: relative;
-}
-
-.closed {
-  color: red;
-}
-
-.opened {
-  color: green;
 }
 
 .bg {
@@ -48,32 +44,54 @@ body {
 
 #topArea {
   height: 100px;
-  background-color: magenta;
 }
 
 #middleArea {
   white-space: nowrap;
   height: 480px;
-  background-color: yellow;
 }
 
 #canvasWrapper {
-  width: 70%;
+  width: 840px;
   margin: 0 auto;
-  background-color: green;
 }
 
+/*************/
 .previousDrawing {
-  width: 640px;
-  height: 480px;
-  vertical-align: top;
-  opacity: 0.5;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 640px;
+  heigth: auto;
+  background: pink;
+  overflow: hidden;
+  float: left;
 }
 
+#placeholderImage {
+  display: block;
+  background-color: yellow;
+  width: 100%;
+  height: auto;
+}
+
+#preview {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+div.previousDrawing img {
+  width: 160%;
+  margin: 0 0 0 -60%;
+}
+
+/*************/
 #myCanvas {
   width: 640px;
   height: 480px;
   background-color: white;
+  margin-left: -380px;
+  clear: right;
 }
 
 #bottomArea {
@@ -88,7 +106,20 @@ body {
 #toolBox {
   width: 90%;
   margin: 0 auto;
-  background-color: green;
+}
+
+.toolButton {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  width: 40px;
+}
+
+.on {
+  border: 1px dashed #021a40;
 }
 
 ul {
@@ -103,6 +134,13 @@ li {
 .galleryImages {
   width: 640px;
   height: 480px;
+}
+
+.previousDrawings {
+  width: 640px;
+  height: 480px;
+  vertical-align: top;
+  opacity: 0.5;
 }
 
 #makeNew {

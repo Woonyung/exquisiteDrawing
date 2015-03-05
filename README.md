@@ -1,5 +1,5 @@
 # WEEKLY TO DO LIST
-- [ ] WED - Make crappy version 0.0.1 -- for usertesting
+- [x] WED - Make crappy version 0.0.1 -- for usertesting
     * tools - display selected / not selected 
     * crappy version of UI
     * display previous drawing
