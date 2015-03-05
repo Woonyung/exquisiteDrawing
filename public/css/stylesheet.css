@@ -67,13 +67,6 @@ body {
   float: left;
 }
 
-#placeholderImage {
-  display: block;
-  background-color: yellow;
-  width: 100%;
-  height: auto;
-}
-
 #preview {
   display: block;
   width: 100%;
@@ -81,8 +74,8 @@ body {
 }
 
 div.previousDrawing img {
-  width: 160%;
-  margin: 0 0 0 -60%;
+  width: 171%;
+  margin: 0 0 0 -71%;
 }
 
 /*************/
@@ -90,7 +83,7 @@ div.previousDrawing img {
   width: 640px;
   height: 480px;
   background-color: white;
-  margin-left: -380px;
+  margin-left: -53.5%;
   clear: right;
 }
 
@@ -106,20 +99,6 @@ div.previousDrawing img {
 #toolBox {
   width: 90%;
   margin: 0 auto;
-}
-
-.toolButton {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  border: none;
-  width: 40px;
-}
-
-.on {
-  border: 1px dashed #021a40;
 }
 
 ul {
