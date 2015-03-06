@@ -4,8 +4,22 @@ var fs = require('fs');
 var path = require('path');
 var app = express();
 
-var currentTheme = 'happinese'; // set this equal to the current theme of the week
-var currentQuestion = 'What are the things that makes you happy?';
+
+var themes = {
+	happiness: {
+		name: 'happiness',
+		question: 'What are the things that makes you happy?',
+		isOpen: false
+	},
+	memory: {
+		name: 'memory',
+		question: 'What are your favorite memory?',
+		isOpen: true
+	}	
+}
+
+var currentTheme = themes['memory'];
+// currentTheme.name, currentTheme.question, currentTheme.isOpen
 
 var mongoose = require('mongoose'); // mongodb
 mongoose.connect(process.env.MONGOLAB_URI); // connect to the mongolab database
@@ -44,7 +58,33 @@ var Info = mongoose.model('Info', {
 ////////////////////// ROUTES //////////////////////
 // if routes are "/" render the index file
 app.get('/', function(req,res){
-	res.render('index.html');
+
+	Info.find({},function(err,photos){
+
+
+		var themeArray = Object.keys(themes);
+
+		var dataToReturn = [];
+
+
+		for(var i=0;i<themeArray.length;i++){
+			var photoCount = 0;
+			for(var j=0;j<photos.length;j++){
+				if(photos[j].theme == themeArray[i] ) photoCount++;
+				else continue;
+			}
+			var currentData = {name: themeArray[i], count: photoCount, isOpen: themes[themeArray[i]].isOpen}
+			dataToReturn.push(currentData);
+		}
+
+		console.log(dataToReturn);
+		var data = {
+			themes: dataToReturn	
+		}
+
+		res.render('index.html',data);
+	})
+
 });
 
 app.get('/newDRAWING', function(req,res){
@@ -54,7 +94,7 @@ app.get('/newDRAWING', function(req,res){
 			res.json(err);
 		} else {
 			// info data is the object that I defined in the gallery
-			res.render('newdrawing.html', { infoData: info })
+			res.render('newdrawing.html', { photos: info })
 		}
 	});
 });
@@ -66,7 +106,7 @@ app.get('/gallllery', function(req,res){
 			res.json(err);
 		} else {
 			// info data is the object that I defined in the gallery
-			res.render('gallery.html', { infoData: info })
+			res.render('gallery.html', { photos: info })
 		}
 	});
 });
@@ -75,20 +115,37 @@ app.get('/gallllery', function(req,res){
 app.get('/theme/:theme', function(req,res){
 	var requestedTheme = req.param('theme');
 
-	Info.find({ theme: requestedTheme }).sort('-Date').limit(1).exec(function(err,info){
+	// first, we need to make sure that the requested Theme is in our theme list
+	// if it is NOT, we need to redirect the user to home pages
+	if(!contains(Object.keys(themes),requestedTheme)) return res.redirect('/');
+
+	Info.find({ theme: requestedTheme }).sort('Date').exec(function(err,info){
 		if(err){
 			res.json(err);
 		} else {
-			// console.log(info.length);
+			console.log(info);
 
-			// if info data is not empty;
-			if ( info.length > 0 ){
-				// info data is the object that I defined in the gallery
-				res.render('newdrawing.html', { infoData: info })
-			} else {
-				// if info data is empty
-				res.render('nopictures.html');
+			// if the requested theme is still open, send to new drawing
+			if(themes[requestedTheme].isOpen) {
+				var data = {
+					theme: requestedTheme,
+					photo: info[info.length-1]
+				}
+				res.render('newdrawing.html', data)
 			}
+			else if(!themes[requestedTheme].isOpen) {
+				res.render('gallery.html', { photos: info })
+			}
+			// else if the requested theme is closed, send to gallery
+
+			// // if info data is not empty;
+			// if ( info.length > 0 ){
+			// 	// info data is the object that I defined in the gallery
+			// 	res.render('newdrawing.html', { infoData: info })
+			// } else {
+			// 	// if info data is empty
+			// 	res.render('nopictures.html');
+			// }
 		}
 	});		
 });
@@ -99,8 +156,7 @@ app.post('/submitDrawing', function(req,res){
 	var infoData = {
 		Date: req.body.Date,
 		imageData : req.body.imageData,
-		theme: currentTheme, // update this every time it changes
-		question: currentQuestion
+		theme: currentTheme.name // update this every time it changes
 		// theme: req.body.theme // front-end: if it's in the POST request, would look like this
 	}
 
@@ -115,6 +171,16 @@ app.post('/submitDrawing', function(req,res){
 	});
 
 });
+
+function contains(arr, str) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === str) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 
 ////////////////////////////////////////////////////

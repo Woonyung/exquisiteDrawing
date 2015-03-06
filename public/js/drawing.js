@@ -30,6 +30,7 @@ $(document).ready(function(){
 
     $("#clear").click(function(){
         project.activeLayer.removeChildren();
+        drawCanvas();
     });
 
 
