@@ -28,11 +28,6 @@ $(document).ready(function(){
         project.activeLayer.removeChildren(pathCount-1,pathCount);
     });   
 
-    $("#clear").click(function(){
-        project.activeLayer.removeChildren();
-        drawCanvas();
-    });
-
 
     ///////////////////////////////////////////////
     // SAVE FUNCTION
