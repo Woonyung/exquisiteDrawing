@@ -44,7 +44,7 @@ function getData(element){
 	////////////////////////////////////////////////////
 
 	if ( name === element ){
-		console.log("this is matched " + element + " " + isOpen);
+		// console.log("this is matched " + element + " " + isOpen);
 
 		if ( isOpen === 'true'){
 			// console.log(count);
@@ -80,20 +80,22 @@ function getData(element){
 			group1.onMouseEnter = function(event){
 				console.log("GROUP 1 - ENTERED");
 				
-				var vector = this.children[1].position - this.children[0].position; // ??
-				console.log(this.position);
-				// console.log(vector);
+				
+				// var vector = this.children[1].position - this.children[0].position; // ??
+				// console.log(this.position);
+				// // console.log(vector);
+				// var line = new Path.Line({
+				// 	strokeColor: 'white'
+				// });
+				// line.add(vector);
 
-
-				var line = new Path.Line({
-					strokeColor: 'white'
-				});
-				line.add(vector);
+			}
+			group1.onClick = function(event){
+				console.log("currently " + count + " people were participated: " + isOpen);
+				location.href= "/theme/" + name;
 			}
 
-			group1.onMouseLeave = function(event) {
-			   console.log("MOUSE LEAVE");
-			}
+			// onMouseLeave
 
 
 
@@ -124,6 +126,13 @@ function getData(element){
 			}
 
 			// move them as well
+
+			// whenever it's clicked
+			group2.onClick = function(event){
+				console.log("currently " + count + " people were participated: " + isOpen);
+				location.href= "/theme/" + name;
+			}
+
 		}
 	}
 
