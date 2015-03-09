@@ -3,10 +3,10 @@
     * tools - display selected / not selected 
     * crappy version of UI
     * display previous drawing
-- [ ] THUR - install usertesting + send email
-- [ ] THUR - figure out multiple theme + how to display those
-- [ ] FRI - figure out UI 
-- [ ] SAT / SUN - make slides
+- [x] THUR - figure out multiple theme + how to display those
+- [ ] SUN - make index page - linkable with stars
+- [x] SUN - INSTALL USER TESTING
+- [ ] MON - make slides + prepare presentation
 
 # Moodboard
 [Pinterest](https://www.pinterest.com/woonyung/thesis-inspirations/)

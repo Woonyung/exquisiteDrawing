@@ -65,18 +65,18 @@ function getData(element){
 
 			// Place the instances of the symbol:
 			for (var i = 1; i <= count; i++) {
-			    // The center position is a random point in the view:
+			    // first make theme cluster
 			    var center = Point.random() * view.size / 5; 
 			    var placedSymbol = symbol.place(center);
 			    placedSymbol.scale(i / count);
-
 			    group1.addChild(placedSymbol);
 			}
 
-			//
-			group1.position = view.center;
+			// move whole group to the center
+			group1.position = view.center * Point.random();
 			console.log(group1.position);
 
+			// whenever users hover
 			group1.onMouseEnter = function(event){
 				console.log("GROUP 1 - ENTERED");
 				
@@ -107,16 +107,15 @@ function getData(element){
 			    center: [0, 0],
 			    radius: 5,
 			    fillColor: 'white',
-			    opacity: 0.5
+			    opacity: 0.5 // give them opacity
 			});
-			// console.log(star_closed.fillColor);
 
 			var group2 = new Group();
 			var symbol = new Symbol(star_closed);
 
 			// Place the instances of the symbol:
 			for (var i = 1; i <= count; i++) {
-			    // The center position is a random point in the view:
+			    // first make them cluster
 			    var center = Point.random() * view.size / 5;
 			    var placedSymbol = symbol.place(center);
 			    placedSymbol.scale(i / count);
@@ -124,6 +123,7 @@ function getData(element){
 			    group2.addChild(placedSymbol);
 			}
 
+			// move them as well
 		}
 	}
 
