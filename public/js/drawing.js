@@ -92,9 +92,7 @@ function drawCanvas(){
 // TOOLS //
 ////////////////////////////////////////////////////
 
-var tool0, tool1, tool2, tool3, tool4, 
-    tool5, tool6, tool7, tool8,
-    tool9, tool10, tool11, tool12;
+var tool0, tool1, tool2, tool3;
 
 // Create drawing tools
 

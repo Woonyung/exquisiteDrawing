@@ -5,17 +5,14 @@ a:link {
   color: #84C0D7;
 }
 
-/* visited link */
 a:visited {
   color: #84C0D7;
 }
 
-/* mouse over link */
 a:hover {
   color: #84C0D7;
 }
 
-/* selected link */
 a:active {
   color: #84C0D7;
 }

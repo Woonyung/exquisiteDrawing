@@ -1,13 +1,18 @@
 <!-- index page -->
-
+<p id="detail">click here</p>
 <div id="container">
 	<img class="bg" src="/images/index_bg01.png">
-<!-- 	<canvas id="backgroundCanvas"></canvas> -->
 	{{#themes}}
-	<a href="/theme/{{name}}" class="opened">{{name}} - {{count}} - {{isOpen}}</a><br>
+	<a href="/theme/{{name}}">{{name}} - {{count}} - {{isOpen}}</a><br>
+
+
+	<input type="hidden" id="{{name}}" data-name="{{name}}" data-if-is-open="{{isOpen}}" data-count= "{{count}}">
+	
 	{{/themes}}
 </div>
 
-<script src="/js/background.js">
-	
-</script>
+<canvas id="background1" resize="true"></canvas>
+
+
+<!-- <script src="/js/background.js"></script> -->
+<script type="text/paperscript" canvas="background1" src="/js/background.js"></script>

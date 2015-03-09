@@ -6,6 +6,11 @@ var app = express();
 
 
 var themes = {
+	weather: {
+		name: 'weather',
+		question: 'test test test',
+		isOpen: true
+	},
 	happiness: {
 		name: 'happiness',
 		question: 'What are the things that makes you happy?',
@@ -14,11 +19,11 @@ var themes = {
 	memory: {
 		name: 'memory',
 		question: 'What are your favorite memory?',
-		isOpen: true
+		isOpen: false
 	}	
 }
 
-var currentTheme = themes['memory'];
+var currentTheme = themes['weather'];
 // currentTheme.name, currentTheme.question, currentTheme.isOpen
 
 var mongoose = require('mongoose'); // mongodb
@@ -66,10 +71,9 @@ app.get('/', function(req,res){
 
 		var dataToReturn = [];
 
-
-		for(var i=0;i<themeArray.length;i++){
+		for(var i = 0 ; i < themeArray.length; i++){
 			var photoCount = 0;
-			for(var j=0;j<photos.length;j++){
+			for( var j = 0; j < photos.length; j++){
 				if(photos[j].theme == themeArray[i] ) photoCount++;
 				else continue;
 			}
