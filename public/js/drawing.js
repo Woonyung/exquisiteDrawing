@@ -92,7 +92,7 @@ function drawCanvas(){
 // TOOLS //
 ////////////////////////////////////////////////////
 
-var tool0, tool1, tool2, tool3;
+var tool0, tool1;
 
 // Create drawing tools
 
@@ -115,87 +115,28 @@ tool0.onMouseDrag = function(event){
 
 
 //////
-// TOOL 1 = brushline thin
+// CLOUD BRUSHES
 tool1 = new Tool();
-
-// The minimum distance the mouse has to drag
-// before firing the onMouseDrag event,
-// since the last onMouseDrag event.
-tool1.minDistance = 10;
-tool1.onMouseDown = function(event){
-    path = new Path({
-        strokeColor: currentColor,
-        strokeWidth: currentWidth // stroke weight
-    });
-
-    path.add(event.point);
-}
 tool1.onMouseDrag = function(event){
-    path.add(event.point);
-    path.smooth();
-}
 
-
-// TOOL 2 = brushline thick
-tool2 = new Tool();
-tool2.minDistance = 3;
-tool2.onMouseDown = function(event){
-    path = new Path({
-        strokeColor: currentColor,
-        strokeWidth: 15 // stroke weight  
-    });
-}
-
-tool2.onMouseDrag = function(event){
-    path.add(event.point);
-    path.smooth();
-}
-
-
-// TOOL 3 = dashed line
-tool3 = new Tool();
-tool3.minDistance = 7;
-tool3.onMouseDown = function(event){
-    path = new Path({
-        strokeColor: currentColor,
-        strokeWidth: currentWidth // stroke weight
-    });
-
-    // make it as dashed line
-    path.dashArray = [10, 12]; // 10pt dash and 12pt gap
+    // The radius is the distance between the position
+    // where the user clicked and the current position
+    // of the mouse.
+    var raster = new Raster('cloud');
+    raster.position = event.downPoint;
+    raster.scale((event.downPoint - event.point).length / 1000);
 
 }
-
-tool3.onMouseDrag = function(event){
-    path.add(event.point);
-    path.smooth();
-}
-
-
 
 
 //////////////////////////////////
 // Whenever buttons are pressed
 activateTools("#tool0", tool0);
-activateTools("#tool1", tool1);
-activateTools("#tool2", tool2);
-activateTools("#tool3", tool3);
+activateTools("#tool1", tool1); 
 
-
-// WIDTH
-activateWidth("#thin", 2);
-activateWidth("#medium", 4);
-activateWidth("#thick", 6);
 
 function activateTools(elements, tool){
     $(elements).click(function(){
         tool.activate();
-    });
-}
-
-
-function activateWidth(element, width){
-    $(element).click(function(){
-        currentWidth = width;
     });
 }

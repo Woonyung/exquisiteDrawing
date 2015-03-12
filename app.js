@@ -51,13 +51,22 @@ app.configure(function(){
 	app.use(express.static(path.join(__dirname, 'public')));
 });
 
+var Schema = mongoose.Schema;
 
 var Info = mongoose.model('Info', {
 	Date: String,
 	imageData: String,
 	theme: String, // dictates which theme the picture is
-	question: String
+	question: String,
+	user: {type:Schema.ObjectId, ref:'User'}
 });
+
+
+// var User = mongoose.model('User',{
+// 	displayname: //,
+// 	facebookId: //,
+// 	drawings: [{type:Schema.ObjectId, ref:'Info'}]
+// });
 
 
 ////////////////////// ROUTES //////////////////////
@@ -81,7 +90,7 @@ app.get('/', function(req,res){
 			dataToReturn.push(currentData);
 		}
 
-		console.log(dataToReturn);
+		// console.log(dataToReturn);
 		var data = {
 			themes: dataToReturn	
 		}
@@ -127,7 +136,7 @@ app.get('/theme/:theme', function(req,res){
 		if(err){
 			res.json(err);
 		} else {
-			console.log(info);
+			// console.log(info);
 
 			// if the requested theme is still open, send to new drawing
 			if(themes[requestedTheme].isOpen) {
@@ -135,6 +144,7 @@ app.get('/theme/:theme', function(req,res){
 					theme: requestedTheme,
 					photo: info[info.length-1]
 				}
+				// console.log(data);
 				res.render('newdrawing.html', data)
 			}
 			else if(!themes[requestedTheme].isOpen) {
@@ -162,6 +172,7 @@ app.post('/submitDrawing', function(req,res){
 		imageData : req.body.imageData,
 		theme: currentTheme.name // update this every time it changes
 		// theme: req.body.theme // front-end: if it's in the POST request, would look like this
+		//user: req.user._id
 	}
 
 	var i = new Info(infoData);
@@ -170,6 +181,10 @@ app.post('/submitDrawing', function(req,res){
 			console.log(err);
 		} else {
 			console.log("SAVED INTO DATABASE!!!!!!!!!");
+
+			// now need to update the user, push the photo Id into their list of photos... doc._id;
+
+
 			res.redirect('/gallery');
 		}
 	});

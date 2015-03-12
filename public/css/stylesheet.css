@@ -27,16 +27,28 @@ body {
 }
 
 .bg {
-  z-index: 300;
   width: 100%;
-  position: absolute;
   left: 0px;
   bottom: 0px;
+  position: absolute;
+  z-index: 4;
 }
 
-#backgroundCanvas {
-  width: 100%;
-  background-color: #404040;
+canvas {
+  position: absolute;
+  z-index: 1;
+}
+
+#popup {
+  width: 500px;
+  height: 300px;
+  top: 100px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  visibility: hidden;
+  position: relative;
+  z-index: 5;
 }
 
 #topArea {

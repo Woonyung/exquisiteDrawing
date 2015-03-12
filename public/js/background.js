@@ -80,7 +80,7 @@ function getData(element){
 			group1.onMouseEnter = function(event){
 				console.log("GROUP 1 - ENTERED");
 				
-				
+
 				// var vector = this.children[1].position - this.children[0].position; // ??
 				// console.log(this.position);
 				// // console.log(vector);
@@ -91,8 +91,12 @@ function getData(element){
 
 			}
 			group1.onClick = function(event){
-				console.log("currently " + count + " people were participated: " + isOpen);
-				location.href= "/theme/" + name;
+				// console.log("currently " + count + " people were participated: " + isOpen);
+				// location.href= "/theme/" + name;
+				
+				$("#popup").css('visibility', 'visible');
+				document.getElementById("popup").innerHTML = "";
+				document.getElementById("popup").innerHTML = "currently " + count + " people were participated: " + isOpen;
 			}
 
 			// onMouseLeave
@@ -129,8 +133,9 @@ function getData(element){
 
 			// whenever it's clicked
 			group2.onClick = function(event){
-				console.log("currently " + count + " people were participated: " + isOpen);
-				location.href= "/theme/" + name;
+				$("#popup").css('visibility', 'visible ');
+				document.getElementById("popup").innerHTML = "";
+				document.getElementById("popup").innerHTML = "currently " + count + " people were participated: " + isOpen;
 			}
 
 		}
@@ -153,7 +158,7 @@ function drawCanvasIndex(){
 	frame = new Path.Rectangle({
 	    point: [0,0],
 	    size: [width, height ],
-	    fillColor: '#404040'
+	    fillColor: 'black'
 	});
 }
 

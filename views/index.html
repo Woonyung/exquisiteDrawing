@@ -1,5 +1,4 @@
 <!-- index page -->
-<p id="detail">click here</p>
 <div id="container">
 	<img class="bg" src="/images/index_bg01.png">
 	{{#themes}}
@@ -11,8 +10,9 @@
 	{{/themes}}
 </div>
 
-<canvas id="background1" resize="true"></canvas>
 
+<canvas id="backgroundCanvas" resize="true"></canvas>
+<div id="popup"></div>
 
 <!-- <script src="/js/background.js"></script> -->
-<script type="text/paperscript" canvas="background1" src="/js/background.js"></script>
+<script type="text/paperscript" canvas="backgroundCanvas" src="/js/background.js"></script>
