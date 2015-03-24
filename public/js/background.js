@@ -25,6 +25,7 @@ $(document).ready(function(){
 
 });
 
+
 // make group for seperate for each themes
 // but also put group on the random spot
 
@@ -73,33 +74,55 @@ function getData(element){
 			}
 
 			// move whole group to the center
-			group1.position = view.center * Point.random();
-			console.log(group1.position);
+
+
+			var lineGroup = new Group();
 
 			// whenever users hover
 			group1.onMouseEnter = function(event){
-				console.log("GROUP 1 - ENTERED");
+				// console.log("GROUP 1 - ENTERED");
 				
+				// only shows line when users hover to it.
+				lineGroup.visible = true;
 
-				// var vector = this.children[1].position - this.children[0].position; // ??
-				// console.log(this.position);
-				// // console.log(vector);
-				// var line = new Path.Line({
-				// 	strokeColor: 'white'
-				// });
-				// line.add(vector);
+				// get all position of children
+				for (var i = 0; i < group1.children.length - 1; i++){
+					// console.log(group1.children[i].position);
+					// console.log(group1.children[i].position.x);
+					var path = new Path.Line({
+					    from: [group1.children[i].position.x, group1.children[i].position.y],
+					    to: [group1.children[i+1].position.x, group1.children[i+1].position.y],
+					    strokeColor: 'white',
+					    strokeWidth: 2,
+					    scaling: 0.8 // magnitude of your vector
+					});
+
+					lineGroup.addChild(path);
+				}
 
 			}
+
+			group1.onMouseLeave = function(event){
+				// console.log("GROUP 1 - OUT");
+
+				lineGroup.visible = false;
+			}
+
 			group1.onClick = function(event){
 				// console.log("currently " + count + " people were participated: " + isOpen);
 				// location.href= "/theme/" + name;
-				
-				$("#popup").css('visibility', 'visible');
-				document.getElementById("popup").innerHTML = "";
-				document.getElementById("popup").innerHTML = "currently " + count + " people were participated: " + isOpen;
-			}
 
-			// onMouseLeave
+				$("#popup").css('visibility', 'visible');
+				$("#popup").html("");
+				$("#popup").append( "<br><button id='closePopup'>X</button><br>" +
+									"currently " + count + 
+									" people were participated: " +
+									isOpen);
+				$("#closePopup").click(function(){
+					console.log("close this one");
+					$("#popup").css('visibility', 'hidden');
+				});
+			}
 
 
 
@@ -112,7 +135,7 @@ function getData(element){
 			var star_closed = new Path.Circle({
 			    center: [0, 0],
 			    radius: 5,
-			    fillColor: 'white',
+			    fillColor: 'yellow',
 			    opacity: 0.5 // give them opacity
 			});
 
@@ -131,18 +154,28 @@ function getData(element){
 
 			// move them as well
 
+
 			// whenever it's clicked
 			group2.onClick = function(event){
-				$("#popup").css('visibility', 'visible ');
-				document.getElementById("popup").innerHTML = "";
-				document.getElementById("popup").innerHTML = "currently " + count + " people were participated: " + isOpen;
+				// console.log("it's clicked - from group 2");
+				$("#popup").css('visibility', 'visible');
+				$("#popup").html("");
+				$("#popup").append( "<br><button id='closePopup'>X</button><br>" +
+									"currently " + count + 
+									" people were participated: " +
+									isOpen);
+				$("#closePopup").click(function(){
+					console.log("close this one");
+					$("#popup").css('visibility', 'hidden');
+				});
 			}
 
 		}
 	}
 
 }
-      
+
+
 
 function drawCanvasIndex(){
 	////////////////////////////////////////////////////
