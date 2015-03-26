@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		#test{
+			background-color: aqua;
+			width: 400px;
+			height: 300px;
+		}
+	</style>
+	
+	<h1>index page</h1>
+	
+	<!-- if there is a user, say Hello -->
+	{{#user}}
+		<h2>Hello, {{user.name}}.</h2>
+	{{/user}}
+			
+	<!-- else, show them log-in -->
+	{{^user}}
+		<h2>Welcome! Please log in.</h2>
+		<a href="/auth/facebook">
+		<button>Login with facebook</button>
+		</a>
+	{{/user}}
+
+</html>

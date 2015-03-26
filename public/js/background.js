@@ -66,12 +66,25 @@ function getData(element){
 
 			// Place the instances of the symbol:
 			for (var i = 1; i <= count; i++) {
-			    // first make theme cluster
-			    var center = Point.random() * view.size / 5; 
-			    var placedSymbol = symbol.place(center);
-			    placedSymbol.scale(i / count);
-			    group1.addChild(placedSymbol);
+				// first make theme cluster
+				var center = Point.random() * view.size / 5; // *o 
+				//center += offset;
+				var placedSymbol = symbol.place(center);
+				placedSymbol.scale(i / count);
+				group1.addChild(placedSymbol);
 			}
+
+			// for (var j = 1; j <= HowManyClusterYOuWant; j++ ){
+			// 	//var offset = Point.random() * view.size;
+			// 	for (var i = 1; i <= count; i++) {
+			// 	    // first make theme cluster
+			// 	    var center = Point.random() * view.size / 5; // *o 
+			// 	    //center += offset;
+			// 	    var placedSymbol = symbol.place(center);
+			// 	    placedSymbol.scale(i / count);
+			// 	    group1.addChild(placedSymbol);
+			// 	}
+			// }
 
 			// move whole group to the center
 

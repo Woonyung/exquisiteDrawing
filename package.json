@@ -11,6 +11,8 @@
   "dependencies": {
     "express": "^3.0.0-rc5",
     "hogan-express": "^0.3.3",
-    "mongoose": "^3.8.23"
+    "mongoose": "^3.8.23",
+    "passport": "0.1.x",
+    "passport-facebook": "1.0.3"
   }
 }
