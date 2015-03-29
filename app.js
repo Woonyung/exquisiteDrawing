@@ -138,7 +138,6 @@ var currentTheme = themes['weather'];
 ////////////////////// ROUTES //////////////////////
 // if routes are "/" render the index file
 app.get('/', function(req,res){
-
 	Info.find({},function(err,photos){
 
 
@@ -158,10 +157,11 @@ app.get('/', function(req,res){
 
 		// console.log(dataToReturn);
 		var data = {
-			themes: dataToReturn	
+			themes: dataToReturn,
+			user: req.user	
 		}
 
-		res.render('index.html',data);
+		res.render('index.html', data);
 	})
 
 });
@@ -293,9 +293,10 @@ app.get('/auth/facebook/callback',
     res.redirect('/');
   });
 
+
 app.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/');
+  res.redirect('/login');
 });
 
 // Simple route middleware to ensure user is authenticated.

@@ -1,29 +1,95 @@
 /* load the font face from local machine */
-@font-face {}
+@font-face {
+  font-family: avenir-book;
+  src: url(fonts/AvenirLTStd-Book.otf);
+}
 /*****************************************/
-a:link {
-  color: #84C0D7;
-}
-
-a:visited {
-  color: #84C0D7;
-}
-
-a:hover {
-  color: #84C0D7;
-}
-
-a:active {
-  color: #84C0D7;
+*:focus {
+  outline: 0;
 }
 
 /*****************************************/
 body {
   background-color: #404040;
+  font-family: avenir-book;
+  color: white;
 }
 
 #wrapper {
   position: relative;
+  width: 100%;
+}
+
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  line-height: 1.5em;
+}
+
+.bigButtons {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid white;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  height: 50px;
+  padding: 10px 20px;
+}
+.bigButtons:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.smButtons {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid white;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  height: 20px;
+  padding: 5px 10px;
+  font-size: 0.5em;
+}
+.smButtons:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#background_layer1 {
+  background-color: rgba(20, 20, 20, 0.7);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+#loginContainer {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10%;
+}
+
+#background_layer2 {
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  width: 100%;
+  height: 12%;
+  z-index: 5;
+}
+
+#topbar {
+  color: white;
 }
 
 .bg {
@@ -49,91 +115,6 @@ canvas {
   visibility: hidden;
   position: relative;
   z-index: 5;
-}
-
-#topArea {
-  height: 100px;
-}
-
-#middleArea {
-  white-space: nowrap;
-  height: 480px;
-}
-
-#canvasWrapper {
-  width: 840px;
-  margin: 0 auto;
-}
-
-/*************/
-.previousDrawing {
-  margin: 0 auto;
-  padding: 0;
-  max-width: 640px;
-  heigth: auto;
-  background: pink;
-  overflow: hidden;
-  float: left;
-}
-
-#preview {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-div.previousDrawing img {
-  width: 171%;
-  margin: 0 0 0 -71%;
-}
-
-/*************/
-#myCanvas {
-  width: 640px;
-  height: 480px;
-  background-color: white;
-  margin-left: -53.5%;
-  clear: right;
-}
-
-#bottomArea {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 150px;
-  background-color: #f5f5f5;
-}
-
-#toolBox {
-  width: 90%;
-  margin: 0 auto;
-}
-
-ul {
-  margin-left: -34px;
-}
-
-li {
-  display: inline;
-  margin-right: -3px;
-}
-
-.galleryImages {
-  width: 640px;
-  height: 480px;
-}
-
-.previousDrawings {
-  width: 640px;
-  height: 480px;
-  vertical-align: top;
-  opacity: 0.5;
-}
-
-#makeNew {
-  position: absolute;
-  height: 480px;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */

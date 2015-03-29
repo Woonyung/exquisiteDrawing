@@ -1,10 +1,11 @@
 /*
-/* Javascript for first index page
+/* paper js page for the first log in shoot
 /* Mar.7, 2015
 /*
-/* change into paperscript
-/* Background stars depend on the data 
+/* randomly placed stars
 */
+
+
 
 var themeList= ['memory', 'happiness', 'weather'];
 
