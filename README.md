@@ -1,12 +1,10 @@
 # WEEKLY TO DO LIST
-- [x] WED - Make crappy version 0.0.1 -- for usertesting
-    * tools - display selected / not selected 
-    * crappy version of UI
-    * display previous drawing
-- [x] THUR - figure out multiple theme + how to display those
-- [ ] SUN - make index page - linkable with stars
-- [x] SUN - INSTALL USER TESTING
-- [ ] MON - make slides + prepare presentation
+- [x] Wireframe 
+- [ ] UI - sketch Drawing environment 
+- [x] Front-end - Login page
+- [ ] Front-end - Drawing environment
+- [ ] Front-end - main page animation???
+- [ ] Front-end - Gallery code
 
 # Moodboard
 [Pinterest](https://www.pinterest.com/woonyung/thesis-inspirations/)
