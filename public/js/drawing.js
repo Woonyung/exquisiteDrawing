@@ -13,8 +13,6 @@ var path;
 var frame;
 
 var currentColor = 'black'; // default is black
-var currentWidth = 4; // default is 4
-
 
 // load the blank paper
 $(document).ready(function(){
@@ -114,19 +112,25 @@ tool0.onMouseDrag = function(event){
 }
 
 
-//////
-// CLOUD BRUSHES
+// TOOL 3 = dashed line
 tool1 = new Tool();
-tool1.onMouseDrag = function(event){
+tool1.minDistance = 7;
+tool1.onMouseDown = function(event){
+    path = new Path({
+        strokeColor: currentColor,
+        strokeWidth: 4
+    });
 
-    // The radius is the distance between the position
-    // where the user clicked and the current position
-    // of the mouse.
-    var raster = new Raster('cloud');
-    raster.position = event.downPoint;
-    raster.scale((event.downPoint - event.point).length / 1000);
+    // make it as dashed line
+    path.dashArray = [10, 12]; // 10pt dash and 12pt gap
 
 }
+
+tool1.onMouseDrag = function(event){
+    path.add(event.point);
+    path.smooth();
+}
+
 
 
 //////////////////////////////////

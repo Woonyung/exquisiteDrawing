@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
-	<style>
-		#test{
-			background-color: aqua;
-			width: 400px;
-			height: 300px;
-		}
-	</style>
-	
-	<h1>index page</h1>
-	
-	<!-- if there is a user, say Hello -->
-	{{#user}}
-		<h2>Hello, {{user.name}}.</h2>
-	{{/user}}
-			
-	<!-- else, show them log-in -->
-	{{^user}}
-		<h2>Welcome! Please log in.</h2>
-		<a href="/auth/facebook">
-		<button>Login with facebook</button>
-		</a>
-	{{/user}}
+
+<div id="background_layer1">
+	<div id="loginContainer">
+		<h3>BEFORE YOU GO FURUTHER</h3>
+		<br>
+
+		<!-- login button -->
+		{{^user}}
+			<a href="/auth/facebook">
+			<button class="bigButtons">Login with facebook</button>
+			</a>
+		{{/user}}
+	</div>
+</div>
+
+<img class="bg" src="/images/index_bg01.png">
+
+<canvas id="backgroundCanvas" resize="true"></canvas>
+<script type="text/paperscript" canvas="backgroundCanvas" src="/js/firstPage.js"></script>
+
 
 </html>
+

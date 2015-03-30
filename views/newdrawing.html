@@ -1,56 +1,30 @@
 <!-- continue drawing with the theme -->
 
 <div id="topArea">
-	<div class="col-sm-2">
-		<!-- Back to the main -->
-	</div>
-	<div class="col-sm-2">
-		<a href="#" id="undo">Undo</a>
-	</div>
-	<div class="col-sm-2">
-		<a href="/" id="clear">Clear</a>
-	</div>
-	<div class="col-sm-2">
-		<a href="#" id="save"><b>SAVE</b></a><br>
-	</div>
-	<div class="col-sm-2">
-		
-	</div>
-	<div class="col-sm-2">
-		
+	<div id="menuArea">
+		<a href="#" class="btn btn-outline-inverse btn-sm" id="undo">Undo</a>
+		<a href="/" class="btn btn-outline-inverse btn-sm" id="clear">Clear</a>
+		<a href="#" class="btn btn-outline-inverse btn-sm" id="save"><b>SAVE</b></a>
 	</div>
 </div>
-
-
 
 <div id="middleArea">
 
 	<div id="canvasWrapper">
-		<li>
 		<div class="previousDrawing">
 			<div id="placeholderImage"></div>
 			<img onmousedown="return false" id="preview" src="{{photo.imageData}}">
 		</div>
-		</li>
-
-		<li>
-		<canvas id="myCanvas" ></canvas>
-		</li>
+		<canvas id="myCanvas"></canvas>
 	</div>
 
 </div>
 
 <div id="bottomArea">
 	<div id="toolBox">
-		<div class="col-sm-2">
-			<!-- TOOLS -->
-			<a href="#" id="tool0">ERASER</a>
-		</div>
-		<div class="col-sm-2">
-			<a href="#" id="tool1">tool1</a>
-			<img src="/images/tool1_cloud.png" id="cloud" class="hidden">
-		</div>
-
+		<!-- DEFAULT BRUSH AND ERASER -->
+		<a href="#" id="tool0">ERASER</a>
+		<a href="#" id="tool1">BRUSH</a>
 	</div> <!-- toolbox -->
 </div>
 	
