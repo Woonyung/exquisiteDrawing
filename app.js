@@ -120,7 +120,7 @@ var themes = {
 	weather: {
 		name: 'weather',
 		question: 'test test test',
-		isOpen: true
+		isOpen: false
 	},
 	happiness: {
 		name: 'happiness',
@@ -130,16 +130,17 @@ var themes = {
 	memory: {
 		name: 'memory',
 		question: 'What are your favorite memory?',
-		isOpen: false
+		isOpen: true
 	}	
 }
 
-var currentTheme = themes['weather'];
+var currentTheme = themes['memory'];
 // currentTheme.name, currentTheme.question, currentTheme.isOpen
 
 ////////////////////// ROUTES //////////////////////
 // if routes are "/" render the index file
 app.get('/', function(req,res){
+	if(!req.user) return res.redirect('/login'); // if not logged in, make them log in
 	Info.find({},function(err,photos){
 
 
@@ -168,22 +169,26 @@ app.get('/', function(req,res){
 
 });
 
-app.get('/newDRAWING', function(req,res){
+// i don't need new drawing route..
+// app.get('/newDRAWING', function(req,res){
+	// if(!req.user) return res.redirect('/login'); // if not logged in, make them log in
+	// // console.log(req.user);
 
-	if(!req.user) return res.redirect('/login'); // if not logged in, make them log in
+// 	// only shows the most recent one
+// 	Info.find({theme: currentTheme}).sort('-Date').limit(1).exec(function(err,info){
+// 		if(err){
+// 			res.json(err);
+// 		} else {
+// 			console.log(info);
+// 			// info data is the object that I defined in the gallery
+// 			res.render('newdrawing.html', { photos: info })
+// 		}
+// 	});
+// });
 
-	// console.log(req.user);
-
-	// only shows the most recent one
-	Info.find({theme: currentTheme}).sort('-Date').limit(1).exec(function(err,info){
-		if(err){
-			res.json(err);
-		} else {
-			console.log(info);
-			// info data is the object that I defined in the gallery
-			res.render('newdrawing.html', { photos: info })
-		}
-	});
+// submission page
+app.get('/submission', function(req,res){
+	res.render('submission.html');
 });
 
 // to see whole gallery / css
@@ -200,6 +205,9 @@ app.get('/gallery', function(req,res){
 
 
 app.get('/theme/:theme', function(req,res){
+	if(!req.user) return res.redirect('/login'); // if not logged in, make them log in
+	// console.log(req.user);
+
 	var requestedTheme = req.param('theme');
 
 	// first, we need to make sure that the requested Theme is in our theme list
@@ -323,6 +331,12 @@ function contains(arr, str) {
     }
     return false;
 }
+
+
+// 404 PAGE -- keep this at the last
+app.get('*', function(req, res){
+  res.render('404page.html');
+});
 
 ////////////////////////////////////////////////////
 

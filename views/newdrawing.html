@@ -2,20 +2,22 @@
 
 <div id="topArea">
 	<div id="menuArea">
-		<a href="#" class="btn btn-outline-inverse btn-sm" id="undo">Undo</a>
-		<a href="/" class="btn btn-outline-inverse btn-sm" id="clear">Clear</a>
-		<a href="#" class="btn btn-outline-inverse btn-sm" id="save"><b>SAVE</b></a>
+		<a href="#" id="undo">Undo</a>
+		<a href="/" id="clear">Clear</a>
+		<a href="#" id="save"><b>SAVE</b></a>
+
+		<br>
+		<a href="#" id="toTheLeft">Go to left</a>
+		<a href="#" id="toTheRight">Go to right</a>
 	</div>
 </div>
 
 <div id="middleArea">
-
 	<div id="canvasWrapper">
-		<div class="previousDrawing">
-			<div id="placeholderImage"></div>
-			<img onmousedown="return false" id="preview" src="{{photo.imageData}}">
-		</div>
-		<canvas id="myCanvas"></canvas>
+<!-- 			<div id="placeholderImage"></div>
+		<img onmousedown="return false" id="preview" src="{{photo.imageData}}"> -->
+		<img class="previousDrawing left" src="{{photo.imageData}}">
+		<canvas class="right" id="myCanvas"></canvas>
 	</div>
 
 </div>

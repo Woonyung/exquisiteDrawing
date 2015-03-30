@@ -19,6 +19,20 @@ $(document).ready(function(){
     // draw the blank canvas
     drawCanvas();
 
+    var duration = 700;
+    $("#toTheLeft").click(function(){
+        $('html, body').animate({
+            scrollLeft: $("body").offset().left
+        }, duration);        
+    });
+
+    $("#toTheRight").click(function(){                    
+        $('html, body').animate({
+            scrollLeft: $(".right").offset().left
+        }, duration);                                        
+    });
+                
+
     $("#undo").click(function(){ 
         // delete children one by one
         var pathCount = project.activeLayer.children.length;
@@ -58,8 +72,8 @@ $(document).ready(function(){
                 // clear the canvas
                 // paper.project.activeLayer.removeChildren();
 
-                //Send them to the gallery
-                document.location.href = '/newDRAWING';
+                //Send them to the submission page..!
+                document.location.href = '/submission';
 
             }
         }); // end of ajax
