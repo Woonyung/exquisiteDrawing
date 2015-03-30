@@ -221,16 +221,21 @@ app.get('/theme/:theme', function(req,res){
 			// console.log(info);
 
 			// if the requested theme is still open, send to new drawing
-			if(themes[requestedTheme].isOpen) {
+			if( themes[requestedTheme].isOpen ) {
 				var data = {
 					theme: requestedTheme,
+					question: themes[requestedTheme]['question'], //
 					photo: info[info.length-1]
 				}
 				// console.log(data);
 				res.render('newdrawing.html', data)
 			}
-			else if(!themes[requestedTheme].isOpen) {
-				res.render('gallery.html', { photos: info })
+			else if( !themes[requestedTheme].isOpen ) {
+				var data = {
+					question: themes[requestedTheme]['question'],
+					photos: info 
+				}
+				res.render('gallery.html', data)
 			}
 			// else if the requested theme is closed, send to gallery
 
