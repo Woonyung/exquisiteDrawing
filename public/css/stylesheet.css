@@ -139,7 +139,7 @@ canvas {
 
 .previousDrawing {
   width: 640px;
-  opacity: 0.5;
+  height: 480px;
 }
 
 /*************/

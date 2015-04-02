@@ -90,7 +90,8 @@ passport.use(new FacebookStrategy({
       var name = profile.displayName;
       User.findOne({facebookId:facebookId},function(err,data){
       	if(err) console.log(err);
-      	if(data.length==0||data==null){
+      	console.log(data);
+      	if(data==null||data.length==0){
       		// we have a new user to save! (they aren't in database yet)
       		var user = new User({
 				name: name,
@@ -251,6 +252,9 @@ app.get('/theme/:theme', function(req,res){
 	});		
 });
 
+app.get('/users', function(req,res){
+	res.render("userpage.html");
+})
 
 
 app.post('/submitDrawing', function(req,res){
