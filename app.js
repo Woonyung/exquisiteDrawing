@@ -10,14 +10,14 @@ var app = express();
 
 app.configure(function(){
 	// server port number
-	app.set('port', process.env.PORT || 3000);
+	app.set('port', process.env.PORT || 5000);
 
 	app.use(express.static(path.join(__dirname, 'public')));
 	app.use(express.cookieParser());
 	app.use(express.bodyParser());
 	app.use(express.favicon());
 	app.use(express.methodOverride());
-    app.use(express.session({ secret: '34ur3hruewn' }));
+    app.use(express.session({ secret: '34urdfgdfgd3hruewn', cookie: {maxAge: 300000 }}));
 
 	//  templates directory to 'views'
 	app.set('views', __dirname + '/views');
@@ -252,8 +252,16 @@ app.get('/theme/:theme', function(req,res){
 	});		
 });
 
-app.get('/users', function(req,res){
-	res.render("userpage.html");
+app.get('/dashboard', function(req,res){
+	
+	if(!req.user) {
+		return res.redirect('/login');
+	}
+
+	User.findById(req.user._id).populate('drawings').exec(function(err,data){		
+		return res.render("userpage.html",data);
+	})
+
 })
 
 

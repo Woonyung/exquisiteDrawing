@@ -1,1 +1,13 @@
 THIS IS USER PAGE
+
+Hi {{name}}!
+
+Here are your drawings:
+
+{{#drawings}}
+<a href="/theme/{{theme}}">
+	<div>
+		<img src="{{imageData}}" width="70" style="border-radius:50%">
+	</div>
+</a>
+{{/drawings}}
