@@ -274,7 +274,7 @@ app.get('/submission', function(req,res){
 	User.find({},function(err, info){
 		var data = req.user;
 		res.render('submission.html', data);
-	})-
+	})
 
 });
 
