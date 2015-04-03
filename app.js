@@ -29,7 +29,6 @@ app.configure(function(){
 
 	app.use(passport.initialize());
 	app.use(passport.session());
-	app.use(app.router);
 });
 
 // DATABASE INTERACTION //
@@ -91,7 +90,7 @@ passport.use(new FacebookStrategy({
       User.findOne({facebookId:facebookId},function(err,data){
       	if(err) console.log(err);
       	console.log(data);
-      	if(data==null||data.length==0){
+      	if( data == null || data.length == 0 ){
       		// we have a new user to save! (they aren't in database yet)
       		var user = new User({
 				name: name,
@@ -138,11 +137,13 @@ var themes = {
 var currentTheme = themes['memory'];
 // currentTheme.name, currentTheme.question, currentTheme.isOpen
 
+
+
 ////////////////////// ROUTES //////////////////////
 // if routes are "/" render the index file
 app.get('/', function(req,res){
 	if(!req.user) return res.redirect('/login'); // if not logged in, make them log in
-	Info.find({},function(err,photos){
+	Info.find({},function(err, photos){
 
 
 		var themeArray = Object.keys(themes);
@@ -187,10 +188,7 @@ app.get('/', function(req,res){
 // 	});
 // });
 
-// submission page
-app.get('/submission', function(req,res){
-	res.render('submission.html');
-});
+
 
 // to see whole gallery / css
 app.get('/gallery', function(req,res){
@@ -252,6 +250,7 @@ app.get('/theme/:theme', function(req,res){
 	});		
 });
 
+// user dashboard
 app.get('/dashboard', function(req,res){
 	
 	if(!req.user) {
@@ -264,7 +263,21 @@ app.get('/dashboard', function(req,res){
 
 })
 
+// submission page
+app.get('/submission', function(req,res){
 
+	if(!req.user) {
+		return res.redirect('/login');
+	}
+
+	// console.log(req.user);
+	User.find({},function(err, info){
+		var data = req.user;
+		res.render('submission.html', data);
+	})
+});
+
+// <POST> submit drawing
 app.post('/submitDrawing', function(req,res){
 	var infoData = {
 		Date: req.body.Date,
@@ -292,6 +305,7 @@ app.post('/submitDrawing', function(req,res){
 
 });
 
+//////////////////////////////////////////////
 // LOG IN ROUTES //
 
 app.get('/login', function(req, res){
