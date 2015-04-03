@@ -17,7 +17,7 @@ app.configure(function(){
 	app.use(express.bodyParser());
 	app.use(express.favicon());
 	app.use(express.methodOverride());
-    app.use(express.session({ secret: '34urdfgdfgd3hruewn', cookie: {maxAge: 300000 }}));
+    app.use(express.session({ secret: '34urdfgdfgd3hruewn', cookie: {maxAge: 3000000 }}));
 
 	//  templates directory to 'views'
 	app.set('views', __dirname + '/views');
