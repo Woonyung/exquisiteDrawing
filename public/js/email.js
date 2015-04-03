@@ -8,20 +8,23 @@ $(document).ready(function(){
 		// pingMe();
 	});
 
-	$("#addInputs").click(function(){
-		
-	});
+	// $("#addInputs").click(function(){
+	// 	console.log("added");
+	// 	$("#friendsArea").append("<input type='text' class='inputs'><br>");
+	// });
 
 	$("#invite").click(function(){
 		friendsEmail = $(".inputs").val();
+		console.log(friendsEmail);
 
 		// email validation
 		var regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 		if (friendsEmail == '' || !friendsEmail.match(regex)){
-			console.log("Type correctly");
+			// console.log("Type correctly");
 		} else {
 			sendEmail("woonyungchoi@gmail.com", friendsEmail);
 		}
+		
 		// multiple email..
 		// append "TO" array
 	});
