@@ -1,4 +1,8 @@
 /* load the font face from local machine */
+@font-face {
+  font-family: avenir-book;
+  src: url(fonts/AvenirLTStd-Book.otf);
+}
 /*****************************************/
 a {
   cursor: pointer;
