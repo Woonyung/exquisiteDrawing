@@ -7,6 +7,18 @@
 a {
   cursor: pointer;
 }
+a:link {
+  color: yellow;
+}
+a:visited {
+  color: yellow;
+}
+a:hover {
+  color: red;
+}
+a:active {
+  color: yellow;
+}
 
 *:focus {
   outline: 0;
@@ -165,16 +177,9 @@ canvas {
 
 #toolBox {
   height: 100%;
-  background-color: green;
-  text-align: center;
-}
-
-.tool-top {
-  background-color: yellow;
 }
 
 .tool-bottom {
-  background-color: red;
   vertical-align: center;
 }
 
@@ -186,13 +191,11 @@ canvas {
 .tool-middle {
   float: left;
   width: 20%;
-  background-color: red;
 }
 
 .tool-right {
   float: left;
   width: 30%;
-  background-color: aqua;
 }
 
 .banners {

@@ -4,11 +4,6 @@
 
 <div id="topArea">
 	<div id="menuArea">
-		<a href="#" id="undo">Undo</a>
-		<a href="/" id="clear">Clear</a>
-		<a href="#" id="save"><b>SAVE</b></a>
-
-		<br>
 		<!-- display question -->
 		{{question}}<br>
 		<a href="#" id="toTheLeft">View Previous Drawing</a>
@@ -28,7 +23,17 @@
 
 <div id="bottomArea">
 	<div id="toolBox">
-		<div class="toolBoxSection col-xs-3" id="">showing current brush</div>
+		<div class="toolBoxSection col-xs-1" id="">
+							<!-- main menus --> 
+				<a href="#" id="undo">Undo</a>
+				<a href="/" id="clear">Clear</a>
+				<a href="#" id="save"><b>SAVE</b></a>
+		</div>
+		<div class="toolBoxSection col-xs-2" id="">
+			current brush section
+		</div>
+
+
 		<div class="toolBoxSection col-xs-3" id="">
 			<div class="tool-top">
 				<img class="banners" src="/images/banner_02.png">
@@ -44,6 +49,8 @@
 				<img id="tool00" class="drawingTools" src="/images/tool_00.png">
 			</div>
 		</div>
+
+
 		<div class="toolBoxSection col-xs-3" id="">
 			<div class="tool-top">
 				<img class="banners" src="/images/banner_01.png">
