@@ -185,12 +185,12 @@ canvas {
 
 .tool-left {
   float: left;
-  width: 50%;
+  width: 40%;
 }
 
 .tool-middle {
   float: left;
-  width: 20%;
+  width: 30%;
 }
 
 .tool-right {
@@ -203,7 +203,7 @@ canvas {
 }
 
 .drawingTools {
-  width: 7%;
+  width: 8%;
   vertical-align: text-top;
   margin-right: 7px;
 }
@@ -213,17 +213,17 @@ canvas {
 }
 
 .stamps-left {
-  width: 68%;
-  margin-top: 7px;
-}
-
-.stamps-middle {
   width: 80%;
   margin-top: 7px;
 }
 
+.stamps-middle {
+  width: 55%;
+  margin-top: 7px;
+}
+
 .stamps-right {
-  width: 65%;
+  width: 75%;
   margin-top: 7px;
 }
 
