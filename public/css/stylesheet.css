@@ -163,6 +163,65 @@ canvas {
   background-color: rgba(255, 255, 0, 0.5);
 }
 
+#toolBox {
+  height: 100%;
+  background-color: green;
+}
+
+.tool-top {
+  background-color: yellow;
+  height: 10%;
+}
+
+.tool-bottom {
+  background-color: red;
+  height: 90%;
+  vertical-align: center;
+}
+
+.tool-left {
+  float: left;
+  width: 50%;
+}
+
+.tool-middle {
+  float: left;
+  width: 20%;
+  background-color: red;
+}
+
+.tool-right {
+  float: left;
+  width: 30%;
+  background-color: aqua;
+}
+
+.banners {
+  width: 40%;
+}
+
+.drawingTools {
+  width: 8%;
+  margin-right: 5px;
+  vertical-align: text-top;
+}
+
+#tool00 {
+  width: 20%;
+}
+
+.stamps-left {
+  width: 80%;
+}
+
+.stamps-middle {
+  width: 100%;
+}
+
+.stamps-right {
+  width: 80%;
+}
+
 ul {
   margin-left: -34px;
 }
@@ -218,21 +277,6 @@ li {
     background-color: magenta;
     opacity: 0.2;
     height: 23%;
-  }
-
-  #toolBox {
-    height: 100%;
-    background-color: green;
-  }
-
-  .tool-top {
-    background-color: yellow;
-    height: 10% !important;
-  }
-
-  .tool-bottom {
-    background-color: red;
-    height: 90% !important;
   }
 
   .galleryImages {
