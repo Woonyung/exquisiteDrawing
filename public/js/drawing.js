@@ -1,7 +1,7 @@
 /*
 /* Javascript for Drawing page
-/* Change into paperscript !
-/* Feb.28, 2015
+/* putting all together
+/* Apr.05, 2015
 /* 
 */
 
@@ -103,58 +103,3 @@ function drawCanvas(){
 ////////////////////////////////////////////////////
 // TOOLS //
 ////////////////////////////////////////////////////
-
-var tool0, tool1;
-
-// Create drawing tools
-
-// ERASER
-tool0 = new Tool();
-tool0.minDistance = 3;
-tool0.onMouseDown = function(event){
-    path = new Path({
-        strokeColor: 'white',
-        strokeJoin : 'round',
-        strokeCap :'round',
-        strokeWidth: 40 // stroke weight  
-    });
-}
-
-tool0.onMouseDrag = function(event){
-    path.add(event.point);
-    path.smooth();
-}
-
-
-// TOOL 3 = dashed line
-tool1 = new Tool();
-tool1.minDistance = 7;
-tool1.onMouseDown = function(event){
-    path = new Path({
-        strokeColor: currentColor,
-        strokeWidth: 4
-    });
-
-    // make it as dashed line
-    path.dashArray = [10, 12]; // 10pt dash and 12pt gap
-
-}
-
-tool1.onMouseDrag = function(event){
-    path.add(event.point);
-    path.smooth();
-}
-
-
-
-//////////////////////////////////
-// Whenever buttons are pressed
-activateTools("#tool0", tool0);
-activateTools("#tool1", tool1); 
-
-
-function activateTools(elements, tool){
-    $(elements).click(function(){
-        tool.activate();
-    });
-}
