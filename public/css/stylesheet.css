@@ -179,4 +179,77 @@ li {
   height: 480px;
 }
 
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+  #topArea {
+    background-color: aqua;
+  }
+
+  #middleArea {
+    margin-top: 600px;
+  }
+
+  #canvasWrapper {
+    width: 1400px;
+    margin: 0 auto;
+  }
+
+  .previousDrawing {
+    width: 640px;
+    height: 480px;
+  }
+
+  /*************/
+  #myCanvas {
+    width: 640px;
+    height: 480px;
+    background-color: white;
+    float: right;
+    clear: right;
+  }
+
+  #bottomArea {
+    background-color: aqua;
+    height: 23%;
+  }
+
+  .galleryImages {
+    width: 640px;
+    height: 480px;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+  #topArea {
+    background-color: yellow;
+  }
+
+  #canvasWrapper {
+    width: 1400px;
+    margin: 0 auto;
+  }
+
+  .previousDrawing {
+    width: 640px;
+    height: 480px;
+  }
+
+  /*************/
+  #myCanvas {
+    width: 640px;
+    height: 480px;
+    background-color: white;
+    float: right;
+    clear: right;
+  }
+
+  #bottomArea {
+    background-color: yellow;
+    height: 23%;
+  }
+
+  .galleryImages {
+    width: 640px;
+    height: 480px;
+  }
+}
+
 /*# sourceMappingURL=stylesheet.css.map */
