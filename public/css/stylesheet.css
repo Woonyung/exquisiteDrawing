@@ -171,12 +171,10 @@ canvas {
 
 .tool-top {
   background-color: yellow;
-  height: 10%;
 }
 
 .tool-bottom {
   background-color: red;
-  height: 90%;
   vertical-align: center;
 }
 
@@ -198,7 +196,7 @@ canvas {
 }
 
 .banners {
-  width: 40%;
+  width: 25%;
 }
 
 .drawingTools {
@@ -218,7 +216,7 @@ canvas {
 
 .stamps-middle {
   width: 80%;
-  margin-top: 4px;
+  margin-top: 7px;
 }
 
 .stamps-right {
