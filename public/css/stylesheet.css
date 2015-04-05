@@ -220,6 +220,16 @@ li {
     height: 23%;
   }
 
+  .tool-top {
+    background-color: yellow;
+    height: 10%;
+  }
+
+  .tool-bottom {
+    background-color: red;
+    height: 90%;
+  }
+
   .galleryImages {
     width: 576px;
     height: 432px;
