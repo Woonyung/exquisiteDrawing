@@ -1,9 +1,9 @@
 /* load the font face from local machine */
-@font-face {
-  font-family: avenir-book;
-  src: url(fonts/AvenirLTStd-Book.otf);
-}
 /*****************************************/
+a {
+  cursor: pointer;
+}
+
 *:focus {
   outline: 0;
 }
@@ -11,13 +11,13 @@
 /*****************************************/
 body {
   background-color: #404040;
-  font-family: avenir-book;
   color: white;
 }
 
 #wrapper {
   position: relative;
   width: 100%;
+  height: 100%;
 }
 
 h3 {
@@ -121,31 +121,30 @@ canvas {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 100px;
+  height: 12%;
   background-color: magenta;
 }
 
 #middleArea {
   white-space: nowrap;
-  margin-top: 100px;
+  margin-top: 120px;
   height: 480px;
 }
 
 #canvasWrapper {
-  width: 1400px;
-  margin-left: 120px;
-  margin-right: 120px;
+  width: 1520px;
+  margin: 0 auto;
 }
 
 .previousDrawing {
-  width: 640px;
-  height: 480px;
+  width: 768px;
+  height: 576px;
 }
 
 /*************/
 #myCanvas {
-  width: 640px;
-  height: 480px;
+  width: 768px;
+  height: 576px;
   background-color: white;
   float: right;
   clear: right;
@@ -155,8 +154,8 @@ canvas {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 150px;
-  background-color: #f5f5f5;
+  height: 23%;
+  background-color: rgba(255, 255, 0, 0.5);
 }
 
 ul {
@@ -170,8 +169,8 @@ li {
 }
 
 .galleryImages {
-  width: 640px;
-  height: 480px;
+  width: 768px;
+  height: 576px;
 }
 
 #makeNew {
@@ -180,9 +179,44 @@ li {
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  #topArea {
+    background-color: yellow;
+    height: 12%;
+  }
+
+  #middleArea {
+    margin-top: 100px;
+  }
+
+  #canvasWrapper {
+    width: 1280px;
+    margin-left: 120px;
+    background-color: aqua;
+  }
+
+  .previousDrawing {
+    width: 576px;
+    height: 432px;
+  }
+
+  /*************/
+  #myCanvas {
+    width: 576px;
+    height: 432px;
+    background-color: white;
+    float: right;
+    clear: right;
+  }
+
   #bottomArea {
     background-color: magenta;
-    opacity: 0.5;
+    opacity: 0.2;
+    height: 23%;
+  }
+
+  .galleryImages {
+    width: 576px;
+    height: 432px;
   }
 }
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
@@ -256,6 +290,9 @@ li {
     width: 640px;
     height: 480px;
   }
+}
+.tempButton {
+  width: 100px;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
