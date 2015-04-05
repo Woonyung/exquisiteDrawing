@@ -185,7 +185,7 @@ li {
   }
 
   #middleArea {
-    margin-top: 100px;
+    margin-top: 80px;
   }
 
   #canvasWrapper {
@@ -290,9 +290,6 @@ li {
     width: 640px;
     height: 480px;
   }
-}
-.tempButton {
-  width: 100px;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
