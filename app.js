@@ -129,7 +129,7 @@ var themes = {
 	},
 	memory: {
 		name: 'memory',
-		question: 'What are your favorite memory?',
+		question: 'If you could do something dangerous just once with no risk what would you do?',
 		isOpen: true
 	}	
 }

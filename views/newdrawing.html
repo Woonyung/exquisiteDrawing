@@ -5,7 +5,7 @@
 <div id="topArea">
 	<div id="menuArea">
 		<!-- display question -->
-		{{question}}<br>
+		<span id="question">Q: {{question}}</span>	
 		<a href="#" id="toTheLeft">View Previous Drawing</a>
 		<a href="#" id="toTheRight">Now Draw your answer!</a>
 	</div>
@@ -22,13 +22,14 @@
 </div>
 
 <div id="bottomArea">
+
 	<div id="toolBox">
 		<div class="toolBoxSection col-xs-1" id="">
-							<!-- main menus --> 
-				<a href="#" id="undo">Undo</a>
-				<a href="/" id="clear">Clear</a>
-				<a href="#" id="save"><b>SAVE</b></a>
+			<a href="#" id="undo">Undo</a>
+			<a href="/" id="clear">Clear</a>
+			<a href="#" id="save"><b>SAVE</b></a>
 		</div>
+
 		<div class="toolBoxSection col-xs-2" id="">
 			current brush section
 		</div>
@@ -83,7 +84,10 @@
 				<img id="tool19" class="drawingTools tubes" src="/images/tool_19.png">
 			</div>
 		</div>
+
 	</div> <!-- toolbox -->
+
+	<div class="nav">2</div> 
 </div>
 	
 
