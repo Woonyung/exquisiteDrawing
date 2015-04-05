@@ -187,13 +187,13 @@ canvas {
 
 .tool-middle {
   float: left;
-  width: 15%;
+  width: 20%;
   background-color: red;
 }
 
 .tool-right {
   float: left;
-  width: 18%;
+  width: 30%;
   background-color: aqua;
 }
 
@@ -202,7 +202,7 @@ canvas {
 }
 
 .drawingTools {
-  width: 8%;
+  width: 7%;
   vertical-align: text-top;
   margin-right: 7px;
 }
@@ -212,22 +212,22 @@ canvas {
 }
 
 .stamps-left {
-  width: 80%;
+  width: 68%;
   margin-top: 7px;
 }
 
 .stamps-middle {
-  width: 100%;
+  width: 80%;
   margin-top: 4px;
 }
 
 .stamps-right {
-  width: 80%;
+  width: 65%;
   margin-top: 7px;
 }
 
 .tubes {
-  width: 40%;
+  width: 35%;
   margin-top: 14px;
 }
 
