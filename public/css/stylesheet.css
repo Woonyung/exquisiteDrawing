@@ -220,19 +220,19 @@ li {
     height: 23%;
   }
 
-  .toolBoxSection {
+  #toolBox {
     height: 100%;
     background-color: green;
   }
 
   .tool-top {
     background-color: yellow;
-    height: 10%;
+    height: 10% !important;
   }
 
   .tool-bottom {
     background-color: red;
-    height: 90%;
+    height: 90% !important;
   }
 
   .galleryImages {
