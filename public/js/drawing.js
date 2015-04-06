@@ -18,6 +18,7 @@ var currentWidth = 4; // default is 4
 
 // load the blank paper
 $(document).ready(function(){
+
     // draw the blank canvas
     drawCanvas();
 
@@ -34,15 +35,11 @@ $(document).ready(function(){
         }, duration);                                        
     });
 
+    
+    ///////////////////////////////////////////////
+    // MENU FUNCTIONS // 
 
-
-    // MENU FUNCTIONS //
-    $("#clear").click(function(){
-        //Send them to the gallery
-        // document.location.href = '/theme/' + currenthTheme;
-    });
-                
-
+    // UNDO FUNCTION 
     $("#undo").click(function(){ 
         // delete children one by one
         var pathCount = project.activeLayer.children.length;
@@ -50,8 +47,6 @@ $(document).ready(function(){
         project.activeLayer.removeChildren(pathCount-1,pathCount);
     });   
 
-
-    ///////////////////////////////////////////////
     // SAVE FUNCTION
     $('#save').click(function(){
         var imageString = canvas.toDataURL();
