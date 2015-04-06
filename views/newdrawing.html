@@ -1,39 +1,54 @@
 <!-- continue drawing with the theme -->
 
-
-
-<div id="topArea">
-	<div id="menuArea">
+<!-- ////////////////////////////////-->
+<!-- QUESTION POP UP -->
+<div id="covered">
+	<div id="questionArea">
 		<!-- display question -->
+		<p id="close">close</p>
 		<span id="question">Q: {{question}}</span>
-
-		<!-- navigation --> 	
-		<a href="#" id="toTheLeft">View Previous Drawing</a>
-		<a href="#" id="toTheRight">Now Draw your answer!</a>
 	</div>
 </div>
+
+
+<!-- ////////////////////////////////-->
+<!-- MENUS -->
+
+<div id="topArea">
+	<a href="#" id="undo">Undo</a>
+	<a href="/theme/{{theme}}" id="clear">Clear</a>
+	<a href="#" id="save"><b>SAVE</b></a>
+</div>
+
+
+<!-- ////////////////////////////////-->
+<!-- MIDDLE PART - CANVAS -->
+
 
 <div id="middleArea">
 	<div id="canvasWrapper">
-<!-- 			<div id="placeholderImage"></div>
-		<img onmousedown="return false" id="preview" src="{{photo.imageData}}"> -->
 		<img class="previousDrawing left" src="{{photo.imageData}}">
 		<canvas class="right" id="myCanvas"></canvas>
+
+		<a href="#" class="navigations" id="toTheLeft">View Previous Drawing</a>
+		<a href="#" class="navigations" id="toTheRight">Now Draw your answer!</a>
 	</div>
 
 </div>
+
+
+<!-- ////////////////////////////////-->
+<!-- BOTTOM PART - TOOLS -->
 
 <div id="bottomArea">
 
 	<div id="toolBox">
-		<div class="toolBoxSection col-xs-1" id="">
-			<a href="#" id="undo">Undo</a>
-			<a href="/theme/{{theme}}" id="clear">Clear</a>
-			<a href="#" id="save"><b>SAVE</b></a>
-		</div>
 
-		<div class="toolBoxSection col-xs-2" id="">
-			Showing currently selected brush
+		<div class="toolBoxSection col-xs-3" id="">
+			<img id="previewFrame" src="/images/box.png">
+			<img id="organicBrush_prev" class="brushPreviews" src="/images/brushPrev_01.png">
+			<img id="dashedBrush_prev" class="brushPreviews" src="/images/brushPrev_02.png">
+			<img id="waveBrush_prev" class="brushPreviews" src="/images/brushPrev_03.png">
 		</div>
 
 		<!-- DRAG - BRUSH --> 
@@ -124,15 +139,10 @@
 		</div>
 
 	</div> <!-- toolbox -->
-
-	<div class="nav">2</div> 
-</div>
-	
-
 </div> 
 
 
+<!-- ////////////////////////////////-->
+<!-- MY AWESOME SCRIPTS -->
 
-
-<!-- <div id="currentTheme" data-theme="memory" class="hideit"></div> -->
 <script type="text/paperscript" canvas="myCanvas" src="/js/drawing.js"></script>

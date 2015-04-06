@@ -21,18 +21,29 @@ $(document).ready(function(){
 
     // draw the blank canvas
     drawCanvas();
+    $("#close").click(function(){
+        $("#covered").fadeOut('slow'); 
+        $("#toTheRight").fadeIn('slow');
+    });
 
     var duration = 700;
     $("#toTheLeft").click(function(){
         $('html, body').animate({
             scrollLeft: $("body").offset().left
-        }, duration);        
+        }, duration);
+
+        $(this).fadeOut('slow');
+        $("#toTheRight").fadeIn('slow');
     });
 
     $("#toTheRight").click(function(){                    
         $('html, body').animate({
             scrollLeft: $(".right").offset().left
-        }, duration);                                        
+        }, duration);
+
+        $(this).fadeOut('slow');
+        $("#toTheLeft").fadeIn('slow');
+                                  
     });
 
     
@@ -120,6 +131,7 @@ function drawCanvas(){
 // drag lines - brushes
 //==========================
 
+
 // ERASER
 eraser = new Tool();
 eraser.minDistance = 3;
@@ -143,7 +155,7 @@ organicBrush = new Tool();
 organicBrush.minDistance = 2;
 organicBrush.maxDistance = 15;
 organicBrush.onMouseDown = function(event){
-    console.log("working")
+
     path = new Path();
     path.fillColor = currentColor;
 
@@ -430,34 +442,37 @@ cubeTube.onMouseDrag = function(event){
 
 ///////////////////////////////////////
 // actiavate tools
-function activateTools(elements, tool){
+function activateTools(elements, tool, preview){
     $(elements).click(function(){
         tool.activate();
+        // add preview of the brushes
+        $(".brushPreviews").fadeTo( "fast", 0 );
+        $(preview).fadeTo( "fast", 100 );
     });
 }
 
 // Whenever buttons are pressed
 // DRAG - BRUSHES
 activateTools("#eraser", eraser);
-activateTools("#organicBrush", organicBrush);
-activateTools("#dashedBrush", dashedBrush);
-activateTools("#waveBrush", waveBrush);
-activateTools("#cloudBrush", cloudBrush);
-activateTools("#verticalBrush", verticalBrush);
-activateTools("#multiLineBrush", multiLineBrush);
+activateTools("#organicBrush", organicBrush, "#organicBrush_prev");
+activateTools("#dashedBrush", dashedBrush, "#dashedBrush_prev");
+activateTools("#waveBrush", waveBrush, "#waveBrush_prev");
+activateTools("#cloudBrush", cloudBrush, "#waveBrush_prev");
+activateTools("#verticalBrush", verticalBrush, "#waveBrush_prev");
+activateTools("#multiLineBrush", multiLineBrush, "#waveBrush_prev");
 
 // CLICK - STAMPS
-activateTools("#threeTriangles", threeTriangles);
-activateTools("#smallCharcoal", smallCharcoal);
-activateTools("#largeCharcoal", largeCharcoal);
+activateTools("#threeTriangles", threeTriangles, "#waveBrush_prev");
+activateTools("#smallCharcoal", smallCharcoal, "#waveBrush_prev");
+activateTools("#largeCharcoal", largeCharcoal, "#waveBrush_prev");
 
-activateTools("#randomTriangle", randomTriangle);
-activateTools("#randomRectangle", randomRectangle);
-activateTools("#randomCircle", randomCircle);
+activateTools("#randomTriangle", randomTriangle, "#waveBrush_prev");
+activateTools("#randomRectangle", randomRectangle, "#waveBrush_prev");
+activateTools("#randomCircle", randomCircle, "#waveBrush_prev");
 
 // RIGHT 
 
 // DRAG - TUBES
 // something
-activateTools("#cloudTube", cloudTube);
-activateTools("#cubeTube", cubeTube);
+activateTools("#cloudTube", cloudTube, "#waveBrush_prev");
+activateTools("#cubeTube", cubeTube, "#waveBrush_prev");
