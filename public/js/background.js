@@ -124,18 +124,18 @@ function getData(element){
 
 			group1.onClick = function(event){
 				// console.log("currently " + count + " people were participated: " + isOpen);
-				// location.href= "/theme/" + name;
+				location.href= "/theme/" + name;
 
-				$("#popup").css('visibility', 'visible');
-				$("#popup").html("");
-				$("#popup").append( "<br><button id='closePopup'>X</button><br>" +
-									"currently " + count + 
-									" people were participated: " +
-									isOpen);
-				$("#closePopup").click(function(){
-					console.log("close this one");
-					$("#popup").css('visibility', 'hidden');
-				});
+				// $("#popup").css('visibility', 'visible');
+				// $("#popup").html("");
+				// $("#popup").append( "<br><button id='closePopup'>X</button><br>" +
+				// 					"currently " + count + 
+				// 					" people were participated: " +
+				// 					isOpen);
+				// $("#closePopup").click(function(){
+				// 	console.log("close this one");
+				// 	$("#popup").css('visibility', 'hidden');
+				// });
 			}
 
 
