@@ -150,7 +150,7 @@ canvas {
 }
 
 #question {
-  letter-spacing: .2em;
+  letter-spacing: .1em;
   font-size: 1.6em;
 }
 
@@ -166,14 +166,14 @@ canvas {
 }
 
 .previousDrawing {
-  width: 768px;
-  height: 576px;
+  width: 640px;
+  height: 480px;
 }
 
 /*************/
 #myCanvas {
-  width: 768px;
-  height: 576px;
+  width: 640px;
+  height: 480px;
   background-color: white;
   float: right;
   clear: right;
@@ -223,10 +223,6 @@ canvas {
   margin-right: 7px;
 }
 
-#tool00 {
-  width: 20%;
-}
-
 .stamps-left {
   width: 80%;
   margin-top: 7px;
@@ -247,6 +243,10 @@ canvas {
   margin-top: 14px;
 }
 
+#eraser {
+  width: 15%;
+}
+
 ul {
   margin-left: -34px;
 }
@@ -258,8 +258,8 @@ li {
 }
 
 .galleryImages {
-  width: 768px;
-  height: 576px;
+  width: 640px;
+  height: 480px;
 }
 
 #makeNew {
@@ -284,29 +284,29 @@ li {
   }
 
   .previousDrawing {
-    width: 512px;
-    height: 384px;
+    width: 544px;
+    height: 408px;
   }
 
   /*************/
   #myCanvas {
-    width: 512px;
-    height: 384px;
+    width: 544px;
+    height: 408px;
     background-color: white;
     float: right;
     clear: right;
   }
 
   #bottomArea {
-    height: 23%;
+    height: 25%;
     /* for testing */
     background-color: black;
     opacity: 0.5;
   }
 
   .galleryImages {
-    width: 512px;
-    height: 384px;
+    width: 544px;
+    height: 408px;
   }
 }
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {

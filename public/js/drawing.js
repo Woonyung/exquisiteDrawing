@@ -13,6 +13,7 @@ var path;
 var frame;
 
 var currentColor = 'black'; // default is black
+var currentWidth = 4; // default is 4
 
 // load the blank paper
 $(document).ready(function(){
@@ -103,3 +104,349 @@ function drawCanvas(){
 ////////////////////////////////////////////////////
 // TOOLS //
 ////////////////////////////////////////////////////
+
+//==========================
+// drag lines - brushes
+//==========================
+
+// ERASER
+eraser = new Tool();
+eraser.minDistance = 3;
+eraser.onMouseDown = function(event){
+    path = new Path({
+        strokeColor: 'white',
+        strokeJoin : 'round',
+        strokeCap :'round',
+        strokeWidth: 40 // stroke weight  
+    });
+}
+
+eraser.onMouseDrag = function(event){
+    path.add(event.point);
+    path.smooth();
+}
+
+
+// Organic brush
+organicBrush = new Tool();
+organicBrush.minDistance = 2;
+organicBrush.maxDistance = 15;
+organicBrush.onMouseDown = function(event){
+    console.log("working")
+    path = new Path();
+    path.fillColor = currentColor;
+
+    path.add(event.point);
+}
+
+organicBrush.onMouseDrag = function(event){
+    var step = event.delta / 2;
+    step.angle += 90;
+
+    var top = event.middlePoint + step;
+    var bottom = event.middlePoint - step;
+
+    // Every drag event, add a segment
+    // to the path at the position of the mouse:
+    path.add(top);
+    path.insert(0, bottom);
+    path.smooth();
+
+}
+
+organicBrush.onMouseUp = function(event){
+    path.add(event.point);
+    path.closed = true;
+    path.smooth();
+}  
+
+
+
+// dashed line
+dashedBrush = new Tool();
+dashedBrush.minDistance = 7;
+dashedBrush.onMouseDown = function(event){
+    path = new Path({
+        strokeColor: currentColor,
+        strokeWidth: currentWidth // stroke weight
+    });
+
+    // make it as dashed line
+    path.dashArray = [10, 12]; // 10pt dash and 12pt gap
+
+}
+dashedBrush.onMouseDrag = function(event){
+    path.add(event.point);
+    path.smooth();
+}
+
+// Wave
+waveBrush = new Tool();
+waveBrush.minDistance = 10;
+var values11 = {
+    curviness: 0.5,
+    distance: waveBrush.minDistance,
+    offset: 10,
+    mouseOffset: true
+};
+
+waveBrush.onMouseDown = function(event){
+    path = new Path({
+        strokeColor: '#000000',
+        strokeWidth: currentWidth
+    });    
+}
+
+var mul = 1;
+waveBrush.onMouseDrag = function(event){ 
+    var step = event.delta.rotate(90 * mul);
+
+    if (!values11.mouseOffset)
+        step.length = values11.offset;
+
+    path.add({
+        point: event.point + step,
+        handleIn: -event.delta * values11.curviness,
+        handleOut: event.delta * values11.curviness
+    });
+    mul *= -1;
+}
+
+
+// cloud shape brush
+cloudBrush = new Tool();
+cloudBrush.minDistance = 20;
+cloudBrush.onMouseDown = function(event){
+    path = new Path({
+        strokeColor : currentColor,
+        strokeWidth : currentWidth,
+        strokeJoin : 'round',
+        strokeCap :'round'
+    });
+
+    path.add(event.point);
+}
+cloudBrush.onMouseDrag = function(event){
+    // use the arcTo command to draw cloudy lines
+    path.arcTo(event.point);
+}
+
+
+// vertical shapes
+verticalBrush = new Tool();
+verticalBrush.minDistance = 10;
+
+verticalBrush.onMouseDrag = function(event){ 
+    path = new Path({
+        strokeColor: currentColor,
+        strokeWidth: currentWidth // stroke weight
+    });
+
+    var vector = event.delta;
+    vector.angle += 90;
+
+    // length of line
+    vector.length = 5;
+    
+    path.add(event.middlePoint + vector);
+    path.add(event.middlePoint - vector);
+}
+
+
+// Multi Lines
+multiLineBrush = new Tool();
+multiLineBrush.fixedDistance = 30;
+
+var values12 = {
+    lines: 3,
+    size: 30,
+    smooth: true
+};
+
+var paths;
+
+multiLineBrush.onMouseDown = function(event){ 
+    paths = [];
+    for (var i = 0; i < values12.lines; i++) {
+        var path = new Path();
+        path.strokeColor = currentColor;
+        path.strokeWidth = 4;
+        paths.push(path);
+    }
+}
+
+multiLineBrush.onMouseDrag = function(event){
+    var offset = event.delta;
+    offset.angle = offset.angle + 90;
+    var lineSize = values12.size / values12.lines;
+    for (var i = 0; i < values12.lines; i++) {
+        var path = paths[values12.lines - 1 - i];
+        offset.length = lineSize * i + lineSize / 2;
+        path.add(event.middlePoint + offset);
+        path.smooth();
+    }
+}
+
+//==========================
+// click - stamps
+//==========================
+
+// LEFT 
+// three - triangle stamps..!!
+threeTriangles = new Tool();
+threeTriangles.onMouseDown = function(event){
+    var raster = new Raster('triangles');
+    raster.scale(0.2);
+    raster.position.x = event.event.layerX;
+    raster.position.y = event.event.layerY;   
+}
+
+
+// small charcoal - line stamp
+var lineLists = ['randomLine01', 'randomLine02', 'randomLine03'];
+var rand;
+
+smallCharcoal = new Tool();
+smallCharcoal.onMouseDown = function(event){
+    // pick randdom circle whenever mouse is clicked
+    rand = lineLists[Math.floor(Math.random() * lineLists.length)];
+    // console.log(rand);
+
+    var raster = new Raster(rand);
+    raster.scale(0.2);
+    raster.position.x = event.event.layerX;
+    raster.position.y = event.event.layerY;   
+}
+
+
+// large charcoal - 
+largeCharcoal = new Tool();
+largeCharcoal.onMouseDown = function(event){
+    var raster = new Raster('gradation');
+    raster.scale(0.2);
+    raster.position.x = event.event.layerX;
+    raster.position.y = event.event.layerY;   
+}
+
+// MIDDLE
+// RANDOM TRIANGLE STAMPS
+var triLists = ['randomTri01', 'randomTri02', 'randomTri03', 'randomTri04'];
+var rand;
+
+randomTriangle = new Tool();
+randomTriangle.onMouseDown = function(event){
+    // pick randdom circle whenever mouse is clicked
+    rand = triLists[Math.floor(Math.random() * triLists.length)];
+    // console.log(rand);
+
+    var raster = new Raster(rand);
+    raster.scale(0.2);
+    raster.position.x = event.event.layerX;
+    raster.position.y = event.event.layerY;   
+}
+
+
+// RANDOM RECTS STAMPS
+var rectLists = ['randomRect01', 'randomRect02', 'randomRect03', 'randomRect04'];
+var rand;
+
+randomRectangle = new Tool();
+randomRectangle.onMouseDown = function(event){
+    // pick randdom circle whenever mouse is clicked
+    rand = rectLists[Math.floor(Math.random() * rectLists.length)];
+    // console.log(rand);
+
+    var raster = new Raster(rand);
+    raster.scale(0.2);
+    raster.position.x = event.event.layerX;
+    raster.position.y = event.event.layerY;   
+}
+
+
+// different look of circles
+var ellpseLists = ['randomCircles01', 'randomCircles02', 'randomCircles03','randomCircles04', 'randomCircles05'];
+var rand;
+
+randomCircle = new Tool();
+randomCircle.onMouseDown = function(event){
+    // pick randdom circle whenever mouse is clicked
+    rand = ellpseLists[Math.floor(Math.random() * ellpseLists.length)];
+    console.log(rand);
+
+    var raster = new Raster(rand);
+    raster.scale(0.2);
+    raster.position.x = event.event.layerX;
+    raster.position.y = event.event.layerY;   
+}
+
+//RIGHT
+
+
+
+//==========================
+// drag - enlarging shapes
+//==========================
+
+// add something....
+
+// cloud shapes
+cloudTube = new Tool();
+cloudTube.onMouseDrag = function(event){
+
+    // The radius is the distance between the position
+    // where the user clicked and the current position
+    // of the mouse.
+    var raster = new Raster('cloud');
+
+    raster.position = event.downPoint;
+    raster.scale((event.downPoint - event.point).length / 1000);
+}
+
+
+// CUBE shapes
+cubeTube = new Tool();
+cubeTube.onMouseDrag = function(event){
+    console.log("cube");
+    // The radius is the distance between the position
+    // where the user clicked and the current position
+    // of the mouse.
+    var raster = new Raster('cube');
+
+    raster.position = event.downPoint;
+    raster.scale((event.downPoint - event.point).length / 1000);
+}
+
+
+///////////////////////////////////////
+// actiavate tools
+function activateTools(elements, tool){
+    $(elements).click(function(){
+        tool.activate();
+    });
+}
+
+// Whenever buttons are pressed
+// DRAG - BRUSHES
+activateTools("#eraser", eraser);
+activateTools("#organicBrush", organicBrush);
+activateTools("#dashedBrush", dashedBrush);
+activateTools("#waveBrush", waveBrush);
+activateTools("#cloudBrush", cloudBrush);
+activateTools("#verticalBrush", verticalBrush);
+activateTools("#multiLineBrush", multiLineBrush);
+
+// CLICK - STAMPS
+activateTools("#threeTriangles", threeTriangles);
+activateTools("#smallCharcoal", smallCharcoal);
+activateTools("#largeCharcoal", largeCharcoal);
+
+activateTools("#randomTriangle", randomTriangle);
+activateTools("#randomRectangle", randomRectangle);
+activateTools("#randomCircle", randomCircle);
+
+// RIGHT 
+
+// DRAG - TUBES
+// something
+activateTools("#cloudTube", cloudTube);
+activateTools("#cubeTube", cubeTube);
