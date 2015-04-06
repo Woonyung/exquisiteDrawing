@@ -5,6 +5,7 @@
 /* 
 */
 
+
 //canvasWH
 var width = 640;
 var height = 540;
@@ -31,6 +32,14 @@ $(document).ready(function(){
         $('html, body').animate({
             scrollLeft: $(".right").offset().left
         }, duration);                                        
+    });
+
+
+
+    // MENU FUNCTIONS //
+    $("#clear").click(function(){
+        //Send them to the gallery
+        // document.location.href = '/theme/' + currenthTheme;
     });
                 
 
@@ -79,6 +88,13 @@ $(document).ready(function(){
             }
         }); // end of ajax
     }); // end of save function
+
+
+    // TEMPORARY CSS - for toggle on and off
+    $(".drawingTools").click(function(){
+        $(".drawingTools").removeClass("on");
+        $(this).toggleClass( "on" );
+    });
 });
 
 
