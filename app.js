@@ -224,7 +224,8 @@ app.get('/theme/:theme', function(req,res){
 				var data = {
 					theme: requestedTheme,
 					question: themes[requestedTheme]['question'], //
-					photo: info[info.length-1]
+					photo: info[info.length-1],
+					user: req.user
 				}
 				// console.log(data);
 				res.render('newdrawing.html', data)
@@ -232,7 +233,8 @@ app.get('/theme/:theme', function(req,res){
 			else if( !themes[requestedTheme].isOpen ) {
 				var data = {
 					question: themes[requestedTheme]['question'],
-					photos: info 
+					photos: info,
+					user: req.user	
 				}
 				res.render('gallery.html', data)
 			}
