@@ -4,6 +4,7 @@ var fs = require('fs');
 var path = require('path');
 var passport = require('passport');
 var util = require('util');
+var mongoStore = require('connect-mongo')(express);
 var FacebookStrategy = require('passport-facebook').Strategy;
 
 var app = express();
@@ -17,7 +18,15 @@ app.configure(function(){
 	app.use(express.bodyParser());
 	app.use(express.favicon());
 	app.use(express.methodOverride());
-    app.use(express.session({ secret: '34urdfgdfgd3hruewn', cookie: {maxAge: 3000000 }})); //300000
+    app.use(express.session({ 
+	    	store : new mongoStore({
+	    		url: process.env.MONGOLAB_URI,
+	    		auto_reconnect: true
+	    	}),
+	    	maxAge: 300000,
+	    	secret: process.env.COOKIEHASH 
+    	})
+    );
 
 	//  templates directory to 'views'
 	app.set('views', __dirname + '/views');
