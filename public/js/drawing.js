@@ -402,14 +402,49 @@ randomCircle.onMouseDown = function(event){
     raster.position.y = event.event.layerY;   
 }
 
+
 //RIGHT
+// RANDOM SPIRAL SHAPES
+var spiralList = ['randomSpiral01', 'randomSpiral02', 'randomSpiral03'];
+var rand;
+
+randomSpiral = new Tool();
+randomSpiral.onMouseDown = function(event){
+    console.log("random spiral");
+    // pick randdom circle whenever mouse is clicked
+    rand = spiralList[Math.floor(Math.random() * spiralList.length)];
+    console.log(rand);
+
+    var raster = new Raster(rand);
+    raster.scale(0.2);
+    raster.position.x = event.event.layerX;
+    raster.position.y = event.event.layerY;   
+}
+
+
+// RANDOM STAR SHAPES
+var starList = ['randomStar01', 'randomStar02', 'randomStar03', 'randomStar04', 'randomStar05'];
+var rand;
+
+randomStars = new Tool();
+randomStars.onMouseDown = function(event){
+    console.log("random spiral");
+    // pick randdom circle whenever mouse is clicked
+    rand = starList[Math.floor(Math.random() * starList.length)];
+    console.log(rand);
+
+    var raster = new Raster(rand);
+    raster.scale(0.2);
+    raster.position.x = event.event.layerX;
+    raster.position.y = event.event.layerY;   
+}
+
 
 
 
 //==========================
 // drag - enlarging shapes
 //==========================
-
 // add something....
 
 // cloud shapes
@@ -457,22 +492,24 @@ activateTools("#eraser", eraser);
 activateTools("#organicBrush", organicBrush, "#organicBrush_prev");
 activateTools("#dashedBrush", dashedBrush, "#dashedBrush_prev");
 activateTools("#waveBrush", waveBrush, "#waveBrush_prev");
-activateTools("#cloudBrush", cloudBrush, "#waveBrush_prev");
-activateTools("#verticalBrush", verticalBrush, "#waveBrush_prev");
-activateTools("#multiLineBrush", multiLineBrush, "#waveBrush_prev");
+activateTools("#cloudBrush", cloudBrush, "#cloudBrush_prev");
+activateTools("#verticalBrush", verticalBrush, "#verticalBrush_prev");
+activateTools("#multiLineBrush", multiLineBrush, "#multiLineBrush_prev");
 
 // CLICK - STAMPS
-activateTools("#threeTriangles", threeTriangles, "#waveBrush_prev");
-activateTools("#smallCharcoal", smallCharcoal, "#waveBrush_prev");
-activateTools("#largeCharcoal", largeCharcoal, "#waveBrush_prev");
+activateTools("#threeTriangles", threeTriangles, "#threeTriangles_prev");
+activateTools("#smallCharcoal", smallCharcoal, "#smallCharcoal_prev");
+activateTools("#largeCharcoal", largeCharcoal, "#largeCharcoal_prev");
 
-activateTools("#randomTriangle", randomTriangle, "#waveBrush_prev");
-activateTools("#randomRectangle", randomRectangle, "#waveBrush_prev");
-activateTools("#randomCircle", randomCircle, "#waveBrush_prev");
+activateTools("#randomTriangle", randomTriangle, "#randomTriangle_prev");
+activateTools("#randomRectangle", randomRectangle, "#randomRectangle_prev");
+activateTools("#randomCircle", randomCircle, "#randomCircle_prev");
 
 // RIGHT 
+activateTools("#randomSpiral", randomSpiral, "#randomSpiral_prev");
+activateTools("#randomStars", randomStars, "#randomStars_prev");
 
 // DRAG - TUBES
 // something
-activateTools("#cloudTube", cloudTube, "#waveBrush_prev");
-activateTools("#cubeTube", cubeTube, "#waveBrush_prev");
+activateTools("#cloudTube", cloudTube, "#cloudTube_prev");
+activateTools("#cubeTube", cubeTube, "#cubeTube_prev");
