@@ -21,11 +21,29 @@ $(document).ready(function(){
 
     // draw the blank canvas
     drawCanvas();
+
+    //// TOOLS
+    // TEMPORARY CSS - for toggle on and off
+    $("#organicBrush").addClass("on");
+    
+    $(".drawingTools").click(function(){
+        $(".drawingTools").removeClass("on");
+        $(this).toggleClass( "on" );
+    });
+
+    //// MENUS
     $("#close").click(function(){
         $("#covered").fadeOut('slow'); 
         $("#toTheRight").fadeIn('slow');
+
+        /// start with the organic brush
+        organicBrush.activate();
+        // add preview of the brushes
+        $(".brushPreviews").fadeTo( "fast", 0 );
+        $("#organicBrush_prev").fadeTo( "fast", 100 );
     });
 
+    // SCROLLS 
     var duration = 700;
     $("#toTheLeft").click(function(){
         $('html, body').animate({
@@ -96,11 +114,6 @@ $(document).ready(function(){
     }); // end of save function
 
 
-    // TEMPORARY CSS - for toggle on and off
-    $(".drawingTools").click(function(){
-        $(".drawingTools").removeClass("on");
-        $(this).toggleClass( "on" );
-    });
 });
 
 
