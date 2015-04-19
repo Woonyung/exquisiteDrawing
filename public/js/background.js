@@ -58,7 +58,7 @@ function getData(element){
 			var star_open = new Path.Circle({
 			    center: [0, 0],
 			    radius: 8,
-			    fillColor: 'white'
+			    fillColor: 'red'
 			});
 
 			// MAKE GROUP - object? 
@@ -95,31 +95,20 @@ function getData(element){
 			// whenever users hover
 			group1.onMouseEnter = function(event){
 				// console.log("GROUP 1 - ENTERED");
-				
-				// only shows line when users hover to it.
-				lineGroup.visible = true;
+
+				console.log(group1._project.symbols[0]._definition.fillColor)
+				group1._project.symbols[0]._definition.fillColor.hue = 200; // 0 - 360
+				group1._project.symbols[0]._definition.scaling = 1.5;
 
 				// get all position of children
-				for (var i = 0; i < group1.children.length - 1; i++){
-					// console.log(group1.children[i].position);
-					// console.log(group1.children[i].position.x);
-					var path = new Path.Line({
-					    from: [group1.children[i].position.x, group1.children[i].position.y],
-					    to: [group1.children[i+1].position.x, group1.children[i+1].position.y],
-					    strokeColor: 'white',
-					    strokeWidth: 2,
-					    scaling: 0.8 // magnitude of your vector
-					});
-
-					lineGroup.addChild(path);
-				}
-
+				// for (var i = 0; i < group1.children.length - 1; i++){
+				// 	console.log(group1.children[i]);
+				// 	// console.log(group1.children[i].position.x);
+				// }
 			}
 
 			group1.onMouseLeave = function(event){
-				// console.log("GROUP 1 - OUT");
-
-				lineGroup.visible = false;
+				// console.log("GROUP 1 - OUT")
 			}
 
 			group1.onClick = function(event){
