@@ -35,18 +35,26 @@ function getData(element){
 	var theme = document.getElementById(element);
 
 	var name = theme.getAttribute('data-name');
+	var question = theme.getAttribute('data-question');
 	var isOpen = theme.getAttribute('data-if-is-open');
 	var count = theme.getAttribute('data-count');
 
+	// console.log(question);
 	// console.log(name + ": " + isOpen + ": " + count);
 	
+	// show if it is opened or closed project
+	var status;
+	if ( isOpen === 'true' ){
+		status = "this is on-going project";
+	} else {
+		status = "this is closed project";
+	}
 
 	////////////////////////////////////////////////////
 	// DRAW STARS //
 	////////////////////////////////////////////////////
 
 	if ( name === element ){
-		// console.log("this is matched " + element + " " + isOpen);
 
 		if ( isOpen === 'true'){
 			// console.log(count);
@@ -65,46 +73,50 @@ function getData(element){
 			var group1 = new Group();
 			var symbol = new Symbol(star_open);
 
-			// Place the instances of the symbol:
-			for (var i = 1; i <= count; i++) {
-				// first make theme cluster
-				var center = Point.random() * view.size / 5; // *o 
-				//center += offset;
-				var placedSymbol = symbol.place(center);
-				placedSymbol.scale(i / count);
-				group1.addChild(placedSymbol);
+
+			for (var j = 1; j <= themeList.length -1 ; j++ ){ // howmanyCluster you want = number of the themeList
+				var offset = Point.random() * view.size;
+				for (var i = 1; i <= count; i++) {
+				    // first make theme cluster
+				    var center = Point.random() * view.size/7;
+				    // and add the random offset so that you can randomly place clusters.
+				    center += offset;
+				    
+				    var placedSymbol = symbol.place(center);
+				    placedSymbol.scale(i / count);
+				    group1.addChild(placedSymbol);
+				}
 			}
 
-			// for (var j = 1; j <= HowManyClusterYOuWant; j++ ){
-			// 	//var offset = Point.random() * view.size;
-			// 	for (var i = 1; i <= count; i++) {
-			// 	    // first make theme cluster
-			// 	    var center = Point.random() * view.size / 5; // *o 
-			// 	    //center += offset;
-			// 	    var placedSymbol = symbol.place(center);
-			// 	    placedSymbol.scale(i / count);
-			// 	    group1.addChild(placedSymbol);
-			// 	}
-			// }
-
-			// move whole group to the center
-
-
-			var lineGroup = new Group();
+			// var lineGroup = new Group();
 
 			// whenever users hover
 			group1.onMouseEnter = function(event){
-				// console.log("GROUP 1 - ENTERED");
+				console.log("GROUP 1 - ENTERED");
 
-				console.log(group1._project.symbols[0]._definition.fillColor)
-				group1._project.symbols[0]._definition.fillColor.hue = 200; // 0 - 360
-				group1._project.symbols[0]._definition.scaling = 1.5;
+				// console.log(this._style);
+				// console.log(group1._project.symbols[0]._definition.fillColor)
+				// group1._project.symbols[0]._definition.fillColor.hue = 100; // 0 - 360
+				// group1._project.symbols[0]._definition.scaling = 1.5;
 
 				// get all position of children
 				// for (var i = 0; i < group1.children.length - 1; i++){
 				// 	console.log(group1.children[i]);
 				// 	// console.log(group1.children[i].position.x);
 				// }
+
+
+				$("#popup").css('visibility', 'visible');
+				$("#popup").html("");
+				$("#popup").append( "<br><button id='closePopup'>X</button><br>" +
+									"currently " + count +  
+									" people were participated <br>" +
+									question + "<br>" + 
+									status);
+				$("#closePopup").click(function(){
+					console.log("close this one");
+					$("#popup").css('visibility', 'hidden');
+				});
 			}
 
 			group1.onMouseLeave = function(event){
@@ -113,18 +125,8 @@ function getData(element){
 
 			group1.onClick = function(event){
 				// console.log("currently " + count + " people were participated: " + isOpen);
-				location.href= "/theme/" + name;
-
-				// $("#popup").css('visibility', 'visible');
-				// $("#popup").html("");
-				// $("#popup").append( "<br><button id='closePopup'>X</button><br>" +
-				// 					"currently " + count + 
-				// 					" people were participated: " +
-				// 					isOpen);
-				// $("#closePopup").click(function(){
-				// 	console.log("close this one");
-				// 	$("#popup").css('visibility', 'hidden');
-				// });
+				// location.href= "/theme/" + name;
+				// console.log(name);
 			}
 
 
@@ -145,32 +147,47 @@ function getData(element){
 			var group2 = new Group();
 			var symbol = new Symbol(star_closed);
 
-			// Place the instances of the symbol:
-			for (var i = 1; i <= count; i++) {
-			    // first make them cluster
-			    var center = Point.random() * view.size / 5;
-			    var placedSymbol = symbol.place(center);
-			    placedSymbol.scale(i / count);
-
-			    group2.addChild(placedSymbol);
+			
+			for (var j = 1; j <= themeList.length -1 ; j++ ){ // howmanyCluster you want = number of the themeList
+				var offset = Point.random() * view.size;
+				for (var i = 1; i <= count; i++) {
+				    // first make theme cluster
+				    var center = Point.random() * view.size/ 9;
+				    // and add the random offset so that you can randomly place clusters.
+				    center += offset;
+				    
+				    var placedSymbol = symbol.place(center);
+				    placedSymbol.scale(i / count);
+				    group2.addChild(placedSymbol);
+				}
 			}
 
-			// move them as well
 
+			// whenever users hover
+			group2.onMouseEnter = function(event){
+				console.log("GROUP 2 ENTERED");
 
-			// whenever it's clicked
-			group2.onClick = function(event){
-				// console.log("it's clicked - from group 2");
+				// console.log(group2._project.symbols[0]._definition.fillColor)
+				// group2._project.symbols[0]._definition.fillColor.hue = 350; // 0 - 360
+				// group2._project.symbols[0]._definition.scaling = 1.5;
+
 				$("#popup").css('visibility', 'visible');
 				$("#popup").html("");
 				$("#popup").append( "<br><button id='closePopup'>X</button><br>" +
-									"currently " + count + 
-									" people were participated: " +
-									isOpen);
+									"currently " + count +  
+									" people were participated <br>" +
+									question + "<br>" + 
+									status);
 				$("#closePopup").click(function(){
 					console.log("close this one");
 					$("#popup").css('visibility', 'hidden');
 				});
+			}
+
+			// whenever it's clicked
+			group2.onClick = function(event){
+				// console.log("it's clicked - from group 2");
+			
 			}
 
 		}

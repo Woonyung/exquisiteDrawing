@@ -51,7 +51,7 @@ var Info = mongoose.model('Info', {
 	Date: String,
 	imageData: String,
 	theme: String, // dictates which theme the picture is
-	question: String,
+	isOpen: Boolean,
 	user: {type:Schema.ObjectId, ref:'User'}
 });
 
@@ -134,7 +134,7 @@ var themes = {
 	happiness: {
 		name: 'happiness',
 		question: 'What are the things that makes you happy?',
-		isOpen: false
+		isOpen: true
 	},
 	memory: {
 		name: 'memory',
@@ -165,11 +165,16 @@ app.get('/', function(req,res){
 				if(photos[j].theme == themeArray[i] ) photoCount++;
 				else continue;
 			}
-			var currentData = {name: themeArray[i], count: photoCount, isOpen: themes[themeArray[i]].isOpen}
+			var currentData = {
+				name: themeArray[i], 
+				question: themes[themeArray[i]].question,
+				count: photoCount, 
+				isOpen: themes[themeArray[i]].isOpen
+			}
 			dataToReturn.push(currentData);
 		}
 
-		// console.log(dataToReturn);
+		console.log(dataToReturn);
 		var data = {
 			themes: dataToReturn,
 			user: req.user	
@@ -298,7 +303,7 @@ app.post('/submitDrawing', function(req,res){
 		Date: req.body.Date,
 		imageData : req.body.imageData,
 		theme: currentTheme.name, // update this every time it changes
-		isOpen: currentTheme.isOpen, // *** Q) NEVER WORK..
+		isOpen: currentTheme.isOpen,
 		user: req.user._id
 	}
 
