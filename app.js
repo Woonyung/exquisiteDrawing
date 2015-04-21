@@ -70,15 +70,15 @@ var FACEBOOK_APP_SECRET = process.env.FACEBOOK_APP_SECRET;
 
 // SESSION SUPPORT, SERIALIZE USER
 passport.serializeUser(function(user, done) {
-  console.log('in serializeUser');
-  console.log(user._id);
+  // console.log('in serializeUser');
+  // console.log(user._id);
   done(null, user._id);
 });
 
 passport.deserializeUser(function(id, done) {
   User.findById(id,function(err,user){
-  	console.log('in deserializeUser');  	
-  	console.log(user);
+  	// console.log('in deserializeUser');  	
+  	// console.log(user);
     if(err) done(err,null);
     else done(null,user);
   })
@@ -129,7 +129,7 @@ var themes = {
 	weather: {
 		name: 'weather',
 		question: 'test test test',
-		isOpen: false
+		isOpen: true
 	},
 	happiness: {
 		name: 'happiness',
@@ -139,11 +139,11 @@ var themes = {
 	memory: {
 		name: 'memory',
 		question: 'If you could do something dangerous just once with no risk what would you do?',
-		isOpen: true
+		isOpen: false
 	}	
 }
 
-var currentTheme = themes['memory'];
+var currentTheme = themes['weather'];
 // currentTheme.name, currentTheme.question, currentTheme.isOpen
 
 
@@ -268,7 +268,8 @@ app.get('/dashboard', function(req,res){
 		return res.redirect('/login');
 	}
 
-	User.findById(req.user._id).populate('drawings').exec(function(err,data){		
+	User.findById(req.user._id).populate('drawings').exec(function(err,data){
+		// console.log(data);
 		return res.render("userpage.html",data);
 	})
 
@@ -291,11 +292,13 @@ app.get('/submission', function(req,res){
 
 // <POST> submit drawing
 app.post('/submitDrawing', function(req,res){
+	console.log(currentTheme.isOpen);
+	
 	var infoData = {
 		Date: req.body.Date,
 		imageData : req.body.imageData,
 		theme: currentTheme.name, // update this every time it changes
-		// theme: req.body.theme // front-end: if it's in the POST request, would look like this
+		isOpen: currentTheme.isOpen, // *** Q) NEVER WORK..
 		user: req.user._id
 	}
 
@@ -304,7 +307,8 @@ app.post('/submitDrawing', function(req,res){
 		if (err) {
 			console.log(err);
 		} else {
-			console.log("DRAWING SAVED INTO DATABASE!!!!!!!!!");
+			// console.log(doc);
+			console.log("drawing is saved into database!!");
 
 			// now need to update the user, push the photo Id into their list of photos... doc._id;
 			var currentUser = req.user._id;

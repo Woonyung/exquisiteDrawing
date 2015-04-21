@@ -3,8 +3,12 @@ THIS IS USER PAGE
 Hi {{name}}!
 
 Here are your drawings:
+
+===========================
+<br>
 {{#drawings}}
 <a href="/theme/{{theme}}">
+	{{theme}}{{isOpen}}
 	<div>
 		<img src="{{imageData}}" width="70" style="border-radius:50%">
 	</div>
