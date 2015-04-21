@@ -171,7 +171,7 @@ app.get('/', function(req,res){
 				count: photoCount, 
 				isOpen: themes[themeArray[i]].isOpen
 			}
-			dataToReturn.push(currentData);
+			// dataToReturn.push(currentData);
 		}
 
 		console.log(dataToReturn);

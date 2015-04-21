@@ -92,7 +92,7 @@ function getData(element){
 
 			// whenever users hover
 			group1.onMouseEnter = function(event){
-				console.log("GROUP 1 - ENTERED");
+				// console.log("GROUP 1 - ENTERED");
 
 				// console.log(this._style);
 				// console.log(group1._project.symbols[0]._definition.fillColor)
@@ -106,7 +106,19 @@ function getData(element){
 				// }
 
 
-				$("#popup").css('visibility', 'visible');
+				
+			}
+
+			group1.onMouseLeave = function(event){
+				// console.log("GROUP 1 - OUT")
+			}
+
+			group1.onMouseDown = function(event){
+				console.log("currently " + count + " people were participated: " + isOpen);
+				// location.href= "/theme/" + name;
+				// console.log(name);	
+
+				$("#popup").fadeIn("slow");
 				$("#popup").html("");
 				$("#popup").append( "<br><button id='closePopup'>X</button><br>" +
 									"currently " + count +  
@@ -114,19 +126,8 @@ function getData(element){
 									question + "<br>" + 
 									status);
 				$("#closePopup").click(function(){
-					console.log("close this one");
-					$("#popup").css('visibility', 'hidden');
+					$("#popup").fadeOut("slow");
 				});
-			}
-
-			group1.onMouseLeave = function(event){
-				// console.log("GROUP 1 - OUT")
-			}
-
-			group1.onClick = function(event){
-				// console.log("currently " + count + " people were participated: " + isOpen);
-				// location.href= "/theme/" + name;
-				// console.log(name);
 			}
 
 
@@ -165,13 +166,20 @@ function getData(element){
 
 			// whenever users hover
 			group2.onMouseEnter = function(event){
-				console.log("GROUP 2 ENTERED");
+				// console.log("GROUP 2 ENTERED");
 
 				// console.log(group2._project.symbols[0]._definition.fillColor)
 				// group2._project.symbols[0]._definition.fillColor.hue = 350; // 0 - 360
 				// group2._project.symbols[0]._definition.scaling = 1.5;
 
-				$("#popup").css('visibility', 'visible');
+			
+			}
+
+			// whenever it's clicked
+			group2.onMouseDown = function(event){
+				console.log("it's clicked - from group 2");
+			
+				$("#popup").fadeIn("slow");
 				$("#popup").html("");
 				$("#popup").append( "<br><button id='closePopup'>X</button><br>" +
 									"currently " + count +  
@@ -179,15 +187,8 @@ function getData(element){
 									question + "<br>" + 
 									status);
 				$("#closePopup").click(function(){
-					console.log("close this one");
-					$("#popup").css('visibility', 'hidden');
+					$("#popup").fadeOut("slow");
 				});
-			}
-
-			// whenever it's clicked
-			group2.onClick = function(event){
-				// console.log("it's clicked - from group 2");
-			
 			}
 
 		}

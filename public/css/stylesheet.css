@@ -135,7 +135,7 @@ canvas {
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.8);
   color: black;
-  visibility: hidden;
+  display: none;
   position: relative;
   z-index: 5;
 }
