@@ -1,9 +1,9 @@
+/* Made with love by Woonyung
+/* woonyungchoi@gmail.com
 /*
 /* Javascript for first index page
 /* Mar.7, 2015
 /*
-/* for the login page
-/* without dynamic data 
 */
 
 

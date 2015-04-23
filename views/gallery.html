@@ -1,7 +1,19 @@
 <!-- gallery page -->
 <div id="topArea">
-	<!-- display question -->
-	{{question}}<br>
+	<div id="menuWrapper">
+		<a href="/">BACK!</a>
+		<br>
+		<!-- display question -->
+		{{question}}<br>
+	</div>
+	<div id="userArea">
+		<!-- display user name -->
+		{{#user}}
+			<h4 class="inlineBlock"><a href="/dashboard">{{user.name}}</h4></a>
+		{{/user}}
+		<a href="/logout"><button class="inlineBlock smButtons">LOGOUT</button></a>
+	</div>
+	
 </div>
 
 <div id="middleArea">

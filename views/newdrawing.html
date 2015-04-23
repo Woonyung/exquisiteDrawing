@@ -15,12 +15,22 @@
 <!-- MENUS -->
 
 <div id="topArea">
-	<a href="#" id="undo">Undo</a>
-	<a href="/theme/{{theme}}" id="clear">Clear</a>
-	<a href="#" id="save"><b>SAVE</b></a>
 
-	<a href="/dashboard">{{user.name}}</a>
-	<a href="/logout">logout</a>
+	<div id="menuWrapper">
+		<a href="/">BACK!</a>
+		<a href="#" id="undo">Undo</a>
+		<a href="/theme/{{theme}}" id="clear">Clear</a>
+		<a href="#" id="save" data-theme="{{theme}}"><b>SAVE</b></a>
+	</div>
+	<div id="userArea">
+		<!-- display user name -->
+		{{#user}}
+			<h4 class="inlineBlock"><a href="/dashboard">{{user.name}}</h4></a>
+		{{/user}}
+		<a href="/logout"><button class="inlineBlock smButtons">LOGOUT</button></a>
+	</div>
+
+
 </div>
 
 
@@ -46,127 +56,129 @@
 <div id="bottomArea">
 
 	<div id="toolBox">
+		<div id="toolboxWrapper">
+			<div class="col-xs-3" id="previewSection">
+					<div id="colors"></div>
+					<div id="previewFrame">
+						<!-- brush --> 
+						<img id="organicBrush_prev" class="brushPreviews" src="/images/brushPrev_01.png">
+						<img id="dashedBrush_prev" class="brushPreviews" src="/images/brushPrev_02.png">
+						<img id="waveBrush_prev" class="brushPreviews" src="/images/brushPrev_03.png">
+						<img id="cloudBrush_prev" class="brushPreviews" src="/images/brushPrev_04.png">
+						<img id="verticalBrush_prev" class="brushPreviews" src="/images/brushPrev_05.png">
+						<img id="multiLineBrush_prev" class="brushPreviews" src="/images/brushPrev_06.png">
 
-		<div class="toolBoxSection col-xs-3" id="">
-			<div id="previewFrame">
-				<!-- brush --> 
-				<img id="organicBrush_prev" class="brushPreviews" src="/images/brushPrev_01.png">
-				<img id="dashedBrush_prev" class="brushPreviews" src="/images/brushPrev_02.png">
-				<img id="waveBrush_prev" class="brushPreviews" src="/images/brushPrev_03.png">
-				<img id="cloudBrush_prev" class="brushPreviews" src="/images/brushPrev_04.png">
-				<img id="verticalBrush_prev" class="brushPreviews" src="/images/brushPrev_05.png">
-				<img id="multiLineBrush_prev" class="brushPreviews" src="/images/brushPrev_06.png">
+						<!-- stamps -->
+						<img id="threeTriangles_prev" class="brushPreviews" src="/images/stampPrev_01.png">
+						<img id="smallCharcoal_prev" class="brushPreviews" src="/images/stampPrev_02.png">
+						<img id="largeCharcoal_prev" class="brushPreviews" src="/images/stampPrev_03.png">
+						<img id="randomTriangle_prev" class="brushPreviews" src="/images/stampPrev_04.png">
+						<img id="randomRectangle_prev" class="brushPreviews" src="/images/stampPrev_05.png">
+						<img id="randomCircle_prev" class="brushPreviews" src="/images/stampPrev_06.png">
+						<img id="randomSpiral_prev" class="brushPreviews" src="/images/stampPrev_07.png">
+						<img id="randomStars_prev" class="brushPreviews" src="/images/stampPrev_08.png">
 
-				<!-- stamps -->
-				<img id="threeTriangles_prev" class="brushPreviews" src="/images/stampPrev_01.png">
-				<img id="smallCharcoal_prev" class="brushPreviews" src="/images/stampPrev_02.png">
-				<img id="largeCharcoal_prev" class="brushPreviews" src="/images/stampPrev_03.png">
-				<img id="randomTriangle_prev" class="brushPreviews" src="/images/stampPrev_04.png">
-				<img id="randomRectangle_prev" class="brushPreviews" src="/images/stampPrev_05.png">
-				<img id="randomCircle_prev" class="brushPreviews" src="/images/stampPrev_06.png">
-				<img id="randomSpiral_prev" class="brushPreviews" src="/images/stampPrev_07.png">
-				<img id="randomStars_prev" class="brushPreviews" src="/images/stampPrev_08.png">
-
-				<!-- tubes -->
-				<img id="cloudTube_prev" class="brushPreviews" src="/images/tubePrev_01.png">
-				<img id="cubeTube_prev" class="brushPreviews" src="/images/tubePrev_02.png">
-			</div>
-		</div>
-
-		<!-- DRAG - BRUSH --> 
-		<div class="toolBoxSection col-xs-3" id="">
-			<div class="tool-top">
-				<img class="banners" src="/images/banner_02.png">
+						<!-- tubes -->
+						<img id="cloudTube_prev" class="brushPreviews" src="/images/tubePrev_01.png">
+						<img id="cubeTube_prev" class="brushPreviews" src="/images/tubePrev_02.png">
+					</div>
+				
 			</div>
 
-			<div class="tool-bottom">
-				<img id="eraser" class="drawingTools" src="/images/tool_00.png">
+			<!-- DRAG - BRUSH --> 
+			<div class="toolBoxSection col-xs-3" id="">
+				<div class="tool-top">
+					<img class="banners" src="/images/banner_02.png">
+				</div>
 
-				<img id="organicBrush" class="drawingTools" src="/images/tool_01.png">
-				<img id="dashedBrush" class="drawingTools" src="/images/tool_02.png">
-				<img id="waveBrush" class="drawingTools" src="/images/tool_03.png">
-				<img id="cloudBrush" class="drawingTools" src="/images/tool_04.png">
-				<img id="verticalBrush" class="drawingTools" src="/images/tool_05.png">
-				<img id="multiLineBrush" class="drawingTools" src="/images/tool_06.png">
+				<div class="tool-bottom">
+					<img id="eraser" class="drawingTools" src="/images/tool_00.png">
 
-			</div>
-		</div>
-
-		<!-- CLICK - STAMP --> 
-		<div class="toolBoxSection col-xs-3" id="">
-			<div class="tool-top">
-				<img class="banners" src="/images/banner_01.png">
-			</div>
-			<div class="tool-bottom">
-				<div class="tool-left">
-
-					<img id="threeTriangles" class="drawingTools stamps-left" src="/images/tool_08.png">
-					<img src="/images/stamp_01.png" id="triangles" class="hidden">
-
-
-					<img id="smallCharcoal" class="drawingTools stamps-left" src="/images/tool_10.png">
-					<img src="/images/stamp_02_01.png" id="randomLine01" class="hidden">	
-					<img src="/images/stamp_02_02.png" id="randomLine02" class="hidden">	
-					<img src="/images/stamp_02_03.png" id="randomLine03" class="hidden">	
-
-
-					<img id="largeCharcoal" class="drawingTools stamps-left" src="/images/tool_09.png">
-					<img src="/images/stamp_03.png" id="gradation" class="hidden">
+					<img id="organicBrush" class="drawingTools" src="/images/tool_01.png">
+					<img id="dashedBrush" class="drawingTools" src="/images/tool_02.png">
+					<img id="waveBrush" class="drawingTools" src="/images/tool_03.png">
+					<img id="cloudBrush" class="drawingTools" src="/images/tool_04.png">
+					<img id="verticalBrush" class="drawingTools" src="/images/tool_05.png">
+					<img id="multiLineBrush" class="drawingTools" src="/images/tool_06.png">
 
 				</div>
-				<div class="tool-middle">
-					<img id="randomTriangle" class="drawingTools stamps-middle" src="/images/tool_11.png">
-					<img src="/images/stamp_04_01.png" id="randomTri01" class="hidden">	
-					<img src="/images/stamp_04_02.png" id="randomTri02" class="hidden">	
-					<img src="/images/stamp_04_03.png" id="randomTri03" class="hidden">	
-					<img src="/images/stamp_04_04.png" id="randomTri04" class="hidden">	
-
-
-					<img id="randomRectangle" class="drawingTools stamps-middle" src="/images/tool_12.png">
-					<img src="/images/stamp_05_01.png" id="randomRect01" class="hidden">	
-					<img src="/images/stamp_05_02.png" id="randomRect02" class="hidden">	
-					<img src="/images/stamp_05_03.png" id="randomRect03" class="hidden">	
-					<img src="/images/stamp_05_04.png" id="randomRect04" class="hidden">	
-
-					<img id="randomCircle" class="drawingTools stamps-middle" src="/images/tool_13.png">
-					<img src="/images/stamp_06_01.png" id="randomCircles01" class="hidden">
-					<img src="/images/stamp_06_02.png" id="randomCircles02" class="hidden">
-					<img src="/images/stamp_06_03.png" id="randomCircles03" class="hidden">
-					<img src="/images/stamp_06_04.png" id="randomCircles04" class="hidden">
-					<img src="/images/stamp_06_05.png" id="randomCircles05" class="hidden">
-	
-				</div>
-				<div class="tool-right">
-					<img id="randomSpiral" class="drawingTools stamps-right" src="/images/tool_14.png">
-					<img src="/images/stamp_07_01.png" id="randomSpiral01" class="hidden">
-					<img src="/images/stamp_07_02.png" id="randomSpiral02" class="hidden">
-					<img src="/images/stamp_07_03.png" id="randomSpiral03" class="hidden">
-
-					<img id="randomStars" class="drawingTools stamps-right" src="/images/tool_15.png">
-					<img src="/images/stamp_08_01.png" id="randomStar01" class="hidden">
-					<img src="/images/stamp_08_02.png" id="randomStar02" class="hidden">
-					<img src="/images/stamp_08_03.png" id="randomStar03" class="hidden">
-					<img src="/images/stamp_08_04.png" id="randomStar04" class="hidden">
-					<img src="/images/stamp_08_05.png" id="randomStar05" class="hidden">			
-
-					<!-- <img id="tool16" class="drawingTools stamps-right" src="/images/tool_16.png"> -->
-				</div>
-			</div>			
-		</div>
-		<div class="toolBoxSection col-xs-3" id="">
-			<div class="tool-top">
-				<img class="banners" src="/images/banner_02.png">
 			</div>
-			<div class="tool-bottom">
-	
-				<img id="cloudTube" class="drawingTools tubes" src="/images/tool_18.png">
-				<img src="/images/tube_02.png" id="cloud" class="hidden">
 
-				<img id="cubeTube" class="drawingTools tubes" src="/images/tool_19.png">
-				<img src="/images/tube_03.png" id="cube" class="hidden">
+			<!-- CLICK - STAMP --> 
+			<div class="toolBoxSection col-xs-3" id="">
+				<div class="tool-top">
+					<img class="banners" src="/images/banner_01.png">
+				</div>
+				<div class="tool-bottom">
+					<div class="tool-left">
+
+						<img id="threeTriangles" class="drawingTools stamps-left" src="/images/tool_08.png">
+						<img src="/images/stamp_01.png" id="triangles" class="hidden">
+
+
+						<img id="smallCharcoal" class="drawingTools stamps-left" src="/images/tool_10.png">
+						<img src="/images/stamp_02_01.png" id="randomLine01" class="hidden">	
+						<img src="/images/stamp_02_02.png" id="randomLine02" class="hidden">	
+						<img src="/images/stamp_02_03.png" id="randomLine03" class="hidden">	
+
+
+						<img id="largeCharcoal" class="drawingTools stamps-left" src="/images/tool_09.png">
+						<img src="/images/stamp_03.png" id="gradation" class="hidden">
+
+					</div>
+					<div class="tool-middle">
+						<img id="randomTriangle" class="drawingTools stamps-middle" src="/images/tool_11.png">
+						<img src="/images/stamp_04_01.png" id="randomTri01" class="hidden">	
+						<img src="/images/stamp_04_02.png" id="randomTri02" class="hidden">	
+						<img src="/images/stamp_04_03.png" id="randomTri03" class="hidden">	
+						<img src="/images/stamp_04_04.png" id="randomTri04" class="hidden">	
+
+
+						<img id="randomRectangle" class="drawingTools stamps-middle" src="/images/tool_12.png">
+						<img src="/images/stamp_05_01.png" id="randomRect01" class="hidden">	
+						<img src="/images/stamp_05_02.png" id="randomRect02" class="hidden">	
+						<img src="/images/stamp_05_03.png" id="randomRect03" class="hidden">	
+						<img src="/images/stamp_05_04.png" id="randomRect04" class="hidden">	
+
+						<img id="randomCircle" class="drawingTools stamps-middle" src="/images/tool_13.png">
+						<img src="/images/stamp_06_01.png" id="randomCircles01" class="hidden">
+						<img src="/images/stamp_06_02.png" id="randomCircles02" class="hidden">
+						<img src="/images/stamp_06_03.png" id="randomCircles03" class="hidden">
+						<img src="/images/stamp_06_04.png" id="randomCircles04" class="hidden">
+						<img src="/images/stamp_06_05.png" id="randomCircles05" class="hidden">
+		
+					</div>
+					<div class="tool-right">
+						<img id="randomSpiral" class="drawingTools stamps-right" src="/images/tool_14.png">
+						<img src="/images/stamp_07_01.png" id="randomSpiral01" class="hidden">
+						<img src="/images/stamp_07_02.png" id="randomSpiral02" class="hidden">
+						<img src="/images/stamp_07_03.png" id="randomSpiral03" class="hidden">
+
+						<img id="randomStars" class="drawingTools stamps-right" src="/images/tool_15.png">
+						<img src="/images/stamp_08_01.png" id="randomStar01" class="hidden">
+						<img src="/images/stamp_08_02.png" id="randomStar02" class="hidden">
+						<img src="/images/stamp_08_03.png" id="randomStar03" class="hidden">
+						<img src="/images/stamp_08_04.png" id="randomStar04" class="hidden">
+						<img src="/images/stamp_08_05.png" id="randomStar05" class="hidden">			
+
+						<!-- <img id="tool16" class="drawingTools stamps-right" src="/images/tool_16.png"> -->
+					</div>
+				</div>			
 			</div>
-		</div>
+			<div class="toolBoxSection col-xs-3" id="">
+				<div class="tool-top">
+					<img class="banners" src="/images/banner_02.png">
+				</div>
+				<div class="tool-bottom">
+		
+					<img id="cloudTube" class="drawingTools tubes" src="/images/tool_18.png">
+					<img src="/images/tube_02.png" id="cloud" class="hidden">
 
+					<img id="cubeTube" class="drawingTools tubes" src="/images/tool_19.png">
+					<img src="/images/tube_03.png" id="cube" class="hidden">
+				</div>
+			</div>
+		</div><!-- toolbox wrapper -->
 	</div> <!-- toolbox -->
 </div> 
 

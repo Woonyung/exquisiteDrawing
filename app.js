@@ -60,6 +60,7 @@ var User = mongoose.model('User',{
 	name: String,
 	facebookId: String,
 	drawings: [{type:Schema.ObjectId, ref:'Info'}]
+	// brushes: Number
 });
 
 
@@ -124,7 +125,6 @@ passport.use(new FacebookStrategy({
 
 
 // THEMES //
-
 var themes = {
 	weather: {
 		name: 'weather',
@@ -143,7 +143,7 @@ var themes = {
 	}	
 }
 
-var currentTheme = themes['weather'];
+// var currentTheme = themes['happiness'];
 // currentTheme.name, currentTheme.question, currentTheme.isOpen
 
 
@@ -171,7 +171,7 @@ app.get('/', function(req,res){
 				count: photoCount, 
 				isOpen: themes[themeArray[i]].isOpen
 			}
-			// dataToReturn.push(currentData);
+			dataToReturn.push(currentData);
 		}
 
 		console.log(dataToReturn);
@@ -297,13 +297,12 @@ app.get('/submission', function(req,res){
 
 // <POST> submit drawing
 app.post('/submitDrawing', function(req,res){
-	console.log(currentTheme.isOpen);
 	
 	var infoData = {
 		Date: req.body.Date,
 		imageData : req.body.imageData,
-		theme: currentTheme.name, // update this every time it changes
-		isOpen: currentTheme.isOpen,
+		theme: req.body.theme, // update this every time it changes
+		isOpen: true,
 		user: req.user._id
 	}
 
@@ -317,6 +316,7 @@ app.post('/submitDrawing', function(req,res){
 
 			// now need to update the user, push the photo Id into their list of photos... doc._id;
 			var currentUser = req.user._id;
+			// * increment users' brushes
 			User.findByIdAndUpdate(currentUser,{$push:{drawings:doc._id}},function(err,data){
 				console.log('update the user, pushed the drawing into their array!')
 				return res.redirect('/gallery');

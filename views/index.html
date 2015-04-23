@@ -1,24 +1,23 @@
 <!-- index page -->
-<div id="background_layer2">
-	<div id="topbar">
+<div id="main_page_top">
+	<div id="userArea">
 		<!-- display user name -->
 		{{#user}}
-			<h4><a href="/dashboard">{{user.name}}</a></h4>
+			<h4 class="inlineBlock"><a href="/dashboard">{{user.name}}</h4></a>
 		{{/user}}
-		<a href="/logout"><button class="smButtons">LOGOUT</button></a>
+		<a href="/logout"><button class="inlineBlock smButtons">LOGOUT</button></a>
 	</div>
 </div>
 
 <!-- draw stars / illustrations -->
-<img class="bg" src="/images/index_bg01.png">
+<img class="bg" src="/images/index_bg02.png">
 {{#themes}}
-<!-- 	<a href="/theme/{{name}}">{{name}} - {{count}} - {{isOpen}}</a><br> -->
-<input type="hidden" id="{{name}}" data-name="{{name}}" data-question="{{question}}" data-if-is-open="{{isOpen}}" data-count= "{{count}}">
+	<input type="hidden" id="{{name}}" data-name="{{name}}" data-question="{{question}}" data-if-is-open="{{isOpen}}" data-count= "{{count}}">
 {{/themes}}
 
 
 <canvas id="backgroundCanvas" resize="true"></canvas>
-<div id="popup"></div>
+<div id="popup"></div> <!-- pop up for detail info --> 
 
 <!-- <script src="/js/background.js"></script> -->
 <script type="text/paperscript" canvas="backgroundCanvas" src="/js/background.js"></script>

@@ -1,7 +1,9 @@
+/* Made with love by Woonyung
+/* woonyungchoi@gmail.com
 /*
 /* Javascript for Drawing page
 /* putting all together
-/* Apr.05, 2015
+/* Apr.20, 2015
 /* 
 */
 
@@ -84,10 +86,14 @@ $(document).ready(function(){
         // console.log(currentTheme);
         // document.getElementById("currentTheme").setAttribute("data-theme", "happiness"); // to change the theme
         
+        var currentTheme = $("#save").data('theme');
+
+        console.log(currentTheme);
+
         var dataToSave = {
             Date: new Date(),
-            imageData: imageString
-            // theme: currentTheme // front-end
+            imageData: imageString,
+            theme: currentTheme // front-end
         }
 
 

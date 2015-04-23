@@ -1,3 +1,11 @@
+/* Made with love by Woonyung
+/* woonyungchoi@gmail.com
+/*
+/* email page-- ping function- will be back later
+/* Apr.05, 2015
+/* 
+*/
+
 var friendsEmail;
 
 $(document).ready(function(){

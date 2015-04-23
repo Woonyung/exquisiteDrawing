@@ -26,7 +26,7 @@ a:active {
 
 /*****************************************/
 body {
-  background-color: #404040;
+  background-color: black;
   font-family: avenir-book;
   color: white;
 }
@@ -41,6 +41,12 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.4em;
   line-height: 1.5em;
+}
+
+h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.9em;
 }
 
 .bigButtons {
@@ -82,7 +88,7 @@ h3 {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-#background_layer1 {
+#background_layer {
   background-color: rgba(20, 20, 20, 0.7);
   position: absolute;
   width: 100%;
@@ -97,15 +103,34 @@ h3 {
   padding-top: 10%;
 }
 
-#background_layer2 {
-  background-color: rgba(255, 255, 255, 0.2);
+#main_page_top {
   position: absolute;
   width: 100%;
   height: 12%;
   z-index: 5;
 }
 
-#topbar {
+.inlineBlock {
+  display: inline-block;
+}
+
+#menuWrapper {
+  position: fixed;
+  top: 0;
+  width: 75%;
+  height: 10%;
+  background-color: blue;
+}
+
+#userArea {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding-right: 10px;
+  width: 25%;
+  height: 10%;
+  text-align: right;
+  /* for testing */
   color: white;
 }
 
@@ -114,7 +139,8 @@ h3 {
   left: 0px;
   bottom: 0px;
   position: absolute;
-  z-index: 4;
+  opacity: 0.7;
+  z-index: 50;
 }
 
 canvas {
@@ -174,17 +200,9 @@ canvas {
   font-size: 1.6em;
 }
 
-#topArea {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 12%;
-  /* for testing */
-}
-
 #middleArea {
   white-space: nowrap;
-  margin-top: 120px;
+  margin-top: 100px;
   height: 480px;
 }
 
@@ -211,6 +229,7 @@ canvas {
 #canvasWrapper {
   width: 1400px;
   margin-left: 120px;
+  border: 1px solid #000;
 }
 
 .previousDrawing {
@@ -241,6 +260,11 @@ canvas {
   /* for testing */
 }
 
+#toolboxWrapper {
+  width: 100%;
+  margin-left: 2%;
+}
+
 .tool-bottom {
   vertical-align: center;
 }
@@ -260,14 +284,24 @@ canvas {
   width: 30%;
 }
 
+#colors {
+  float: left;
+  width: 98.55px;
+  height: 171.45px;
+  background-image: url(/images/colorbox_00.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-left: 6px;
+}
+
 #previewFrame {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   float: right;
   background-image: url(/images/box.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  margin-left: 60px;
+  margin-top: 10px;
 }
 
 .brushPreviews {
@@ -284,7 +318,7 @@ canvas {
 }
 
 .drawingTools {
-  width: 8%;
+  width: 9%;
   vertical-align: text-top;
   margin-right: 7px;
   opacity: 0.4;
@@ -317,7 +351,19 @@ canvas {
 }
 
 #eraser {
-  width: 15%;
+  width: 16%;
+}
+
+#organicBrush {
+  width: 7%;
+}
+
+#cloudBrush {
+  width: 10%;
+}
+
+#multiLineBrush {
+  width: 8%;
 }
 
 ul {

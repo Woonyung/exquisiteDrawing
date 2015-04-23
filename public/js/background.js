@@ -1,13 +1,14 @@
-/*
-/* paper js page for the first log in shoot
-/* Mar.7, 2015
-/*
+/* Made with love by Woonyung
+/* woonyungchoi@gmail.com
+/* 
+/* Apr.20, 2015
 /* randomly placed stars
 */
 
 
 
-var themeList= ['memory', 'happiness', 'weather'];
+var themeList= ['memory', 'weather','happiness'];
+var topMargin = 70;
 
 $(document).ready(function(){
 	// console.log(view.bounds.height);
@@ -64,9 +65,9 @@ function getData(element){
 
 			// Create a symbol, which we will use to place instances of later:
 			var star_open = new Path.Circle({
-			    center: [0, 0],
+			    center: [0, topMargin],
 			    radius: 8,
-			    fillColor: 'red'
+			    fillColor: 'white'
 			});
 
 			// MAKE GROUP - object? 
@@ -124,7 +125,9 @@ function getData(element){
 									"currently " + count +  
 									" people were participated <br>" +
 									question + "<br>" + 
-									status);
+									status + "<br>" +
+									"<a href='/theme/" + name + 
+									"'>GO TO PAGE</a>");
 				$("#closePopup").click(function(){
 					$("#popup").fadeOut("slow");
 				});
@@ -139,9 +142,9 @@ function getData(element){
 
 			// Create a symbol, which we will use to place instances of later:
 			var star_closed = new Path.Circle({
-			    center: [0, 0],
+			    center: [0, topMargin],
 			    radius: 5,
-			    fillColor: 'yellow',
+			    fillColor: 'white',
 			    opacity: 0.5 // give them opacity
 			});
 
@@ -185,7 +188,9 @@ function getData(element){
 									"currently " + count +  
 									" people were participated <br>" +
 									question + "<br>" + 
-									status);
+									status + "<br>" +
+									"<a href='/theme/" + name + 
+									"'>GO TO PAGE</a>");
 				$("#closePopup").click(function(){
 					$("#popup").fadeOut("slow");
 				});
@@ -204,15 +209,15 @@ function drawCanvasIndex(){
 	////////////////////////////////////////////////////
 
 	var width = view.bounds.width;
-	var height = view.bounds.height;
+	var height = view.bounds.height / 1.5;
 
 	// get id from canvas and set up
 	var canvas = document.getElementById('background1');
 
-	frame = new Path.Rectangle({
-	    point: [0,0],
-	    size: [width, height ],
-	    fillColor: 'black'
-	});
+	// frame = new Path.Rectangle({
+	//     point: [0, 0],
+	//     size: [width, height ],
+	//     fillColor: 'blue'
+	// });
 }
 
