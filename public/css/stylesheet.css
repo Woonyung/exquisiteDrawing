@@ -443,6 +443,8 @@ li {
   #bottomArea {
     height: 25%;
     /* for testing */
+    background-color: black;
+    opacity: 0.5;
   }
 
   .brushPreviews {
@@ -452,6 +454,10 @@ li {
     margin-top: 43px;
     z-index: 100;
     display: none;
+  }
+
+  #multiLineBrush {
+    width: 7%;
   }
 
   .galleryImages {
