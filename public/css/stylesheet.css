@@ -441,9 +441,9 @@ li {
   }
 
   #bottomArea {
-    height: 25%;
+    height: 27%;
     /* for testing */
-    background-color: black;
+    background-color: magenta;
     opacity: 0.5;
   }
 
