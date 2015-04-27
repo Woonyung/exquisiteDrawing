@@ -26,7 +26,7 @@ a:active {
 
 /*****************************************/
 body {
-  background-color: black;
+  background-color: #fffef3;
   font-family: avenir-book;
   color: white;
 }
@@ -288,10 +288,31 @@ canvas {
   float: left;
   width: 98.55px;
   height: 171.45px;
-  background-image: url(/images/colorbox_00.png);
+  background-image: url(/images/colorbox.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   margin-left: 6px;
+}
+
+#colorwrapper {
+  margin-left: 16px;
+  margin-top: 13px;
+}
+
+.colorPaints {
+  width: 42%;
+  float: left;
+}
+
+#colorFrame {
+  width: 105px;
+  float: right;
+}
+
+.colorPreviews {
+  position: absolute;
+  width: 105px;
+  float: right;
 }
 
 #previewFrame {
@@ -355,11 +376,15 @@ canvas {
 }
 
 #organicBrush {
-  width: 7%;
+  width: 8%;
 }
 
 #cloudBrush {
-  width: 10%;
+  width: 11%;
+}
+
+#verticalBrush {
+  width: 7%;
 }
 
 #multiLineBrush {
@@ -421,10 +446,10 @@ li {
   }
 
   .brushPreviews {
-    width: 28%;
+    width: 23%;
     position: absolute;
-    margin-left: 30px;
-    margin-top: 47px;
+    margin-left: 27px;
+    margin-top: 43px;
     z-index: 100;
     display: none;
   }

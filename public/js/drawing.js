@@ -234,7 +234,7 @@ var values11 = {
 
 waveBrush.onMouseDown = function(event){
     path = new Path({
-        strokeColor: '#000000',
+        strokeColor: currentColor,
         strokeWidth: currentWidth
     });    
 }
@@ -505,6 +505,7 @@ function activateTools(elements, tool, preview){
     });
 }
 
+
 // Whenever buttons are pressed
 // DRAG - BRUSHES
 activateTools("#eraser", eraser);
@@ -532,3 +533,22 @@ activateTools("#randomStars", randomStars, "#randomStars_prev");
 // something
 activateTools("#cloudTube", cloudTube, "#cloudTube_prev");
 activateTools("#cubeTube", cubeTube, "#cubeTube_prev");
+
+
+
+///////////////////////////////////////
+// activate colors
+function activateColors(elements,colors){
+    $(elements).click(function(){
+        currentColor = colors;
+    });
+}
+
+activateColors("#color_red", "#F2CCB9");
+activateColors("#color_orange", "#FBE69D");
+activateColors("#color_yellow", "#FFF7B7");
+activateColors("#color_green", "#EDF7AF");
+activateColors("#color_blue", "#D3F9E8");
+activateColors("#color_purple", "#F0D5E1");
+activateColors("#color_pink", "#F8E5D5");
+activateColors("#color_brown", "#CDC1A7");
