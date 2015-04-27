@@ -418,7 +418,7 @@ li {
   }
 
   #middleArea {
-    margin-top: 80px;
+    margin-top: 70px;
   }
 
   #canvasWrapper {
@@ -443,7 +443,7 @@ li {
   #bottomArea {
     height: 27%;
     /* for testing */
-    background-color: magenta;
+    background-color: yellow;
     opacity: 0.5;
   }
 
