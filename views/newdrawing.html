@@ -21,6 +21,7 @@
 		<a href="#" id="undo">Undo</a>
 		<a href="/theme/{{theme}}" id="clear">Clear</a>
 		<a href="#" id="save" data-theme="{{theme}}"><b>SAVE</b></a>
+		<a href={{shareUrl}}>Share!</a>
 	</div>
 	<div id="userArea">
 		<!-- display user name -->
@@ -94,8 +95,9 @@
 						<img id="cubeTube_prev" class="brushPreviews" src="/images/tubePrev_02.png">
 					</div>
 					<div id="colorFrame">
-						<img class="colorPreviews" src="/images/colorPrev_00.png">
-						<img class="colorPreviews" src="/images/colorPrev_01.png">
+						<img id="colorPreview_none" class="colorPreviews" src="/images/colorPrev_00.png">
+						<img id="colorPreview_red" class="colorPreviews hidden" src="/images/colorPrev_01.png">
+						<img id="colorPreview_orange" class="colorPreviews hidden" src="/images/colorPrev_02.png">
 					</div>
 				
 			</div>

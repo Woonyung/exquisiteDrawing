@@ -443,8 +443,6 @@ li {
   #bottomArea {
     height: 27%;
     /* for testing */
-    background-color: yellow;
-    opacity: 0.5;
   }
 
   .brushPreviews {

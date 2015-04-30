@@ -15,7 +15,18 @@ var height = 540;
 var path;
 var frame;
 
-var currentColor = 'black'; // default is black
+
+// colors 
+var red = '#F2CCB9',
+    orange = '#FBE69D',
+    yellow = '#FFF7B7',
+    green = '#EDF7AF',
+    blue = '#D3F9E8',
+    purple = '#F0D5E1',
+    pink = '#F8E5D5',
+    brown = '#CDC1A7';
+
+var currentColor = brown; // default is black
 var currentWidth = 4; // default is 4
 
 // load the blank paper
@@ -538,17 +549,23 @@ activateTools("#cubeTube", cubeTube, "#cubeTube_prev");
 
 ///////////////////////////////////////
 // activate colors
-function activateColors(elements,colors){
+function activateColors(elements,colors, previews){
     $(elements).click(function(){
+        console.log(currentColor);
         currentColor = colors;
+
+        $(".colorPreviews").addClass('hidden');
+        $(previews).toggleClass('hidden');
+
     });
 }
 
-activateColors("#color_red", "#F2CCB9");
-activateColors("#color_orange", "#FBE69D");
-activateColors("#color_yellow", "#FFF7B7");
-activateColors("#color_green", "#EDF7AF");
-activateColors("#color_blue", "#D3F9E8");
-activateColors("#color_purple", "#F0D5E1");
-activateColors("#color_pink", "#F8E5D5");
-activateColors("#color_brown", "#CDC1A7");
+
+activateColors("#color_red", red, "#colorPreview_red");
+activateColors("#color_orange", orange, "#colorPreview_orange");
+activateColors("#color_yellow", yellow, "#colorPreview_yellow");
+activateColors("#color_green", green, "#colorPreview_green");
+activateColors("#color_blue", blue, "#colorPreview_blue");
+activateColors("#color_purple", purple, "#colorPreview_purple");
+activateColors("#color_pink", pink, "#colorPreview_pink");
+activateColors("#color_brown", brown, "#colorPreview_brown");

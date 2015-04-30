@@ -6,6 +6,7 @@ var passport = require('passport');
 var util = require('util');
 var mongoStore = require('connect-mongo')(express);
 var FacebookStrategy = require('passport-facebook').Strategy;
+var TwitterStrategy = require('passport-twitter').Strategy;
 
 var app = express();
 
@@ -59,6 +60,8 @@ var Info = mongoose.model('Info', {
 var User = mongoose.model('User',{
 	name: String,
 	facebookId: String,
+	twitterId: String,
+	provider: {type:String, required:true, enum:'facebook twitter'.split(' ')},
 	drawings: [{type:Schema.ObjectId, ref:'Info'}]
 	// brushes: Number
 });
@@ -104,7 +107,8 @@ passport.use(new FacebookStrategy({
       		// we have a new user to save! (they aren't in database yet)
       		var user = new User({
 				name: name,
-				facebookId: facebookId     			
+				facebookId: facebookId,
+				provider: 'facebook'    			
       		})
       		user.save(function(err,user_data){
       			if(err) console.log(err);
@@ -121,6 +125,38 @@ passport.use(new FacebookStrategy({
       })
     });
   }
+));
+
+passport.use(new TwitterStrategy({
+		consumerKey: process.env.TWITTER_CONSUMER_KEY,
+		consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
+		callbackURL: process.env.TWITTER_CALLBACK_URL
+	},
+	function(token,tokenSecret,profile,done){
+		// 2 steps: 1. see if they are existing in database already; 2. if they are NOT need to save them, else continue
+		User.findOne({'twitterId':profile.id},function(err,data){
+	      	if(err) console.log(err);
+	      	if( data == null || data.length == 0 ){
+	      		// we have a new user to save! (they aren't in database yet)
+	      		var user = new User({
+					name: profile.username,
+					twitterId: profile.id,
+					provider: 'twitter'    			
+	      		})
+	      		user.save(function(err,user_data){
+	      			if(err) console.log(err);
+	      			console.log('created a new user! ' +  user_data)
+	      			return done(null, user_data);
+	      		})
+	      	}
+	      	else{
+	      		// they already signed up! continue...
+	      		console.log(data);
+	      		console.log('they are an existing user! ' + data.name)
+	      		return done(null, data);
+	      	}
+		})
+	}
 ));
 
 
@@ -239,7 +275,8 @@ app.get('/theme/:theme', function(req,res){
 					theme: requestedTheme,
 					question: themes[requestedTheme]['question'], //
 					photo: info[info.length-1],
-					user: req.user
+					user: req.user,
+					shareUrl: getShareUrl(requestedTheme)
 				}
 				// console.log(data);
 				res.render('newdrawing.html', data)
@@ -248,7 +285,8 @@ app.get('/theme/:theme', function(req,res){
 				var data = {
 					question: themes[requestedTheme]['question'],
 					photos: info,
-					user: req.user	
+					user: req.user,
+					shareUrl: getShareUrl(requestedTheme)
 				}
 				res.render('gallery.html', data)
 			}
@@ -356,6 +394,8 @@ app.get('/auth/facebook/callback',
     res.redirect('/');
   });
 
+app.get('/auth/twitter',passport.authenticate('twitter'));
+app.get('/auth/twitter/callback',passport.authenticate('twitter', {successRedirect: '/', failureRedirect: '/login'}));
 
 app.get('/logout', function(req, res){
   req.logout();
@@ -384,6 +424,9 @@ function contains(arr, str) {
     return false;
 }
 
+function getShareUrl(theme){
+	return 'https://www.facebook.com/sharer/sharer.php?u='+process.env.SITEURL+'/theme/'+theme;
+}
 
 // 404 PAGE -- keep this at the last
 app.get('*', function(req, res){
