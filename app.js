@@ -100,9 +100,9 @@ passport.use(new FacebookStrategy({
       // get user details in profile field
       var facebookId = profile.id;
       var name = profile.displayName;
-      User.findOne({facebookId:facebookId},function(err,data){
+      User.findOne({ facebookId:facebookId }, function(err,data){
       	if(err) console.log(err);
-      	console.log(data);
+      	console.log( data );
       	if( data == null || data.length == 0 ){
       		// we have a new user to save! (they aren't in database yet)
       		var user = new User({
@@ -110,7 +110,7 @@ passport.use(new FacebookStrategy({
 				facebookId: facebookId,
 				provider: 'facebook'    			
       		})
-      		user.save(function(err,user_data){
+      		user.save(function( err, user_data ){
       			if(err) console.log(err);
       			console.log('created a new user! ' +  user_data)
       			return done(null, user_data);
@@ -134,7 +134,7 @@ passport.use(new TwitterStrategy({
 	},
 	function(token,tokenSecret,profile,done){
 		// 2 steps: 1. see if they are existing in database already; 2. if they are NOT need to save them, else continue
-		User.findOne({'twitterId':profile.id},function(err,data){
+		User.findOne({ 'twitterId': profile.id },function(err,data){
 	      	if(err) console.log(err);
 	      	if( data == null || data.length == 0 ){
 	      		// we have a new user to save! (they aren't in database yet)

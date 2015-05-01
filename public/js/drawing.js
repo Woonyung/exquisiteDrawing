@@ -17,14 +17,14 @@ var frame;
 
 
 // colors 
-var red = '#F2CCB9',
-    orange = '#FBE69D',
-    yellow = '#FFF7B7',
-    green = '#EDF7AF',
-    blue = '#D3F9E8',
-    purple = '#F0D5E1',
-    pink = '#F8E5D5',
-    brown = '#CDC1A7';
+var red = '#FFB3A1',
+    orange = '#FFDA78',
+    yellow = '#FFF390',
+    green = '#E2F388',
+    blue = '#BCF8EC',
+    purple = '#E7C0E2',
+    pink = '#FFD9D0',
+    brown = '#C3B39D';
 
 var currentColor = brown; // default is black
 var currentWidth = 4; // default is 4
@@ -54,6 +54,13 @@ $(document).ready(function(){
         // add preview of the brushes
         $(".brushPreviews").fadeTo( "fast", 0 );
         $("#organicBrush_prev").fadeTo( "fast", 100 );
+
+         $('html, body').animate({
+            scrollLeft: $(".right").offset().left
+        }, duration);
+
+        $(this).fadeOut('slow');
+        $("#toTheLeft").fadeIn('slow');
     });
 
     // SCROLLS 
@@ -368,7 +375,7 @@ smallCharcoal.onMouseDown = function(event){
     var raster = new Raster(rand);
     raster.scale(0.2);
     raster.position.x = event.event.layerX;
-    raster.position.y = event.event.layerY;   
+    raster.position.y = event.event.layerY; 
 }
 
 
@@ -556,9 +563,13 @@ function activateColors(elements,colors, previews){
 
         $(".colorPreviews").addClass('hidden');
         $(previews).toggleClass('hidden');
-
     });
 }
+
+$(".stamps").click(function(){
+    $(".colorPreviews").addClass('hidden');
+    $("#colorPreview_none").removeClass('hidden');
+});
 
 
 activateColors("#color_red", red, "#colorPreview_red");

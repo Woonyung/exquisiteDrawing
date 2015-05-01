@@ -17,11 +17,11 @@
 <div id="topArea">
 
 	<div id="menuWrapper">
-		<a href="/">BACK!</a>
-		<a href="#" id="undo">Undo</a>
-		<a href="/theme/{{theme}}" id="clear">Clear</a>
-		<a href="#" id="save" data-theme="{{theme}}"><b>SAVE</b></a>
-		<a href={{shareUrl}}>Share!</a>
+		<a href="/"><h4 class="menuType">BACK</h4></a>
+		<a href="#" id="undo"><h4 class="menuType">Undo</h4></a>
+		<a href="/theme/{{theme}}" id="clear"><h4 class="menuType">Clear</h4></a>
+		<a href="#" id="save" data-theme="{{theme}}"><h4 class="menuType">SAVE</h4></a>
+		<a href={{shareUrl}}><h4 class="menuType">Share</h4></a>
 	</div>
 	<div id="userArea">
 		<!-- display user name -->
@@ -94,10 +94,17 @@
 						<img id="cloudTube_prev" class="brushPreviews" src="/images/tubePrev_01.png">
 						<img id="cubeTube_prev" class="brushPreviews" src="/images/tubePrev_02.png">
 					</div>
+					<!-- color previews --> 
 					<div id="colorFrame">
 						<img id="colorPreview_none" class="colorPreviews" src="/images/colorPrev_00.png">
 						<img id="colorPreview_red" class="colorPreviews hidden" src="/images/colorPrev_01.png">
 						<img id="colorPreview_orange" class="colorPreviews hidden" src="/images/colorPrev_02.png">
+						<img id="colorPreview_yellow" class="colorPreviews hidden" src="/images/colorPrev_03.png">
+						<img id="colorPreview_green" class="colorPreviews hidden" src="/images/colorPrev_04.png">
+						<img id="colorPreview_blue" class="colorPreviews hidden" src="/images/colorPrev_05.png">
+						<img id="colorPreview_purple" class="colorPreviews hidden" src="/images/colorPrev_06.png">
+						<img id="colorPreview_pink" class="colorPreviews hidden" src="/images/colorPrev_07.png">
+						<img id="colorPreview_brown" class="colorPreviews hidden" src="/images/colorPrev_08.png">
 					</div>
 				
 			</div>
@@ -129,35 +136,35 @@
 				<div class="tool-bottom">
 					<div class="tool-left">
 
-						<img id="threeTriangles" class="drawingTools stamps-left" src="/images/tool_08.png">
+						<img id="threeTriangles" class="drawingTools stamps-left stamps" src="/images/tool_08.png">
 						<img src="/images/stamp_01.png" id="triangles" class="hidden">
 
 
-						<img id="smallCharcoal" class="drawingTools stamps-left" src="/images/tool_10.png">
+						<img id="smallCharcoal" class="drawingTools stamps-left stamps" src="/images/tool_10.png">
 						<img src="/images/stamp_02_01.png" id="randomLine01" class="hidden">	
 						<img src="/images/stamp_02_02.png" id="randomLine02" class="hidden">	
 						<img src="/images/stamp_02_03.png" id="randomLine03" class="hidden">	
 
 
-						<img id="largeCharcoal" class="drawingTools stamps-left" src="/images/tool_09.png">
+						<img id="largeCharcoal" class="drawingTools stamps-left stamps" src="/images/tool_09.png">
 						<img src="/images/stamp_03.png" id="gradation" class="hidden">
 
 					</div>
 					<div class="tool-middle">
-						<img id="randomTriangle" class="drawingTools stamps-middle" src="/images/tool_11.png">
+						<img id="randomTriangle" class="drawingTools stamps-middle stamps" src="/images/tool_11.png">
 						<img src="/images/stamp_04_01.png" id="randomTri01" class="hidden">	
 						<img src="/images/stamp_04_02.png" id="randomTri02" class="hidden">	
 						<img src="/images/stamp_04_03.png" id="randomTri03" class="hidden">	
 						<img src="/images/stamp_04_04.png" id="randomTri04" class="hidden">	
 
 
-						<img id="randomRectangle" class="drawingTools stamps-middle" src="/images/tool_12.png">
+						<img id="randomRectangle" class="drawingTools stamps-middle stamps" src="/images/tool_12.png">
 						<img src="/images/stamp_05_01.png" id="randomRect01" class="hidden">	
 						<img src="/images/stamp_05_02.png" id="randomRect02" class="hidden">	
 						<img src="/images/stamp_05_03.png" id="randomRect03" class="hidden">	
 						<img src="/images/stamp_05_04.png" id="randomRect04" class="hidden">	
 
-						<img id="randomCircle" class="drawingTools stamps-middle" src="/images/tool_13.png">
+						<img id="randomCircle" class="drawingTools stamps-middle stamps" src="/images/tool_13.png">
 						<img src="/images/stamp_06_01.png" id="randomCircles01" class="hidden">
 						<img src="/images/stamp_06_02.png" id="randomCircles02" class="hidden">
 						<img src="/images/stamp_06_03.png" id="randomCircles03" class="hidden">
@@ -166,19 +173,19 @@
 		
 					</div>
 					<div class="tool-right">
-						<img id="randomSpiral" class="drawingTools stamps-right" src="/images/tool_14.png">
+						<img id="randomSpiral" class="drawingTools stamps-right stamps" src="/images/tool_14.png">
 						<img src="/images/stamp_07_01.png" id="randomSpiral01" class="hidden">
 						<img src="/images/stamp_07_02.png" id="randomSpiral02" class="hidden">
 						<img src="/images/stamp_07_03.png" id="randomSpiral03" class="hidden">
 
-						<img id="randomStars" class="drawingTools stamps-right" src="/images/tool_15.png">
+						<img id="randomStars" class="drawingTools stamps-right stamps" src="/images/tool_15.png">
 						<img src="/images/stamp_08_01.png" id="randomStar01" class="hidden">
 						<img src="/images/stamp_08_02.png" id="randomStar02" class="hidden">
 						<img src="/images/stamp_08_03.png" id="randomStar03" class="hidden">
 						<img src="/images/stamp_08_04.png" id="randomStar04" class="hidden">
 						<img src="/images/stamp_08_05.png" id="randomStar05" class="hidden">			
 
-						<!-- <img id="tool16" class="drawingTools stamps-right" src="/images/tool_16.png"> -->
+						<!-- <img id="tool16" class="drawingTools stamps-right stamps" src="/images/tool_16.png"> -->
 					</div>
 				</div>			
 			</div>
