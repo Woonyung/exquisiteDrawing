@@ -7,7 +7,7 @@
 
 
 
-var themeList= ['memory', 'weather','happiness'];
+var themeList= ['itp_thesis', 'happiness','worst_haircut','memory'];
 var topMargin = 70;
 
 $(document).ready(function(){
