@@ -370,6 +370,11 @@ canvas {
   display: none;
 }
 
+#randomSpiral_prev {
+  width: 20%;
+  top: 0;
+}
+
 .banners {
   width: 25%;
 }
@@ -388,17 +393,17 @@ canvas {
 }
 
 .stamps-left {
-  width: 80%;
+  width: 90%;
   margin-top: 7px;
 }
 
 .stamps-middle {
-  width: 55%;
+  width: 60%;
   margin-top: 7px;
 }
 
 .stamps-right {
-  width: 75%;
+  width: 90%;
   margin-top: 7px;
 }
 

@@ -184,7 +184,7 @@ function getData(element){
 			
 				$("#popup").fadeIn("slow");
 				$("#popup").html("");
-				$("#popup").append( "<br><button id='closePopup'>X</button><br>" +
+				$("#popup").append( "<br><a id='closePopup'>X</a><br>" +
 									"currently " + count +  
 									" people were participated <br>" +
 									question + "<br>" + 
