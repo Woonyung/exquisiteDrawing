@@ -165,7 +165,7 @@ var themes = {
 	itp_thesis: {
 		name: 'itp_thesis',
 		question: 'How do you feel about thesis?',
-		isOpen: true
+		isOpen: false
 	},
 	happiness: {
 		name: 'happiness',

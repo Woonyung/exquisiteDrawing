@@ -25,7 +25,7 @@ var Colors = {
     'blue': '#BCF8EC',
     'purple': '#E7C0E2',
     'pink': '#FFD9D0',
-    'brown': '#C3B39D'
+    'brown': '#94847E'
 }
 var currentColor = Colors['brown']; // default is brown
 var currentWidth = 4; // default is 4
@@ -75,6 +75,7 @@ $(document).ready(function(){
 
         $(this).fadeOut('slow');
     });
+
 
     // SCROLLS 
     var duration = 700;

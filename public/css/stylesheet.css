@@ -420,6 +420,10 @@ canvas {
   width: 7%;
 }
 
+#question {
+  color: black;
+}
+
 ul {
   margin-left: -34px;
 }
