@@ -17,16 +17,17 @@ var frame;
 
 
 // colors 
-var red = '#FFB3A1',
-    orange = '#FFDA78',
-    yellow = '#FFF390',
-    green = '#E2F388',
-    blue = '#BCF8EC',
-    purple = '#E7C0E2',
-    pink = '#FFD9D0',
-    brown = '#C3B39D';
-
-var currentColor = brown; // default is black
+var Colors = {
+    'red': '#FFB3A1',
+    'orange': '#FFDA78',
+    'yellow': '#FFF390',
+    'green': '#E2F388',
+    'blue': '#BCF8EC',
+    'purple': '#E7C0E2',
+    'pink': '#FFD9D0',
+    'brown': '#C3B39D'
+}
+var currentColor = Colors['brown']; // default is brown
 var currentWidth = 4; // default is 4
 
 // load the blank paper
@@ -35,19 +36,32 @@ $(document).ready(function(){
     // draw the blank canvas
     drawCanvas();
 
-    //// TOOLS
-    // TEMPORARY CSS - for toggle on and off
-    $("#organicBrush").addClass("on");
     
+    //// TOOLS
+    // begin with default brush + default color
+    $("#organicBrush").addClass("on");
+    $("#colorPreview_none").addClass('hidden');
+    $("#colorPreview_brown").removeClass('hidden');
+
     $(".drawingTools").click(function(){
+        $("#colorPreview_none").addClass('hidden');
+        // remember selected color and show it to preview
+        for (var color in Colors) {
+            if( currentColor == Colors[color]) $("#colorPreview_" + color).removeClass('hidden');
+        }
         $(".drawingTools").removeClass("on");
         $(this).toggleClass( "on" );
+    });
+
+    $(".stamps").click(function(){
+        $(".colorPreviews").addClass('hidden');
+        $("#colorPreview_none").removeClass('hidden');
     });
 
     //// MENUS
     $("#close").click(function(){
         $("#covered").fadeOut('slow'); 
-        $("#toTheRight").fadeIn('slow');
+        $("#toTheLeft").fadeIn('slow');
 
         /// start with the organic brush
         organicBrush.activate();
@@ -60,7 +74,6 @@ $(document).ready(function(){
         }, duration);
 
         $(this).fadeOut('slow');
-        $("#toTheLeft").fadeIn('slow');
     });
 
     // SCROLLS 
@@ -95,6 +108,10 @@ $(document).ready(function(){
         // console.log(project.activeLayer);
         project.activeLayer.removeChildren(pathCount-1,pathCount);
     });   
+
+    $("#clear").click(function(){
+        console.log("clear");
+    });
 
     // SAVE FUNCTION
     $('#save').click(function(){
@@ -136,8 +153,7 @@ $(document).ready(function(){
             }
         }); // end of ajax
     }); // end of save function
-
-
+    
 });
 
 
@@ -512,7 +528,9 @@ cubeTube.onMouseDrag = function(event){
 }
 
 
-///////////////////////////////////////
+//////////////////////////////////////
+// ACTIVATE TOOLS
+
 // actiavate tools
 function activateTools(elements, tool, preview){
     $(elements).click(function(){
@@ -522,7 +540,6 @@ function activateTools(elements, tool, preview){
         $(preview).fadeTo( "fast", 100 );
     });
 }
-
 
 // Whenever buttons are pressed
 // DRAG - BRUSHES
@@ -547,18 +564,19 @@ activateTools("#randomCircle", randomCircle, "#randomCircle_prev");
 activateTools("#randomSpiral", randomSpiral, "#randomSpiral_prev");
 activateTools("#randomStars", randomStars, "#randomStars_prev");
 
+
 // DRAG - TUBES
 // something
 activateTools("#cloudTube", cloudTube, "#cloudTube_prev");
 activateTools("#cubeTube", cubeTube, "#cubeTube_prev");
 
+////////////////////////////////////////////////////
+// ACTIVATE COLORS
 
-
-///////////////////////////////////////
 // activate colors
 function activateColors(elements,colors, previews){
     $(elements).click(function(){
-        console.log(currentColor);
+        // console.log(currentColor);
         currentColor = colors;
 
         $(".colorPreviews").addClass('hidden');
@@ -566,17 +584,11 @@ function activateColors(elements,colors, previews){
     });
 }
 
-$(".stamps").click(function(){
-    $(".colorPreviews").addClass('hidden');
-    $("#colorPreview_none").removeClass('hidden');
-});
-
-
-activateColors("#color_red", red, "#colorPreview_red");
-activateColors("#color_orange", orange, "#colorPreview_orange");
-activateColors("#color_yellow", yellow, "#colorPreview_yellow");
-activateColors("#color_green", green, "#colorPreview_green");
-activateColors("#color_blue", blue, "#colorPreview_blue");
-activateColors("#color_purple", purple, "#colorPreview_purple");
-activateColors("#color_pink", pink, "#colorPreview_pink");
-activateColors("#color_brown", brown, "#colorPreview_brown");
+activateColors("#color_red", Colors['red'], "#colorPreview_red");
+activateColors("#color_orange", Colors['orange'], "#colorPreview_orange");
+activateColors("#color_yellow", Colors['yellow'], "#colorPreview_yellow");
+activateColors("#color_green", Colors['green'], "#colorPreview_green");
+activateColors("#color_blue", Colors['blue'], "#colorPreview_blue");
+activateColors("#color_purple", Colors['purple'], "#colorPreview_purple");
+activateColors("#color_pink", Colors['pink'], "#colorPreview_pink");
+activateColors("#color_brown", Colors['brown'], "#colorPreview_brown");

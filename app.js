@@ -162,9 +162,9 @@ passport.use(new TwitterStrategy({
 
 // THEMES //
 var themes = {
-	weather: {
-		name: 'weather',
-		question: 'test test test',
+	itp_thesis: {
+		name: 'itp_thesis',
+		question: 'How do you feel about thesis?',
 		isOpen: true
 	},
 	happiness: {
@@ -172,16 +172,20 @@ var themes = {
 		question: 'What are the things that makes you happy?',
 		isOpen: true
 	},
+	worst_haircut:{
+		name: 'worst_haircut',
+		question: 'worst haircut question',
+		isOpen: true
+	},
 	memory: {
 		name: 'memory',
 		question: 'If you could do something dangerous just once with no risk what would you do?',
-		isOpen: false
+		isOpen: true
 	}	
 }
 
 // var currentTheme = themes['happiness'];
 // currentTheme.name, currentTheme.question, currentTheme.isOpen
-
 
 
 ////////////////////// ROUTES //////////////////////

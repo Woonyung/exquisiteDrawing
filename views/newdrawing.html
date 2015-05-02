@@ -5,8 +5,11 @@
 <div id="covered">
 	<div id="questionArea">
 		<!-- display question -->
-		<p id="close">close</p>
-		<span id="question">Q: {{question}}</span>
+		<p id="close">X</p>
+		<br>
+		<br>
+		<span id="question">Q: {{question}}</span><br>
+		please follow the steps :)
 	</div>
 </div>
 
@@ -16,14 +19,23 @@
 
 <div id="topArea">
 
-	<div id="menuWrapper">
-		<a href="/"><h4 class="menuType">BACK</h4></a>
-		<a href="#" id="undo"><h4 class="menuType">Undo</h4></a>
-		<a href="/theme/{{theme}}" id="clear"><h4 class="menuType">Clear</h4></a>
-		<a href="#" id="save" data-theme="{{theme}}"><h4 class="menuType">SAVE</h4></a>
-		<a href={{shareUrl}}><h4 class="menuType">Share</h4></a>
+	<div id="menuWrapper" class="col-xs-8">
+		<div class="col-xs-1"><h4><a href="/">back</a></h4></div>
+		<div id="test1" class="col-xs-4">
+			<a href="#" id="undo"><img class="menus" id="image_undo" src="/images/menu_01.png"></a>
+			<!-- <a href="/theme/{{theme}}" id="clear"><img class="menus" id="image_clear" src="/images/menu_02.png"></a> -->
+			<a href="#" id="clear"><img class="menus" id="image_clear" src="/images/menu_02.png"></a>
+			<a href="#" id="save" data-theme="{{theme}}"><img class="menus" id="image_save" src="/images/menu_03.png"></a>
+		</div>
+		<div id="test2" class="col-xs-1"></div>
+		<div id="test3" class="col-xs-1"></div>
+		<div id="test4" class="col-xs-1">
+			<a href={{shareUrl}}><img class="menus" id="image_share_f" src="/images/menu_04_facebook.png"></a>
+		</div>
 	</div>
-	<div id="userArea">
+
+
+	<div id="userArea" class="col-xs-4">
 		<!-- display user name -->
 		{{#user}}
 			<h4 class="inlineBlock"><a href="/dashboard">{{user.name}}</h4></a>
@@ -157,19 +169,19 @@
 						<img src="/images/stamp_04_03.png" id="randomTri03" class="hidden">	
 						<img src="/images/stamp_04_04.png" id="randomTri04" class="hidden">	
 
-
-						<img id="randomRectangle" class="drawingTools stamps-middle stamps" src="/images/tool_12.png">
-						<img src="/images/stamp_05_01.png" id="randomRect01" class="hidden">	
-						<img src="/images/stamp_05_02.png" id="randomRect02" class="hidden">	
-						<img src="/images/stamp_05_03.png" id="randomRect03" class="hidden">	
-						<img src="/images/stamp_05_04.png" id="randomRect04" class="hidden">	
-
-						<img id="randomCircle" class="drawingTools stamps-middle stamps" src="/images/tool_13.png">
+						<img id="randomCircle" class="drawingTools stamps-middle stamps" src="/images/tool_12.png">
 						<img src="/images/stamp_06_01.png" id="randomCircles01" class="hidden">
 						<img src="/images/stamp_06_02.png" id="randomCircles02" class="hidden">
 						<img src="/images/stamp_06_03.png" id="randomCircles03" class="hidden">
 						<img src="/images/stamp_06_04.png" id="randomCircles04" class="hidden">
 						<img src="/images/stamp_06_05.png" id="randomCircles05" class="hidden">
+
+						<img id="randomRectangle" class="drawingTools stamps-middle stamps" src="/images/tool_13.png">
+						<img src="/images/stamp_05_01.png" id="randomRect01" class="hidden">	
+						<img src="/images/stamp_05_02.png" id="randomRect02" class="hidden">	
+						<img src="/images/stamp_05_03.png" id="randomRect03" class="hidden">	
+						<img src="/images/stamp_05_04.png" id="randomRect04" class="hidden">	
+
 		
 					</div>
 					<div class="tool-right">
