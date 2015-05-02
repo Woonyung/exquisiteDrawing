@@ -115,24 +115,7 @@ h4 {
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: rgba(255, 0, 0, 0.5);
   height: 10%;
-}
-
-#test1 {
-  background-color: aqua;
-}
-
-#test2 {
-  background-color: yellow;
-}
-
-#test3 {
-  background-color: aqua;
-}
-
-#test4 {
-  background-color: yellow;
 }
 
 .menus {
@@ -154,9 +137,6 @@ h4 {
   padding-right: 10px;
   height: 10%;
   text-align: right;
-  /* for testing */
-  background-color: magenta;
-  opacity: 0.5;
 }
 
 .bg {
