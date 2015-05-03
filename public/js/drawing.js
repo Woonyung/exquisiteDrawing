@@ -30,6 +30,9 @@ var Colors = {
 var currentColor = Colors['brown']; // default is brown
 var currentWidth = 4; // default is 4
 
+// for scroll
+var duration = 700;
+
 // load the blank paper
 $(document).ready(function(){
 
@@ -61,7 +64,7 @@ $(document).ready(function(){
     //// MENUS
     $("#close").click(function(){
         $("#covered").fadeOut('slow'); 
-        $("#toTheLeft").fadeIn('slow');
+        // $("#toTheLeft").fadeIn('slow');
 
         /// start with the organic brush
         organicBrush.activate();
@@ -78,25 +81,24 @@ $(document).ready(function(){
 
 
     // SCROLLS 
-    var duration = 700;
-    $("#toTheLeft").click(function(){
-        $('html, body').animate({
-            scrollLeft: $("body").offset().left
-        }, duration);
+    // $("#toTheLeft").click(function(){
+    //     $('html, body').animate({
+    //         scrollLeft: $("body").offset().left
+    //     }, duration);
 
-        $(this).fadeOut('slow');
-        $("#toTheRight").fadeIn('slow');
-    });
+    //     $(this).fadeOut('slow');
+    //     $("#toTheRight").fadeIn('slow');
+    // });
 
-    $("#toTheRight").click(function(){                    
-        $('html, body').animate({
-            scrollLeft: $(".right").offset().left
-        }, duration);
+    // $("#toTheRight").click(function(){                    
+    //     $('html, body').animate({
+    //         scrollLeft: $(".right").offset().left
+    //     }, duration);
 
-        $(this).fadeOut('slow');
-        $("#toTheLeft").fadeIn('slow');
+    //     $(this).fadeOut('slow');
+    //     $("#toTheLeft").fadeIn('slow');
                                   
-    });
+    // });
 
     
     ///////////////////////////////////////////////

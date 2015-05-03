@@ -1,7 +1,10 @@
 <style>
-	body{
-		background-color: rgba(20,20,20,0.7);
-	}
+
+
+	/*#main_page_top{
+		background-color: magenta;
+		height: 2%;
+	}*/
 </style>
 
 <!-- index page -->
@@ -15,17 +18,23 @@
 	</div>
 </div>
 
-<!-- draw stars / illustrations -->
-<img class="bg" src="/images/index_bg02.png">
-{{#themes}}
-	<input type="hidden" id="{{name}}" data-name="{{name}}" data-question="{{question}}" data-if-is-open="{{isOpen}}" data-count= "{{count}}">
-{{/themes}}
 
+<div id="main_page_middle">
+	<!-- draw stars / illustrations -->
+	<!-- <img class="bg" src="/images/index_bg02.png"> -->
+	{{#themes}}
+		<input type="hidden" id="{{name}}" data-name="{{name}}" data-question="{{question}}" data-if-is-open="{{isOpen}}" data-count= "{{count}}">
+	{{/themes}}
 
-<canvas id="backgroundCanvas" resize="true"></canvas>
+	<div id="displayInfo">
+		
+	</div>
+</div>
+
+<!-- <canvas id="backgroundCanvas"></canvas> -->
 <div id="popup">
 	
 </div> <!-- pop up for detail info --> 
 
-<!-- <script src="/js/background.js"></script> -->
-<script type="text/paperscript" canvas="backgroundCanvas" src="/js/background.js"></script>
+<script src="/js/background.js"></script>
+<!-- <script type="text/paperscript" canvas="backgroundCanvas" src="/js/background.js"></script> -->

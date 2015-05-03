@@ -53,7 +53,7 @@ var Info = mongoose.model('Info', {
 	imageData: String,
 	theme: String, // dictates which theme the picture is
 	isOpen: Boolean,
-	user: {type:Schema.ObjectId, ref:'User'}
+	user: { type:Schema.ObjectId, ref:'User' }
 });
 
 
@@ -61,14 +61,13 @@ var User = mongoose.model('User',{
 	name: String,
 	facebookId: String,
 	twitterId: String,
-	provider: {type:String, required:true, enum:'facebook twitter'.split(' ')},
-	drawings: [{type:Schema.ObjectId, ref:'Info'}]
+	provider: { type:String, required:true, enum:'facebook twitter'.split(' ') },
+	drawings: [{ type:Schema.ObjectId, ref:'Info' }]
 	// brushes: Number
 });
 
 
 // LOG IN //
-
 var FACEBOOK_APP_ID = process.env.FACEBOOK_APP_ID;
 var FACEBOOK_APP_SECRET = process.env.FACEBOOK_APP_SECRET;
 
