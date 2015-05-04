@@ -164,23 +164,63 @@ var themes = {
 	itp_thesis: {
 		name: 'itp_thesis',
 		question: 'How do you feel about thesis?',
-		isOpen: false
+		isOpen: true
 	},
-	happiness: {
-		name: 'happiness',
-		question: 'What are the things that makes you happy?',
+	itp_firstday: {
+		name: 'itp_firstday',
+		question: 'your first day at work',
 		isOpen: true
 	},
 	worst_haircut:{
 		name: 'worst_haircut',
-		question: 'worst haircut question',
+		question: 'What was the worst hairstyle you ever had?',
 		isOpen: true
 	},
-	memory: {
-		name: 'memory',
-		question: 'If you could do something dangerous just once with no risk what would you do?',
+	spontaneous: {
+		name: 'spontaneous',
+		question: 'What was most spontaneous thing you’ve ever done?',
 		isOpen: true
-	}	
+	},
+	roadTrip: {
+		name: 'roadTrip',
+		question: 'Your  fantasy road trip?',
+		isOpen: true
+	},
+	postCard: {
+		name: 'postCard',
+		question: 'What makes a great postcard?',
+		isOpen: true
+	},
+	laugh: {
+		name: 'laugh',
+		question: 'What always makes you laugh?',
+		isOpen: true	
+	},
+	pararell_World:{
+		name: 'pararell_World',
+		question: 'In a parallel life, what job might you have?',
+		isOpen: true
+	},
+	smell:{
+		name: 'smell',
+		question: 'What smell reminds you of childhood?',
+		isOpen: true
+	},
+	paint:{
+		name: 'paint',
+		question: 'Paint your surroundings in colors that will uplift your mood',
+		isOpen: true
+	},
+	joy:{
+		name: 'joy',
+		question: 'What does joy look like?',
+		isOpen: true
+	},
+	weekends:{
+		name: 'weekends',
+		question: 'What’s your favorite weekend getaway?',
+		isOpen: true
+	}
 }
 
 // var currentTheme = themes['happiness'];
@@ -213,7 +253,7 @@ app.get('/', function(req,res){
 			dataToReturn.push(currentData);
 		}
 
-		console.log(dataToReturn);
+		// console.log(dataToReturn);
 		var data = {
 			themes: dataToReturn,
 			user: req.user	

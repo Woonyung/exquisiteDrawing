@@ -2,20 +2,58 @@
 /* woonyungchoi@gmail.com
 /* 
 /* Apr.20, 2015
-/* randomly placed stars
+/* changed display
 */
 
-
-
-// var themeList= ['itp_thesis', 'happiness'];
 var themeList= [  
    {  
       "theme":"itp_thesis",
-      "image":"http://p1.pichost.me/640/8/1311384.jpg"
+      "image":"/thumbs/image_01.png"
    },
    {  
-      "theme":"happiness",
-      "image":"http://www.canoefoundation.org.uk/cf/assets/Image/Yellow%20Duck.jpg"
+      "theme":"itp_firstday",
+      "image":"/thumbs/image_01.png"
+   },
+   {  
+      "theme":"worst_haircut",
+      "image":"/thumbs/image_01.png"
+   },
+   {  
+      "theme":"spontaneous",
+      "image":"/thumbs/image_01.png"
+   },
+   {  
+      "theme":"roadTrip",
+      "image":"/thumbs/image_01.png"
+   },
+   {  
+      "theme":"postCard",
+      "image":"/thumbs/image_01.png"
+   },
+   {  
+      "theme":"laugh",
+      "image":"/thumbs/image_01.png"
+   },
+   {  
+      "theme":"pararell_World",
+      "image":"/thumbs/image_01.png"
+   },
+   {  
+      "theme":"smell",
+      "image":"/thumbs/image_01.png"
+   }, 
+	//
+   {  
+      "theme":"paint",
+      "image":"/thumbs/image_01.png"
+   },
+   {  
+      "theme":"joy",
+      "image":"/thumbs/image_01.png"
+   },
+   {  
+      "theme":"weekends",
+      "image":"/thumbs/image_01.png"
    }
 ]
 
@@ -28,6 +66,9 @@ $(document).ready(function(){
 		getData(themeList[i]);
 	}
 
+	$(".thumbnails").hover(function(){
+		console.log("hover");
+	});
 });
 
 
@@ -52,15 +93,22 @@ function getData(element){
 	// show if it is opened or closed project
 	var status;
 	if ( isOpen === 'true' ){
-		status = "this is on-going project";
+		// later change with image
+		status = "on-going project"; 
 	} else {
-		status = "this is closed project";
+		status = "finished project";
 	}
 
-	$("#displayInfo").append("<a href='/theme/" + name + 
-							"'><div class='frames'><img class='thumbnails' src='" + 
-							thumbnails + "'><br>"+ 
-							"Q: " + question + 
-							"</div></a>");
+	// grid view
+	// $("#polaroids").append("<li><a href='/theme/" + name + 
+	// 						"'><div class='frames'><img class='thumbnails' src='" + 
+	// 						thumbnails + "'><br>"+ 
+	// 						"<span class='captions'>" + name + "</span>" +
+	// 						"</div></a></li>");
+
+	$("#polaroids").append("<li><a href='/theme/" + name + 
+							"'><img class='thumbnails' src='" + 
+							thumbnails + "'></a></li>");
+	
 }
 
