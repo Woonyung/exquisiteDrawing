@@ -36,7 +36,7 @@
 	<div id="userArea" class="col-xs-4">
 		<!-- display user name -->
 		{{#user}}
-			<h4 class="inlineBlock"><a href="/dashboard">{{user.name}}</h4></a>
+			<h4 class="inlineBlock"><a href="#">{{user.name}}</h4></a>
 		{{/user}}
 		<a href="/logout"><button id="logoutButton" class="inlineBlock smButtons">LOGOUT</button></a>
 	</div>
@@ -48,11 +48,11 @@
 
 <div id="main_page_middle">
 	<!-- <div id="middle_top">
-		instruction
+		<div id="captionArea">
+			maybe this can be fixed
+		</div>
 	</div> -->
 	
-	<!-- draw stars / illustrations -->
-	<!-- <img class="bg" src="/images/index_bg02.png"> -->
 	{{#themes}}
 		<input type="hidden" id="{{name}}" data-name="{{name}}" data-question="{{question}}" data-if-is-open="{{isOpen}}" data-count= "{{count}}">
 	{{/themes}}
@@ -66,9 +66,12 @@
 		<div id="polaroids"></div>
 	</ul>
 
+
 	<div id="middle_bottom">
 		<div id="captionArea">
-			maybe this can be fixed
+			<br><br>
+			<!-- draw stars / illustrations -->
+			<img class="bg" src="/images/index_bg03.png">
 		</div>
 	</div>
 

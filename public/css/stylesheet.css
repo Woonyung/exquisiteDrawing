@@ -142,6 +142,7 @@ h4 {
   padding-right: 10px;
   height: 10%;
   text-align: right;
+  z-index: 400;
 }
 
 canvas {
@@ -178,7 +179,7 @@ canvas {
   top: 40px;
   background-size: 3%;
   background-repeat: repeat-x;
-  width: 4650px;
+  width: 5080px;
   position: absolute;
   z-index: 2;
 }
@@ -207,10 +208,10 @@ canvas {
 
 #middle_bottom {
   width: 100%;
-  height: 40%;
+  height: 100%;
   bottom: 0;
   position: fixed;
-  background-color: magenta;
+  background-color: #B3FAD8;
 }
 
 #captionArea {
@@ -218,7 +219,6 @@ canvas {
   height: 100%;
   margin: 0 auto;
   text-align: center;
-  background-color: aqua;
 }
 
 #covered {
@@ -502,8 +502,12 @@ li {
     /* for testing */
   }
 
+  #middle_background {
+    width: 4080px;
+  }
+
   .thumbnails {
-    width: 40%;
+    width: 35%;
   }
 
   #middleArea {
