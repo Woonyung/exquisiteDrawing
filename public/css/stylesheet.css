@@ -364,7 +364,7 @@ canvas {
 .previousDrawing {
   width: 640px;
   height: 480px;
-  border: 1px solid #000;
+  border: 1px solid #615551;
   border-right: none;
 }
 
@@ -373,7 +373,7 @@ canvas {
   width: 640px;
   height: 480px;
   background-color: white;
-  border: 1px solid #000;
+  border: 1px solid #615551;
   border-left: none;
   float: right;
   clear: right;
