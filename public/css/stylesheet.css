@@ -361,7 +361,7 @@ canvas {
 .previousDrawing {
   width: 640px;
   height: 480px;
-  border: 2px solid #9f6e44;
+  border: 1px solid #7d634c;
   border-right: none;
 }
 
@@ -370,7 +370,7 @@ canvas {
   width: 640px;
   height: 480px;
   background-color: white;
-  border: 2px solid #9f6e44;
+  border: 1px solid #7d634c;
   border-left: none;
   float: right;
   clear: right;
@@ -539,7 +539,7 @@ li {
 .galleryImages {
   width: 640px;
   height: 480px;
-  border: 2px solid #9f6e44;
+  border: 1px solid #7d634c;
   border-left: none;
   border-right: none;
 }
@@ -556,7 +556,7 @@ li {
 }
 
 #question_small {
-  color: #9f6e44;
+  color: #7d634c;
   text-transform: uppercase;
   letter-spacing: .3em;
   font-size: 1.2em;
