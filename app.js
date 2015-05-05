@@ -174,7 +174,7 @@ var themes = {
 	worst_haircut:{
 		name: 'worst_haircut',
 		question: 'What was the worst hairstyle you ever had?',
-		isOpen: false
+		isOpen: true
 	},
 	spontaneous: {
 		name: 'spontaneous',
