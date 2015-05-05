@@ -12,48 +12,48 @@ var themeList= [
    },
    {  
       "theme":"itp_firstday",
-      "image":"/thumbs/image_01.png"
+      "image":"/thumbs/image_02.png"
    },
    {  
       "theme":"worst_haircut",
-      "image":"/thumbs/image_01.png"
+      "image":"/thumbs/image_03.png"
    },
    {  
       "theme":"spontaneous",
-      "image":"/thumbs/image_01.png"
+      "image":"/thumbs/image_04.png"
    },
    {  
       "theme":"roadTrip",
-      "image":"/thumbs/image_01.png"
+      "image":"/thumbs/image_05.png"
    },
    {  
       "theme":"postCard",
-      "image":"/thumbs/image_01.png"
+      "image":"/thumbs/image_06.png"
    },
    {  
       "theme":"laugh",
-      "image":"/thumbs/image_01.png"
+      "image":"/thumbs/image_07.png"
    },
    {  
       "theme":"pararell_World",
-      "image":"/thumbs/image_01.png"
+      "image":"/thumbs/image_08.png"
    },
    {  
       "theme":"smell",
-      "image":"/thumbs/image_01.png"
+      "image":"/thumbs/image_09.png"
    }, 
 	//
    {  
       "theme":"paint",
-      "image":"/thumbs/image_01.png"
+      "image":"/thumbs/image_10.png"
    },
    {  
       "theme":"joy",
-      "image":"/thumbs/image_01.png"
+      "image":"/thumbs/image_11.png"
    },
    {  
       "theme":"weekends",
-      "image":"/thumbs/image_01.png"
+      "image":"/thumbs/image_12.png"
    }
 ]
 

@@ -29,6 +29,35 @@ a:active {
   outline: 0;
 }
 
+hr {
+  height: 1px;
+  border: 0;
+  color: #333;
+  background-color: #333;
+  width: 100%;
+  left: 0px;
+}
+
+.inputs {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  width: 70%;
+  height: 28px;
+  float: left;
+  font-size: 0.7em;
+  letter-spacing: .1em;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #817f77;
+}
+
+#invite {
+  height: 28px;
+}
+
 /*****************************************/
 body {
   background-color: #fffde9;
@@ -116,6 +145,19 @@ h4 {
   padding-top: 10%;
 }
 
+#submission {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10%;
+}
+
+.message {
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  line-height: 1.5em;
+}
+
 #menuWrapper {
   width: 100%;
   position: fixed;
@@ -123,11 +165,16 @@ h4 {
   height: 10%;
 }
 
+.inactive {
+  opacity: 0.5;
+}
+
 .menus {
   width: 21%;
 }
 
-#image_share_f {
+#image_share_f,
+#image_share_t {
   width: 110%;
 }
 
@@ -179,7 +226,7 @@ canvas {
   top: 40px;
   background-size: 3%;
   background-repeat: repeat-x;
-  width: 5080px;
+  width: 4480px;
   position: absolute;
   z-index: 2;
 }
@@ -232,7 +279,7 @@ canvas {
   background-color: rgba(20, 20, 20, 0.7);
 }
 
-#questionArea {
+#questionPopup {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
@@ -241,18 +288,13 @@ canvas {
   border: none;
   position: relative;
   width: 600px;
-  height: 400px;
+  height: 345px;
   padding: 30px 50px;
   top: 150px;
   margin: 0 auto;
   z-index: 300;
   color: rgba(20, 20, 20, 0.7);
   background-color: rgba(255, 255, 255, 0.8);
-}
-
-#question {
-  letter-spacing: .1em;
-  font-size: 1.6em;
 }
 
 #close,
@@ -268,6 +310,22 @@ canvas {
 #close a:hover {
   /* testing */
   color: red;
+}
+
+#textArea {
+  margin-left: 25px;
+}
+
+#instruction_title {
+  font-size: 0.9em;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+#question {
+  letter-spacing: .1em;
+  font-size: 1.6em;
+  line-height: 1.7em;
 }
 
 #middleArea {

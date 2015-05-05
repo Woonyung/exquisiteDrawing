@@ -168,7 +168,7 @@ var themes = {
 	},
 	itp_firstday: {
 		name: 'itp_firstday',
-		question: 'your first day at work',
+		question: 'Your first day at ITP?',
 		isOpen: true
 	},
 	worst_haircut:{

@@ -1,13 +1,20 @@
 <!-- temporary setting --> 
 <style type="text/css">
 	body{
-		background-color: #B3FAD8;
+		background-color: #EBC8FF;
 		color: black;
 	}
 
-	#friendsArea{
-		background-color: yellow;
+	#background_layer{
+		background-color: rgba(255,255,255,0);
+
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 5; 
 	}
+
+
 </style>
 
 
@@ -16,37 +23,46 @@
 	{{#user}}
 		<h4><a href="#">{{user.name}}</a></h4>
 	{{/user}}
-	<a href="/logout"><button class="smButtons">LOGOUT</button></a>
+	<a href="/logout"><button id="logoutButton" class="smButtons">LOGOUT</button></a>
 </div>
 
 
-<br>
-<br>
-thank you for your submission {{name}} <br>
+<div id="background_layer">
+	<div id="submission">
+		<br>
+		<br>
+		<span class="message">thank you for your submission,
+		<br>{{name}}</span>
+		<br>
 
-Let me know whenver drawing is done..!
-<button id="pingMe">Let me know!!</button>
-<!-- {{photo.isOpen}} -->
-<br> <!--delete-->
+		<!-- Let me know whenver drawing is done..!<br>
+		<button class="bigButtons" id="pingMe">Let me know!!</button> -->
+		<!-- {{photo.isOpen}} -->
+		<br>
 
+		<hr></hr>
 
-============================<br> <!--delete-->
-Invite Friends...! <br> <!--delete-->
+		<span class="message">Invite Friends</span><br> <!--delete-->
 
-<input type="text" class="inputs"><br> <!--delete-->
-
-
-<div id="friendsArea"></div>
-<button id="addInputs">Add more Friends</button>
-
-<br> <!--delete-->
-<br> <!--delete-->
-<button id="invite">Invite!</button>
+		<br>
+		<input type="text" class="inputs">
+		<a href="/"><button class="smButtons" id="invite">Invite!</button></a>
 
 
+		<div id="friendsArea"></div>
+		<!-- <button id="addInputs">Add more Friends</button> -->
 
-<a href="/">
-back to the main
-</a>
+
+
+		<br>
+		<br>
+		<br>
+		<a href="/"><button id="backToMain" class="bigButtons">
+		back to the main
+		</button></a>
+	</div>
+</div>
+
+
 
 <script type="text/javascript" src="/js/email.js"></script>

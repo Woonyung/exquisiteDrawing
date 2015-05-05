@@ -3,13 +3,19 @@
 <!-- ////////////////////////////////-->
 <!-- QUESTION POP UP -->
 <div id="covered">
-	<div id="questionArea">
+	<div id="questionPopup">
 		<!-- display question -->
 		<span id="close"><a href="#">x</a></span>
 		<br>
 		<br>
-		<span id="question">Q: {{question}}</span>
-		<hr noshade size="1" color="black"></hr>
+
+		<div id="textArea">
+			<span id="instruction_title">Answer the question with</span><br>
+			<span id="instruction_title"><b>your drawing!</b></span>
+			<hr noshade size="1" color="black"></hr>
+			<span id="question">Q: {{question}}</span>
+		</div>
+		
 	</div>
 </div>
 
@@ -24,15 +30,15 @@
 		<div id="test1" class="col-xs-4">
 			<a href="#" id="undo"><img class="menus" id="image_undo" src="/images/menu_01.png"></a>
 			<!-- <a href="/theme/{{theme}}" id="clear"><img class="menus" id="image_clear" src="/images/menu_02.png"></a> -->
-			<a href="/theme/{{theme}}" id="clear"><img class="menus" id="image_clear" src="/images/menu_02.png"></a>
+			<a href="/theme/{{theme}}" id="clear"><img class="inactive menus" id="image_clear" src="/images/menu_02.png"></a>
 			<a href="#" id="save" data-theme="{{theme}}"><img class="menus" id="image_save" src="/images/menu_03.png"></a>
 		</div>
 		<div id="test2" class="col-xs-1"></div>
 		<div id="test3" class="col-xs-1">
-			<a href="#"><img class="menus" id="image_share_f" src="/images/menu_04_facebook.png"></a>
+			<a href="#"><img class="inactive menus" id="image_share_f" src="/images/menu_04_twitter.png"></a>
 		</div>
 		<div id="test4" class="col-xs-1">
-			<a href={{shareUrl}}><img class="menus" id="image_share_f" src="/images/menu_04_facebook.png"></a>
+			<a href={{shareUrl}}><img class="menus" id="image_share_t" src="/images/menu_04_facebook.png"></a>
 		</div>
 	</div>
 
