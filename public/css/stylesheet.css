@@ -302,6 +302,7 @@ canvas {
   position: absolute;
   top: 7px;
   right: 15px;
+  font-family: gotham-thin;
   font-size: 1.5em;
   color: #44463f;
 }
