@@ -559,8 +559,8 @@ li {
   color: #7d634c;
   text-transform: uppercase;
   letter-spacing: .3em;
-  font-size: 1.2em;
-  line-height: 1.2em;
+  font-size: 1.5em;
+  line-height: 1.3em;
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
@@ -621,6 +621,14 @@ li {
   .galleryImages {
     width: 544px;
     height: 408px;
+  }
+
+  #question_small {
+    color: #7d634c;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    font-size: 1.2em;
+    line-height: 1.2em;
   }
 }
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
