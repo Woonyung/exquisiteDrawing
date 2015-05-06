@@ -224,9 +224,9 @@ canvas {
 #middle_background {
   background-image: url("/thumbs/bg_02.png");
   top: 40px;
-  background-size: 3%;
+  background-size: 5%;
   background-repeat: repeat-x;
-  width: 4480px;
+  width: 2100px;
   position: absolute;
   z-index: 2;
 }
@@ -570,7 +570,7 @@ li {
   }
 
   #middle_background {
-    width: 4080px;
+    width: 1700px;
   }
 
   .thumbnails {

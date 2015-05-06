@@ -171,49 +171,14 @@ var themes = {
 		question: 'Your first day at ITP?',
 		isOpen: true
 	},
-	worst_haircut:{
-		name: 'worst_haircut',
-		question: 'What was the worst hairstyle you ever had?',
-		isOpen: true
-	},
 	spontaneous: {
 		name: 'spontaneous',
 		question: 'What was most spontaneous thing you’ve ever done?',
 		isOpen: true
 	},
-	roadTrip: {
-		name: 'roadTrip',
-		question: 'Your  fantasy road trip?',
-		isOpen: true
-	},
 	postCard: {
 		name: 'postCard',
 		question: 'What makes a great postcard?',
-		isOpen: true
-	},
-	laugh: {
-		name: 'laugh',
-		question: 'What always makes you laugh?',
-		isOpen: true	
-	},
-	pararell_World:{
-		name: 'pararell_World',
-		question: 'In a parallel life, what job might you have?',
-		isOpen: true
-	},
-	smell:{
-		name: 'smell',
-		question: 'What smell reminds you of childhood?',
-		isOpen: true
-	},
-	paint:{
-		name: 'paint',
-		question: 'Paint your surroundings in colors that will uplift your mood',
-		isOpen: true
-	},
-	joy:{
-		name: 'joy',
-		question: 'What does joy look like?',
 		isOpen: true
 	},
 	weekends:{
