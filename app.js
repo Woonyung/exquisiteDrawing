@@ -185,6 +185,11 @@ var themes = {
 		name: 'weekends',
 		question: 'What’s your favorite weekend getaway?',
 		isOpen: true
+	},
+	exquisite_corpse:{
+		name: 'exquisite_corpse',
+		question: "It's exquisite corpse! just continue from last drawing.",
+		isOpen: true
 	}
 }
 

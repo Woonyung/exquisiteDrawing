@@ -25,6 +25,10 @@ var themeList= [
    {  
       "theme":"weekends",
       "image":"/thumbs/image_12.png"
+   },
+   {  
+      "theme":"exquisite_corpse",
+      "image":"/thumbs/image_13.png"
    }
 ]
 
