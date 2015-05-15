@@ -164,12 +164,12 @@ var themes = {
 	itp_thesis: {
 		name: 'itp_thesis',
 		question: 'How do you feel about thesis?',
-		isOpen: true
+		isOpen: false
 	},
 	itp_firstday: {
 		name: 'itp_firstday',
 		question: 'Your first day at ITP?',
-		isOpen: true
+		isOpen: false	
 	},
 	spontaneous: {
 		name: 'spontaneous',
