@@ -63,7 +63,7 @@ $(document).ready(function(){
 
     //// MENUS
     $("#close").click(function(){
-        $("#covered").fadeOut('slow'); 
+        $("#covered1").fadeOut('slow'); 
         // $("#toTheLeft").fadeIn('slow');
 
         /// start with the organic brush
@@ -78,6 +78,7 @@ $(document).ready(function(){
 
         $(this).fadeOut('slow');
     });
+
 
 
     // SCROLLS 
@@ -118,6 +119,9 @@ $(document).ready(function(){
 
     // SAVE FUNCTION
     $('#save').click(function(){
+        // pop up window
+        $("#covered2").fadeTo( "fast", 1 );
+
         var imageString = canvas.toDataURL();
         // front-end stuffs
         // var currentTheme = document.getElementById("currentTheme").getAttribute("data-theme");

@@ -274,7 +274,8 @@ canvas {
   text-align: center;
 }
 
-#covered {
+#covered1,
+#covered2 {
   position: fixed;
   overflow-y: hidden;
   top: 0;
@@ -285,7 +286,12 @@ canvas {
   background-color: rgba(20, 20, 20, 0.6);
 }
 
-#questionPopup {
+#covered2 {
+  display: none;
+}
+
+#questionPopup,
+#savePopUp {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
